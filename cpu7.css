@@ -5244,10 +5244,17 @@ html.mobile #srh .hd {
 }
 html.mobile #srh .bd form {
   float: none;
-  margin: 0 auto;
+  height: auto;
+  margin: 5px auto;
 }
 html.mobile #srh .bd span {
   text-align: center;
+}
+html.mobile #srh input, html.mobile #srh select {
+  height: 30px;
+}
+html.mobile #srh select, html.mobile #srh input.s {
+  height: 32px;
 }
 html.mobile #srh .ft span {
   margin: 10px;
