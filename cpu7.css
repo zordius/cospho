@@ -2498,6 +2498,9 @@ div.ephoto form .tool input, body.adm .tool input.adm {
   color: #444;
 }
 /* single photo */
+.photo .img {
+  position: relative;
+}
 .photo img {
   display: block;
   margin: 0 auto;
@@ -5349,7 +5352,17 @@ html.mobile #captchaimg {
 html.mobile .mod.admin {
   position: relative;
   buttom: auto;
+  margin: 10px;
   top: 20px;
+  background: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  filter: none;
+  border: 0;
+}
+html.mobile .mod.admin .close {
+  display: none;
 }
 html.mobile .guest li b a {
   width: 0;

@@ -225,14 +225,15 @@ YUI().use('node-base', 'node-style', 'node-screen', 'cookie', 'dump', 'event-key
         var I = po.next('li'),
             J = po.previous('li'),
             K = Y.one('.ephoto .bk a'),
-            L = Y.one('.main .photo .bd');
+            L = Y.one('.main .photo .bd'),
+            M = L.one('.img');
 
-        if (L) {
+        if (L && M) {
             if (J) {
-                rk[112] = L.appendChild('<a class="p" title="上一張照片(熱鍵 P)" href="' + J.one('a').get('href') + '"><i></i></a>');
+                rk[112] = M.appendChild('<a class="p" title="上一張照片(熱鍵 P)" href="' + J.one('a').get('href') + '"><i></i></a>');
             }
             if (I) {
-                rk[110] = L.appendChild('<a class="n" title="下一張照片(熱鍵 N)" href="' + I.one('a').get('href') + '"><i></i></a>');
+                rk[110] = M.appendChild('<a class="n" title="下一張照片(熱鍵 N)" href="' + I.one('a').get('href') + '"><i></i></a>');
             }
             if (K) {
                 K.set('title', '熱鍵 Z');
