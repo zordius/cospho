@@ -1,0 +1,5391 @@
+/* base framework */
+/* css3 enchancement */
+#yui-main donotusenow[title]:after {
+  content: attr(title);
+  display: none;
+}
+#yui-main donotusenow[title]:hover::after .shadow4 {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-weight: 500;
+  z-index: 101;
+  font-size: 13px;
+  position: absolute;
+  white-space: nowrap;
+  display: block;
+  text-decoration: none;
+  background: #fda;
+  color: #822;
+  border: 1px solid #606;
+  padding: 2px 4px;
+  margin: 25px 0 0 10px;
+}
+/* scroll and font */
+body {
+  overflow: visible;
+  -webkit-text-size-adjust: none;
+  font-family: arial,MingLiu;
+}
+html {
+  overflow-y: scroll;
+  overflow: auto;
+  scrollbar-arrow-color: #fff;
+  scrollbar-shadow-color: #999;
+  scrollbar-face-color: #9bf;
+  scrollbar-highlight-color: #eef;
+  scrollbar-darkshadow-color: #44a;
+  scrollbar-3dlight-color: #888;
+  filter: expression(document.execCommand('BackgroundImageCache',false,true));
+}
+input, select {
+  font-family: arial,MingLiu;
+}
+/* html tags */
+a,
+s,
+u,
+i,
+b {
+  text-decoration: none;
+  font-weight: 500;
+  font-style: normal;
+}
+a {
+  color: #0000ee;
+}
+a:hover {
+  text-decoration: underline;
+}
+.hover {
+  text-decoration: underline;
+}
+input.submit {
+  cursor: pointer;
+}
+label {
+  cursor: pointer;
+}
+input[type=hidden] {
+  display: none!important;
+}
+a.more {
+  text-align: center;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 12px;
+  width: 25px;
+  height: 14px;
+  overflow: hidden;
+  padding: 0 4px 4px 21px;
+  background: url("allicon.png") no-repeat 4px -128px;
+  letter-spacing: 0;
+  color: #46b;
+}
+/* yui3 grid */
+#doc2 {
+  width: 960px;
+  *width: 72.0001em;
+  margin: auto;
+}
+.main {
+  position: relative;
+  z-index: 2;
+  width: 768px;
+  *width: 57.6001em;
+  margin-right: 8px;
+  *margin-right: 0.6em;
+  padding-top: 0.6153em;
+  *padding-top: 0.6em;
+}
+.side {
+  width: 184px;
+  *width: 13.8em;
+  padding-top: 0.6153em;
+  *padding-top: 0.6em;
+}
+.s0 .main {
+  width: 100%;
+  margin: 0;
+}
+.s0 .side {
+  display: none;
+}
+.s240 .main {
+  width: 704px;
+  *width: 52.8001em;
+}
+.s240 .side {
+  width: 248px;
+  *width: 18.6em;
+}
+.s240 .side .mod {
+  width: 246px;
+  *width: 18.45em;
+}
+.yui3-g .grid {
+  padding: 0 3px;
+}
+.yui3-u-1-3 {
+  _width: 33.3%;
+}
+/* modules */
+.mod {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #ccccee;
+  margin: 0 0 8px;
+}
+.mod .hd {
+  background: #eeeeff;
+  margin: 1px;
+  padding: 2px 1px 1px;
+  border-bottom: 1px solid #bbbbcc;
+  position: relative;
+  zoom: 1;
+}
+.mod .hd h1 {
+  background: #ddddee url("allicon.png") no-repeat 4px -156px;
+  border-top: 1px solid #e3e3f0;
+  padding: 2px 3px 1px 24px;
+  color: #444488;
+  font-weight: 900;
+  font-size: 123.1%;
+  letter-spacing: 3px;
+}
+.mod .bd {
+  margin: 4px;
+}
+.mod .ft {
+  text-align: right;
+  clear: both;
+  zoom: 1;
+}
+/* facebook */
+.fb_iframe_widget {
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+.fbm {
+  display: none;
+}
+.fbon .fbm {
+  display: block;
+}
+.fbon .photo .ft, .fbon .epuu .ft {
+  text-align: center;
+  padding: 8px 0 0;
+}
+.fbcmt, .fblikebox {
+  clear: both;
+}
+.fbcmt .bd, .fblikebox .bd {
+  text-align: center;
+}
+.fbcmt p, .fblikebox p {
+  color: #ff0000;
+  padding: 0 0 4px;
+}
+.fbcmt .ft, .fblikebox .ft {
+  height: 0;
+  overflow: hidden;
+}
+.main .mod.fblikebox .bd {
+  margin: 0;
+}
+.fblike .ft {
+  display: none;
+}
+.fbmig .bd img {
+  width: 50px;
+  height: 50px;
+  margin: 0 4px 0 0;
+  float: left;
+  border: 2px solid #6677bb;
+}
+.fbmig .bd i {
+  display: block;
+}
+.fbmig .ft {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #a44;
+}
+.fbusr li {
+  height: 70px;
+  margin: 0 0 3px;
+  border-bottom: 1px solid #eeeeee;
+}
+.fbusr li a, .fbusr li b, .fbusr li i {
+  padding: 0 0 0 70px;
+  display: block;
+}
+.fbusr u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  left: 0;
+  line-height: 200px;
+  position: absolute;
+}
+.fbusr .ft {
+  height: 0;
+}
+/* facebook canvas, iframe mode */
+.iframe #hd, .iframe #ft {
+  display: none;
+}
+/* dynamic iframe module */
+.yui3-g iframe {
+  clear: both;
+  border: 0;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+/* debug module */
+.debug textarea {
+  border: 0;
+  width: 100%;
+  height: 400px;
+}
+/* page nav */
+.pg {
+  text-align: left;
+  height: 32px;
+  padding: 2px;
+  background: #f8f8f8;
+  margin: 4px 0;
+}
+.pg a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 12px;
+  border: 1px solid #6677bb;
+  width: 36px;
+  height: 20px;
+  padding: 5px 5px 0 22px;
+  color: #6677bb;
+  margin: 3px;
+  background: url("allicon.png") no-repeat #ffffff;
+  background-position: 4px -478px;
+  text-align: center;
+}
+.pg a.p {
+  background-position: 4px -510px;
+}
+.pg a.n, .pg a.l {
+  padding: 5px 22px 0 5px;
+  background-position: 39px -542px;
+}
+.pg a.l {
+  background-position: 39px -574px;
+}
+.pg i {
+  display: none;
+}
+.hd .pg {
+  position: absolute;
+  top: 0;
+  text-align: right;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  width: 13em;
+}
+.hd .pg p {
+  display: none;
+}
+.hd .pg a {
+  color: #ffffff;
+  overflow: hidden;
+  width: 0;
+  padding: 2px 0 0 18px;
+  margin: 0 0 0 4px;
+  background-position: 2px -479px;
+}
+.hd .pg a.p {
+  background-position: 2px -511px;
+}
+.hd .pg a.n {
+  background-position: -4px -543px;
+}
+.hd .pg a.l {
+  background-position: -4px -575px;
+}
+.hd .pg i {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #6677bb;
+  padding: 4px;
+  font-weight: 900;
+}
+.ft .pg p {
+  float: right;
+  width: 25em;
+  font-size: 93%;
+  padding: 2px!important;
+}
+.ft .pg i.vsi {
+  margin: 3px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: center;
+  padding: 3px 3px 4px;
+  width: 80px;
+  border: 2px solid #6677bb;
+  background: #ffc;
+  cursor: pointer;
+}
+.ft .pg i.vsi.on {
+  background: #ffa;
+  font-weight: 900;
+  color: #644;
+}
+.ft .pg i.vsi.go {
+  background: #eeeeee;
+  font-weight: 900;
+  color: #ff0000;
+  cursor: progress;
+}
+/* path */
+.path {
+  font-size: 14px;
+  padding: 2px 0 0;
+  height: 27px;
+  _padding-top: 1px;
+  position: absolute;
+  top: 5px;
+  z-index: 10;
+  margin: 0 13em 0 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+.path li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  background: url("allicon.png") no-repeat 100% -832px;
+  padding-right: 7px;
+  margin: 0 2px 0 0;
+}
+.path li a, .path li span {
+  border: 1px solid #acf;
+  border-right: 0;
+  border-left: 0;
+  padding: 5px 5px 5px 12px;
+  display: block;
+  background: url("allicon.png") no-repeat 0 -800px;
+  *padding-bottom: 3px;
+}
+.path li.first a {
+  background: none;
+  border-left: 3px solid #acf;
+  padding-left: 7px;
+}
+.path li.last {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.path li.last span {
+  border-right: 1px solid #acf;
+  padding-right: 8px;
+  font-weight: 900;
+}
+/* main modules */
+.main .mod {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  overflow: visible;
+  border: 0;
+  zoom: 1;
+}
+.main .mod .hd {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  height: 26px;
+  *height: 24px;
+  border: 0;
+  margin: 0;
+  background: none;
+  padding: 0;
+  border-bottom: 5px double #7ad;
+  overflow: hidden;
+}
+.main .mod .hd h1 {
+  border: 0;
+  background: #7ad;
+  padding: 3px;
+  width: 6em;
+  height: 20px;
+  color: #fff;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 16px;
+  -moz-border-radius: 0 6px 0 0;
+  -webkit-border-top-right-radius: 6px;
+}
+.main .mod .bd {
+  margin: 4px 0 0;
+}
+/* error */
+.main .error .hd {
+  border-bottom: 5px double #d44;
+}
+.main .error .hd h1 {
+  background: #d44;
+}
+.main .error .bd {
+  font-size: 123.1%;
+  font-weight: 900;
+  color: #ff0000;
+}
+.main .error .ft {
+  border-bottom: 5px double #d44;
+  padding: 10px;
+}
+.main .error .ft a {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 25%;
+  height: 2em;
+  border: 2px solid #444488;
+  background: #6677bb;
+  color: #fff;
+  font-weight: 900;
+  *line-height: 1.6em;
+  padding-top: 0.5em;
+}
+/* module expand */
+.main div.mod.mod_on {
+  border-bottom: 5px double #7ad;
+  margin-bottom: 30px;
+  position: relative;
+}
+.main div.mod.mod_on .hd {
+  position: static;
+}
+.main div.mod.mod_on .ft {
+  cursor: pointer;
+  position: static;
+}
+.mod.mod_on .hd i.mod_onoff {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  background: url("allicon.png") no-repeat 0 -672px;
+  overflow: hidden;
+  width: 19px;
+  height: 16px;
+}
+.mod.mod_on.mod_off {
+  opacity: 0.7;
+  filter: alpha(opacity='70',style=0);
+  cursor: pointer;
+}
+.mod.mod_on.mod_off .bd {
+  display: none;
+}
+.mod.mod_on.mod_off .ft {
+  position: relative;
+  height: 17px;
+  padding: 2px 4px 0;
+  background: #eeeeee;
+}
+.mod.mod_on.mod_off .hd i.mod_onoff {
+  background-position: 0px -704px;
+}
+/* submit form */
+form input, form select, form textarea {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #6677bb;
+  height: 20px;
+  margin: 2px 2px 2px 0;
+  width: 62%;
+}
+form label {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #6677bb;
+  height: 20px;
+  margin: 2px 2px 2px 0;
+  color: #46a;
+  border: 1px solid #ffffff;
+  border-bottom: 1px solid #cdf;
+  width: 36.5%;
+  text-align: right;
+}
+form textarea {
+  height: 100px;
+}
+form i {
+  clear: both;
+  text-align: right;
+  color: #a44;
+  display: block;
+  margin: 0 0 4px;
+}
+form button {
+  padding: 3px;
+  border: 2px solid #44a;
+  font-weight: 900;
+  color: #fff;
+  background: #77c;
+  position: relative;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+  width: 6em;
+  *padding-bottom: 0;
+  white-space: nowrap;
+  height: 28px;
+}
+form button.q {
+  background: #888;
+}
+form input.submit {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 2em;
+  border: 2px solid #444488;
+  background: #6677bb;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.8em;
+  padding: 0 0 0.3em;
+  width: 30%;
+  float: right;
+  clear: both;
+}
+.side form label {
+  width: 28%;
+}
+/* back module */
+.mod.back a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 2em;
+  border: 2px solid #444488;
+  background: #6677bb;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.8em;
+  padding: 0 0 0.3em;
+  border-color: #888888;
+  color: #888888;
+  background: #eeeeee;
+  text-align: center;
+  display: block;
+  height: auto;
+}
+.mod.back a:hover {
+  color: #000;
+  border-color: #444;
+  text-decoration: none;
+}
+/* facebook wall */
+.mod.fbwall dl dt {
+  padding: 0 0 0 55px;
+  position: relative;
+}
+.mod.fbwall dl dt img {
+  position: absolute;
+  left: 0;
+  _left: -55px;
+  top: 3px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #888;
+}
+.mod.fbwall dl dd {
+  border-bottom: 1px solid #888;
+  padding: 5px 0 5px 60px;
+  color: #888;
+}
+.mod.fbwall dl dd img {
+  float: left;
+  margin: 0 3px 0 0;
+}
+.mod.fbwall dl dd h3, .mod.fbwall dl dd p {
+  padding: 0 0 3px 0;
+  text-align: justify;
+  text-justify: distribute;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.mod.fbwall dl .profile {
+  padding: 3px 0;
+  margin: 0 0 3px;
+  border-bottom: 1px dotted #ccc;
+}
+.mod.fbwall dl .profile a {
+  font-weight: 900;
+}
+.mod.fbwall dl ul {
+  clear: left;
+}
+.mod.fbwall dl li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border-left: 2px solid #acf;
+  padding: 0 5px 1px 10px;
+  margin: 3px 0 0;
+  background: url("allicon.png") no-repeat -3px -805px;
+}
+.mod.fbwall .fbm {
+  padding: 0 0 4px;
+  margin: 0 0 4px;
+  border-bottom: 1px solid #888;
+}
+.mod.fbwall .ft {
+  padding: 4px 0 0;
+}
+/* form validation */
+.req .isreq {
+  background: url("allicon.png") no-repeat 1px -735px;
+  border: #fee 1px solid;
+}
+.req .empty {
+  background: #fee;
+  border: #faa 1px solid;
+}
+.req input.submit {
+  background: #c00;
+  border-color: #fc8;
+}
+.side .req .isreq {
+  background: transparent;
+}
+/* captcha */
+.captcha {
+  position: relative;
+  zoom: 1;
+}
+.captcha b {
+  right: 35%;
+  bottom: 3px;
+  position: absolute;
+  font-size: 11px;
+  text-align: right;
+  color: #888;
+}
+#captchaimg {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #46b;
+  margin: 2px 4px 2px 0;
+  width: 200px;
+  height: 40px;
+  background: #999999 50% 50% no-repeat;
+}
+form input#iCaptcha {
+  width: 30%;
+}
+/* Master head */
+#srh {
+  background: url(http://l.yimg.com/f/i/tw/hp/masthead/yhtw_mh_bg.gif) repeat-x;
+  border-bottom: 1px solid #cccccc;
+}
+#srh .hd {
+  float: left;
+  background: transparent url("header.png") no-repeat;
+  width: 190px;
+  height: 43px;
+  overflow: hidden;
+  margin: 10px 0 5px;
+}
+#srh .hd h1 a {
+  display: block;
+  line-height: 100px;
+  width: 100%;
+  height: 100%;
+}
+#srh .bd {
+  float: right;
+  background: url(http://l.yimg.com/f/i/tw/hp/masthead/yhtw_mh_paddle.gif) no-repeat;
+  width: 275px;
+}
+#srh .bd span {
+  display: block;
+  height: 14px;
+  width: 240px;
+  float: right;
+  clear: right;
+  color: #6677bb;
+  font-size: 93%;
+  position: relative;
+  top: 3px;
+  right: 3px;
+  text-align: right;
+}
+#srh .bd form {
+  font-size: 12px;
+  width: 232px;
+  height: 25px;
+  float: right;
+  padding: 3px 3px 0 0;
+}
+#srh .bd form input {
+  line-height: 18px;
+  border: 1px solid #888888;
+  width: 110px;
+  height: 19px;
+  margin: 0;
+}
+#srh .bd form input.q {
+  border-right: 0;
+}
+#srh .bd form input.s {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #ffdd88;
+  background: -webkit-gradient(linear, center bottom, center top, color-stop(0.17, #ffdd88), color-stop(1, #ffffdd));
+  background-image: -moz-linear-gradient(center bottom, #ffdd88 17%, #ffffdd 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ffffdd', EndColorStr='#ffdd88');
+  padding: 0;
+  width: 57px;
+  height: 21px;
+  _height: 20px;
+  cursor: pointer;
+}
+#srh .bd form select {
+  margin: 0;
+  height: 21px;
+  width: 58px;
+  border: 1px solid #888888;
+  position: relative;
+  left: -4px;
+  *top: 1px;
+}
+#srh .ft {
+  clear: both;
+  position: relative;
+}
+#srh .ft span {
+  position: absolute;
+  top: -50px;
+  left: 200px;
+}
+#srh .ft span a.login {
+  margin: 0 4px;
+  padding-left: 18px;
+  background: url("allicon.png") no-repeat 0px -605px;
+}
+#srh .ft span a.logout {
+  margin: 0 4px;
+  padding-left: 18px;
+  background: url("allicon.png") no-repeat 0px -637px;
+  color: #b68;
+}
+/* admin tool */
+.mod.admin {
+  box-shadow: 0px 0px 5px #000000;
+  -moz-box-shadow: 0px 0px 5px #000000;
+  -webkit-box-shadow: 0px 0px 5px #000000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000',direction=120,strength=0);
+  z-index: 999;
+  background: #cccccc;
+  position: fixed;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.mod.admin.devel {
+  background: #fcc;
+}
+.mod.admin .hd, .mod.admin .ft {
+  display: none;
+}
+.mod.admin .bd {
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  height: 10px;
+  *height: 25px;
+  margin: 0;
+}
+.mod.admin .bd a {
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  background: #fff;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 0 0 5px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  top: -20px;
+  *top: 0;
+}
+.mod.admin .bd span.close {
+  position: relative;
+  cursor: pointer;
+  top: -10px;
+  *top: 5px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  background: transparent url("allicon.png") no-repeat;
+  background-position: 0px -1319px;
+  height: 20px;
+  width: 20px;
+  margin: 0 0 0 5px;
+  padding: 0;
+  overflow: hidden;
+}
+.mod.admin .bd:hover {
+  height: 20px;
+  *height: 25px;
+}
+.mod.admin .bd:hover a {
+  top: -15px;
+  *top: 0;
+}
+.mod.admin .bd:hover a:hover {
+  background: #ffe;
+  box-shadow: 2px 2px 5px #888888;
+  -moz-box-shadow: 2px 2px 5px #888888;
+  -webkit-box-shadow: 2px 2px 5px #888888;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888',direction=120,strength=2);
+}
+/* announce module */
+.mod.announce .bd {
+  text-align: justify;
+  text-justify: distribute;
+}
+.mod.announce .ft {
+  display: none;
+}
+/* login page*/
+.mod.login {
+  position: relative;
+}
+.mod.login .ft {
+  height: 2px;
+}
+.mod.login .ft a {
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+}
+/* Nav */
+#nav {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+#nav .bd {
+  position: relative;
+  top: -25px;
+  left: 200px;
+  width: 40em;
+}
+#nav .bd ul li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin-right: 4px;
+  position: relative;
+  top: -2px;
+}
+#nav .bd ul li a {
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  opacity: 0.7;
+  filter: alpha(opacity='70',style=0);
+  height: 17px;
+  font-size: 13px;
+  overflow: hidden;
+  display: block;
+  width: 36px;
+  font-weight: 900;
+  color: #559;
+  letter-spacing: 3px;
+  background: #ffffff url("allicon.png") no-repeat;
+  padding: 7px 0 0 24px;
+  border: 1px solid #ffffff;
+  position: relative;
+}
+#nav .bd ul li a:hover {
+  color: #57b;
+  text-decoration: none;
+  border: 1px solid #cde;
+}
+#nav .bd ul li.on a, #nav .bd ul li a:active, #nav .bd ul li a:hover {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #7ac;
+  border-bottom: 1px solid #45a;
+  color: #45a;
+  top: -1px;
+  opacity: 1;
+  filter: alpha(opacity='100',style=0);
+}
+#nav .bd ul li.home a {
+  background-position: 2px 2px;
+}
+#nav .bd ul li.comm a {
+  background-position: 2px -30px;
+}
+#nav .bd ul li.photo a {
+  background-position: 2px -62px;
+}
+#nav .bd ul li.event a {
+  background-position: 2px -94px;
+}
+#nav .bd ul li.on a:hover {
+  border-bottom: 1px solid #aaa;
+}
+/* news */
+.mod.news h1 {
+  background-position: 4px -188px;
+}
+.mod.news li {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-bottom: 1px dotted #cccccc;
+  color: #444;
+}
+.mod.news li b {
+  position: relative;
+  left: -4px;
+  color: #494;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.mod.news p {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  color: #888;
+  padding: 4px;
+}
+.main .mod.news li {
+  list-style: decimal outside;
+  margin-left: 4em;
+}
+/* event map */
+.tmap {
+  width: 94px;
+  height: 177px;
+  background: url("taiwan.png") 100% 0 no-repeat;
+  float: left;
+}
+.mod.emap .hd h1 {
+  background-position: 4px -348px;
+}
+.mod.emap ul {
+  margin-left: 100px;
+  position: relative;
+}
+.mod.emap li {
+  zoom: 1;
+  border-bottom: 1px dotted #cccccc;
+  padding: 4px 0;
+}
+.mod.emap li i {
+  position: absolute;
+  top: -999px;
+  display: block;
+}
+.mod.emap li a {
+  color: #22e;
+}
+.mod.emap li a i {
+  padding: 15px 1px 0;
+  background: #ffffff url("allicon.png") no-repeat 6px -318px;
+  font-size: 11px;
+  color: #000000;
+  text-align: center;
+  display: none;
+}
+.mod.emap li a b {
+  word-break: break-all;
+  word-wrap: break-word;
+  font-size: 108%;
+  color: #644;
+}
+.mod.emap li a u {
+  font-size: 85%;
+  display: block;
+  text-align: right;
+  margin-left: 5px;
+  white-space: nowrap;
+}
+.mod.emap li a:hover i {
+  opacity: 0.6;
+  filter: alpha(opacity='60',style=0);
+  display: block;
+}
+.mod.emap li.tpe i {
+  top: 8px;
+  left: -40px;
+  background-position: 6px -222px;
+}
+.mod.emap li.tch i {
+  top: 53px;
+  left: -82px;
+  background-position: 6px -254px;
+}
+.mod.emap li.ksh i {
+  top: 131px;
+  left: -98px;
+  background-position: 6px -286px;
+}
+.mod.emap li.ila i {
+  top: 23px;
+  left: -28px;
+}
+.mod.emap li.cha i {
+  top: 58px;
+  left: -86px;
+}
+.mod.emap li.tnn i {
+  top: 112px;
+  left: -105px;
+}
+.mod.emap li.hsz i {
+  top: 19px;
+  left: -68px;
+}
+.mod.emap li.jho i {
+  top: 13px;
+  left: -54px;
+}
+.mod.emap li.tao i {
+  top: 10px;
+  left: -52px;
+}
+.mod.emap li.hua i {
+  top: 58px;
+  left: -36px;
+}
+.mod.emap li.cyi i {
+  top: 88px;
+  left: -92px;
+}
+.mod.emap li.ttt i {
+  top: 125px;
+  left: -63px;
+}
+/* birth */
+.mod.btoday .hd h1 {
+  background-position: 4px -380px;
+}
+.mod.btoday .md {
+  font-size: 32px;
+  font-weight: 900;
+  float: left;
+  margin-right: 7px;
+  color: #448;
+  background: #ffffff;
+  position: relative;
+}
+.mod.btoday li {
+  padding: 4px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.mod.btoday a {
+  font-size: 116%;
+  font-weight: 900;
+  color: #c84;
+}
+.mod.btoday i {
+  margin-left: 5px;
+}
+.mod.btoday .ft {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  margin: 0 4px 4px;
+  color: #888;
+}
+/* event list */
+.elist ul {
+  overflow: hidden;
+}
+.elist li {
+  clear: both;
+  border-top: 1px solid #cccccc;
+  position: relative;
+  top: -1px;
+}
+.elist h3 {
+  font-size: 167%;
+  margin-right: 350px;
+  position: relative;
+  top: 0.5em;
+}
+.elist h3 a {
+  display: block;
+  font-weight: 900;
+}
+.elist h3 i {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  display: block;
+  background: url("allicon.png") no-repeat 0 -64px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  _right: 345px;
+  cursor: pointer;
+}
+.elist a div {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: -1em;
+  float: right;
+  width: 240px;
+  height: 170px;
+  border: 2px solid #aaf;
+  background: #88c 50% 50%;
+  cursor: pointer;
+}
+.elist a div i {
+  visibility: hidden;
+}
+.elist a:hover div i {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity='100',style=0);
+}
+.elist dl {
+  font-size: 108%;
+  zoom: 1;
+  margin: 0 350px 0 0;
+  padding: 1.5em 0 1em;
+}
+.elist dt {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-weight: 900;
+  width: 25%;
+  text-align: right;
+  white-space: nowrap;
+}
+.elist dd {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+  width: 72%;
+  margin: 0 0 0 0.5em;
+}
+.elist dd i {
+  color: #ff0000;
+  font-weight: 900;
+}
+.elist .tmap {
+  display: block;
+  float: right;
+  padding-left: 5px;
+  position: relative;
+  top: -1em;
+}
+.elist .tmap:hover {
+  text-decoration: none;
+}
+.elist .tmap i {
+  opacity: 0.8;
+  filter: alpha(opacity='80',style=0);
+  position: absolute;
+  padding: 15px 1px 0;
+  white-space: nowrap;
+  background: #ffffff url("allicon.png") no-repeat 6px -318px;
+  font-size: 11px;
+  color: #000000;
+  text-align: center;
+  *filter: none;
+  display: block;
+  cursor: pointer;
+}
+.elist i b {
+  opacity: 0.6;
+  filter: alpha(opacity='60',style=0);
+  position: absolute;
+  top: -2px;
+  left: -89px;
+  height: 9px;
+  width: 100px;
+  overflow: hidden;
+  border: 2px ridge #009;
+  border-bottom: 0;
+  border-left: 0;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius: 0 5px 0 0;
+}
+.elist .tpe i {
+  top: 8px;
+  left: 65px;
+  background-position: 6px -222px;
+}
+.elist .tch i {
+  top: 53px;
+  left: 23px;
+  background-position: 6px -254px;
+}
+.elist .ksh i {
+  top: 131px;
+  left: 7px;
+  background-position: 6px -286px;
+}
+.elist .ila i {
+  top: 23px;
+  left: 77px;
+}
+.elist .cha i {
+  top: 58px;
+  left: 19px;
+}
+.elist .tnn i {
+  top: 112px;
+  left: 0;
+}
+.elist .hsz i {
+  top: 19px;
+  left: 37px;
+}
+.elist .jho i {
+  top: 13px;
+  left: 51px;
+}
+.elist .tao i {
+  top: 10px;
+  left: 53px;
+}
+.elist .hua i {
+  top: 58px;
+  left: 69px;
+}
+.elist .cyi i {
+  top: 88px;
+  left: 13px;
+}
+.elist .ttt i {
+  top: 125px;
+  left: 37px;
+}
+/* event filter */
+.mod.efilt .hd h1 {
+  background-position: 4px -348px;
+}
+.mod.efilt ul {
+  padding: 0 0 0 6px;
+  *padding: 0 0 0 3px;
+}
+.mod.efilt li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 108%;
+  padding: 2px;
+}
+.mod.efilt li a, .mod.efilt li i {
+  white-space: nowrap;
+  display: block;
+  padding: 3px;
+  width: 4.6em;
+  text-align: center;
+  background: #eeeeee;
+}
+.mod.efilt li i {
+  background: #ddd;
+  font-weight: 900;
+  color: #224;
+}
+.mod.efilt .ft {
+  text-align: center;
+}
+/* event calendar */
+.mod.ecal .hd h1 {
+  background-position: 4px -1052px;
+}
+.ecal dt {
+  font-weight: 900;
+  text-align: center;
+  background: #eff;
+  margin: 3px 0 0 0;
+  border: 3px solid #ddd;
+  border-bottom: 0;
+}
+.ecal dt a {
+  display: block;
+  padding: 4px;
+  color: #66a;
+}
+.ecal dt.dat a {
+  font-weight: 900;
+  color: #448;
+}
+.ecal dd {
+  background: #ddd;
+  padding: 2px 0 3px 3px;
+}
+.ecal dd a {
+  display: block;
+  height: 25px;
+}
+.ecal dd a div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  padding: 2px;
+  background: #ffa;
+  color: #624;
+  width: 89px;
+  border: 1px solid #a84;
+  cursor: pointer;
+}
+.ecal dd a.ac {
+  border-color: #48f;
+}
+.ecal dd a:hover {
+  background: none;
+  z-index: 30;
+}
+.ecal dd a:hover div {
+  padding: 2px 25px 2px 2px;
+  width: auto;
+  background: #ffc;
+}
+.ecal dd a b {
+  display: inline-block;
+  padding: 1px 1px 0 13px;
+  background: url("allicon.png") no-repeat 0 -318px;
+  color: #000000;
+  font-size: 11px;
+  height: 13px;
+  cursor: pointer;
+}
+.ecal dd a.tpe b {
+  background-position: 0px -222px;
+}
+.ecal dd a.tch b {
+  background-position: 0px -254px;
+}
+.ecal dd a.ksh b {
+  background-position: 0px -286px;
+}
+.ecal ul {
+  border-left: 1px solid #ddd;
+  border-top: 2px solid #ddd;
+}
+.ecal li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 24px;
+  *width: 1.8em;
+  padding: 4px 8px 2px 0;
+  *padding: 0.3em;
+  text-align: right;
+  border: 1px solid #ddd;
+  border-top: 0;
+  border-left: 0;
+  background: #eeeeff 0 -1024px no-repeat;
+  position: relative;
+}
+.ecal li.cur {
+  background-image: url("allicon.png");
+  border-color: #844;
+}
+.ecal li.s0 {
+  color: #700;
+  background-color: #ffe;
+}
+.ecal li.s0 a div, .ecal li.s0 :hover div {
+  left: auto;
+  right: 2px;
+}
+.ecal li.s1 {
+  color: #d00;
+  background-color: #fee;
+}
+.ecal li.s1 a:hover div {
+  left: 0;
+}
+.ecal li.now {
+  font-weight: 900;
+  background: #fcc;
+  top: 0;
+  left: 0;
+  border-color: #888;
+}
+.ecal li i {
+  opacity: 0.4;
+  filter: alpha(opacity='40',style=0);
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("allicon.png") no-repeat 0px -961px;
+  top: 0.2em;
+  right: 8px;
+  *right: 0.2em;
+  overflow: hidden;
+}
+.ecal li i.tpe {
+  background-position: 0px -865px;
+}
+.ecal li i.tch {
+  background-position: 0px -897px;
+}
+.ecal li i.ksh {
+  background-position: 0px -929px;
+}
+.ecal li i.mny {
+  background-position: 0px -993px;
+}
+.ecal .w1 {
+  margin-left: 33px;
+  *margin-left: 2.475006187515469em;
+}
+.ecal .w2 {
+  margin-left: 66px;
+  *margin-left: 4.950012375030938em;
+}
+.ecal .w3 {
+  margin-left: 99px;
+  *margin-left: 7.4250185625464065em;
+}
+.ecal .w4 {
+  margin-left: 132px;
+  *margin-left: 9.900024750061876em;
+}
+.ecal .w5 {
+  margin-left: 165px;
+  *margin-left: 12.375030937577344em;
+}
+.ecal .w6 {
+  margin-left: 198px;
+  *margin-left: 14.850037125092813em;
+}
+.side .ecal p {
+  display: none;
+}
+.main .ecal .bd {
+  *width: 52.66em;
+}
+.main .ecal .ft {
+  display: none;
+}
+.main .ecal p {
+  padding: 0 0 4px;
+  text-align: center;
+  letter-spacing: -0.31em;
+  *letter-spacing: normal;
+  word-spacing: -0.43em;
+}
+.main .ecal p a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin: 2px 2px 2px 2px;
+  width: 230px;
+  padding: 2px 0;
+  background: #ddd;
+}
+.main .ecal dl {
+  font-size: 13px;
+}
+.main .ecal dt {
+  width: 223px;
+  display: inline;
+  position: absolute;
+  margin: 0 1px 0 2px;
+  border-width: 4px;
+}
+.main .ecal dd {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 228px;
+  margin: 27px 1px 4px 2px;
+}
+.main .ecal li {
+  width: 23px;
+}
+.main .ecal .w1 {
+  margin-left: 32px;
+}
+.main .ecal .w2 {
+  margin-left: 64px;
+}
+.main .ecal .w3 {
+  margin-left: 96px;
+}
+.main .ecal .w4 {
+  margin-left: 128px;
+}
+.main .ecal .w5 {
+  margin-left: 160px;
+}
+.main .ecal .w6 {
+  margin-left: 192px;
+}
+.main .ecal dt.dat {
+  font-size: 197%;
+  background: #8ac;
+  width: 701px;
+  display: block;
+  margin: 0;
+  padding: 5px 0 3px;
+  border: 0;
+  position: relative;
+}
+.main .ecal dt.dat a {
+  color: #fff;
+}
+.main .ecal dd.dat {
+  width: 701px;
+  margin: 0 0 4px;
+  padding: 0;
+  display: block;
+}
+.main .ecal dd.dat .w1 {
+  margin-left: 100px;
+}
+.main .ecal dd.dat .w2 {
+  margin-left: 200px;
+}
+.main .ecal dd.dat .w3 {
+  margin-left: 300px;
+}
+.main .ecal dd.dat .w4 {
+  margin-left: 400px;
+}
+.main .ecal dd.dat .w5 {
+  margin-left: 500px;
+}
+.main .ecal dd.dat .w6 {
+  margin-left: 600px;
+}
+.main .ecal dd.dat li {
+  position: static;
+  width: 97px;
+  height: 90px;
+  padding: 0 0 2px 2px;
+  text-align: right;
+}
+.main .ecal dd.dat li i {
+  display: none;
+  opacity: 0.75;
+  filter: alpha(opacity='75',style=0);
+  z-index: 20;
+  background: url("allicon.png") no-repeat 0px -1088px;
+  border: 1px solid #448;
+  background-color: #444;
+  right: 4px;
+  height: 16px;
+  width: 16px;
+  top: 1px;
+}
+.main .ecal dd.dat li a.ac i {
+  display: block;
+}
+/* calendar years */
+.mod.eyear .hd h1 {
+  background-position: 4px -1052px;
+}
+.eyear li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  padding: 3px 3px 3px 2px;
+  white-space: nowrap;
+}
+.eyear .ft {
+  text-align: center;
+}
+/* calendar legend */
+.ecal .ft {
+  position: relative;
+  zoom: 1;
+}
+.ecal .ft a.note {
+  position: absolute;
+  bottom: 1px;
+  left: 4px;
+  cursor: help;
+  color: #226;
+}
+.ecal .ft a.note:hover {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #888888;
+  padding: 4px;
+  background: #ddd;
+  text-ecoration: none
+        width:7em;
+}
+.ecal .ft a.note h4 {
+  background: url("allicon.png") no-repeat 0 -736px;
+  display: block;
+  width: 2.3em;
+  height: 17px;
+  padding: 0 0 0 20px;
+  *padding-top: 2px;
+  overflow: hidden;
+}
+.ecal .ft a.note ul {
+  display: none;
+}
+.ecal .ft a.note:hover ul {
+  display: block;
+  margin: 3px 0 0 0;
+}
+.ecal .ft a.note:hover li {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 4px 2px 2px 24px;
+  left: 0;
+  text-align: left;
+}
+.ecal .ft a.note:hover i {
+  right: auto;
+  left: 2px;
+  top: 2px;
+}
+.ecal .ft li.cur {
+  width: 4em;
+  padding: 4px;
+  text-align: center;
+  margin: 5px auto;
+}
+/* event photo list */
+.mod.ephotol .hd h1 {
+  background-position: 4px -1084px;
+}
+.mod.ephotol h2 {
+  font-size: 116%;
+  font-weight: 900;
+}
+.mod.ephotol h2 i {
+  padding: 0;
+  width: 22px;
+  height: 16px;
+  overflow: hidden;
+  background: url("allicon.png") no-repeat 0px -672px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.mod.ephotol h2 i.n {
+  background-position: 0px -704px;
+}
+.mod.ephotol h2 a {
+  padding: 0 0 0 3px;
+}
+.mod.ephotol .er {
+  text-align: center;
+}
+.mod.ephotol .er a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: bottom;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 67px;
+  height: 67px;
+  margin: 0 0 2px 2px;
+  border: 2px solid #cccccc;
+  background: #cccccc no-repeat 50% 0;
+  position: relative;
+  border: 3px solid #cccccc;
+  margin: 0 1px 3px 0;
+}
+.mod.ephotol .er a i {
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  opacity: 0;
+  filter: alpha(opacity='0',style=0);
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  padding: 0;
+  position: relative;
+  left: 1px;
+  bottom: 1px;
+  display: block;
+  font-size: 0;
+}
+.mod.ephotol .er a:hover {
+  z-index: 30;
+  background-color: #dddddd;
+  text-decoration: none;
+  _position: absolute;
+}
+.mod.ephotol .er a:hover i {
+  z-index: 40;
+  opacity: 1;
+  filter: alpha(opacity='100',style=0);
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 100%;
+}
+.mod.ephotol .er a u {
+  display: block;
+  white-space: nowrap;
+  padding: 0 3px;
+  margin: 2px;
+  background: #ffffcc no-repeat 0 100px;
+  border: #fcc 1px solid;
+  cursor: pointer;
+}
+.mod.ephotol li {
+  clear: both;
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  *padding-bottom: 0;
+}
+.mod.ephotol i {
+  display: block;
+}
+.mod.ephotol .bd a.more {
+  width: 52px;
+}
+.side .mod.ephotol .er a:hover i {
+  left: auto;
+  right: 1px;
+}
+.main .mod.ephotol .bd {
+  margin: 0;
+}
+.main .mod.ephotol li {
+  display: block;
+  position: relative;
+  height: 180px;
+  border-bottom: 1px solid #aaa;
+  margin: 0;
+  padding: 0;
+}
+.main .mod.ephotol div.er {
+  padding: 5px 0 0;
+  text-align: left;
+  float: right;
+  width: 400px;
+  background: #ffffff;
+}
+.main .mod.ephotol div.er a {
+  margin: 0 0 4px;
+}
+.main .mod.ephotol div.er .p0 {
+  margin: 0 3px 0 0;
+  *margin: 0;
+  display: block;
+  float: left;
+  width: 160px;
+  height: 160px;
+  border: 5px solid #ddd;
+}
+.main .mod.ephotol div.er a.p0 {
+  _position: relative;
+  zoom: 1;
+}
+.main .mod.ephotol div.el {
+  float: left;
+  margin: 0 -400px 0 0;
+  width: 100%;
+}
+.main .mod.ephotol div.el dl {
+  margin: 3px 400px 0 0;
+}
+.main .mod.ephotol div.el dt {
+  font-weight: 900;
+}
+.main .mod.ephotol div.el dd {
+  padding: 0 0 4px 2em;
+}
+.main .mod.ephotol div.el h2 {
+  margin: 3px 400px 0 0;
+  font-size: 197%;
+  font-weight: 900;
+  border-bottom: 1px dashed #cccccc;
+  padding-bottom: 3px;
+}
+.main .mod.ephotol div.el h2 a {
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 0 0 0 5px;
+  color: #22e;
+  font-size: 20px;
+}
+.main .mod.ephotol i {
+  padding: 3px 0 0;
+  text-indent: 3px;
+}
+.main .mod.ephotol .bd .more {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  z-index: 10;
+}
+.main .mod.ephotol .ft {
+  padding: 4px 0 0;
+}
+/* event photo sample list */
+.mod.ephotov {
+  position: relative;
+}
+.mod.ephotov .er {
+  text-align: center;
+}
+.mod.ephotov .er a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: bottom;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 67px;
+  height: 67px;
+  margin: 0 0 2px 2px;
+  border: 2px solid #cccccc;
+  background: #cccccc no-repeat 50% 0;
+  position: relative;
+  border: 3px solid #cccccc;
+  margin: 0 1px 3px 0;
+}
+.mod.ephotov .er a i {
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  opacity: 0;
+  filter: alpha(opacity='0',style=0);
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  padding: 0;
+  position: relative;
+  left: 1px;
+  bottom: 1px;
+  display: block;
+  font-size: 0;
+}
+.mod.ephotov .er a:hover {
+  z-index: 30;
+  background-color: #dddddd;
+  text-decoration: none;
+  _position: absolute;
+}
+.mod.ephotov .er a:hover i {
+  z-index: 40;
+  opacity: 1;
+  filter: alpha(opacity='100',style=0);
+  width: auto;
+  height: auto;
+  position: absolute;
+  font-size: 100%;
+}
+.mod.ephotov .er a u {
+  display: block;
+  white-space: nowrap;
+  padding: 0 3px;
+  margin: 2px;
+  background: #ffffcc no-repeat 0 100px;
+  border: #fcc 1px solid;
+  cursor: pointer;
+}
+.mod.ephotov .more {
+  width: 52px;
+}
+.mod.ephotov i {
+  bottom: 2px;
+  left: 0;
+  display: block;
+  position: absolute;
+}
+/* event photo user index */
+.ephotou .bd a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  height: 144px;
+  width: 144px;
+  margin: 0 0 4px;
+  border: 3px solid #eeeeee;
+  background: #aaaaaa 50% 0 no-repeat;
+  position: relative;
+}
+.ephotou .bd a:hover {
+  text-decoration: none;
+}
+.ephotou .bd a i {
+  opacity: 0.8;
+  filter: alpha(opacity='80',style=0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+  padding: 2px;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  display: block;
+  background: #eeeeee;
+  cursor: pointer;
+}
+.ephotou .bd a:hover {
+  background-color: #dddddd;
+}
+.ephotou .bd a:hover i {
+  white-space: normal;
+  text-align: justify;
+  text-justify: distribute;
+  word-break: break-all;
+  word-wrap: break-word;
+  background: #ffc;
+}
+.ephotou .ft {
+  border-top: 1px solid #aaa;
+  padding: 4px 0 0;
+}
+.ephotou .ft a.more {
+  width: 52px;
+}
+.ephotou p {
+  text-align: center;
+  color: #ff0000;
+  font-weight: 900;
+  padding: 0 0 4px;
+}
+/* photo who */
+.photow .bd a {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  height: 144px;
+  width: 144px;
+  margin: 0 0 4px;
+  border: 3px solid #eeeeee;
+  background: #aaaaaa 50% 0 no-repeat;
+  position: relative;
+}
+.photow .bd a:hover {
+  text-decoration: none;
+}
+.photow .bd a i {
+  opacity: 0.8;
+  filter: alpha(opacity='80',style=0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+  padding: 2px;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  display: block;
+  background: #eeeeee;
+  cursor: pointer;
+}
+.photow .bd a:hover {
+  background-color: #dddddd;
+}
+.photow .bd a:hover i {
+  white-space: normal;
+  text-align: justify;
+  text-justify: distribute;
+  word-break: break-all;
+  word-wrap: break-word;
+  background: #ffc;
+}
+.photow .bd p {
+  text-align: center;
+  color: #ff0000;
+  font-weight: 900;
+  padding: 0 0 4px;
+}
+/* event photo */
+.ephoto .hd i.bk {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 108%;
+  width: 24em;
+  text-align: right;
+}
+.ephoto .hd i.bk a {
+  display: block;
+  float: right;
+  padding: 2px;
+  border: 2px solid #44a;
+  font-weight: 900;
+  color: #fff;
+  background: #77c;
+  position: relative;
+  margin: 0 0 0 4px;
+}
+.ephoto .bd {
+  zoom: 1;
+}
+.ephoto ul {
+  position: relative;
+  left: 2px;
+}
+.ephoto li.cur {
+  background: #fca;
+}
+.ephoto li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 140px;
+  height: 160px;
+  margin: 0 3px 3px 0;
+  padding: 5px;
+  background: #dde;
+  position: relative;
+  z-index: 0;
+}
+.ephoto li a {
+  display: block;
+  width: 140px;
+  height: 160px;
+  background: #cccccc 50% 0 no-repeat;
+  position: relative;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.ephoto li a:hover {
+  text-decoration: none;
+}
+.ephoto li i {
+  display: block;
+  padding: 0 2px;
+  background: #ffffff;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  opacity: 0.75;
+  color: #00f;
+  font-size: 93%;
+  overflow: visible;
+  font-weight: 900;
+  height: 1.4em;
+}
+.ephoto li a:visited i {
+  color: #666666;
+  font-weight: 500;
+}
+.ephoto li a b {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: 900;
+  color: #ff0000;
+  position: absolute;
+  background: url("allicon.png") no-repeat 2px -734px #ffffff;
+  width: 10px;
+  height: 15px;
+  padding: 4px 0 2px 21px;
+  top: 132px;
+  left: 102px;
+  overflow: hidden;
+  border: 1px solid #f88;
+  opacity: 0.75;
+  filter: alpha(opacity='75',style=0);
+}
+.ephoto li a b.w0 {
+  display: none;
+}
+.ephoto input {
+  display: none;
+}
+.ephoto form input {
+  border: 0;
+  clear: none;
+  float: none;
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  z-index: 10;
+  background: #ffffff;
+  width: 30px;
+  height: 30px;
+}
+/* event photo menu */
+.tool, .menu {
+  margin: 5px 0;
+  padding: 5px 0;
+  border: 1px solid #8af;
+  border-left: 0;
+  border-right: 0;
+}
+.menu {
+  border-color: #cccccc;
+}
+.ephoto .tool {
+  display: none;
+}
+.ptoolb {
+  display: none;
+}
+body.adm .ptoolb {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: middle;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+body.adm #ft {
+  padding: 0 0 40px;
+}
+body.pmenu .ephoto .menu {
+  display: none;
+}
+body.pmenu .ephoto .tool {
+  display: block;
+}
+.ephoto .menu b {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  background: url("allicon.png") no-repeat -1px -737px #ffffff;
+  width: 15px;
+  height: 16px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+/* event photo form */
+body button.adm, .ephoto form .tool input.adm {
+  display: none;
+}
+body.adm button.adm, body.adm .ephoto form .tool input.adm {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.ephoto form label {
+  display: none;
+}
+body.pmenu .ephoto input {
+  display: block;
+}
+body.adm .ephoto form label {
+  border: 0;
+  height: 30px;
+  bottom: 3px;
+  left: 4px;
+  width: 60px;
+  position: absolute;
+  display: block;
+  color: #0a0;
+  background: #dfd;
+  font-weight: 900;
+  line-height: 22px;
+  padding: 0 3px 0 0;
+}
+.tool input.adm {
+  display: none;
+}
+div.ephoto form .tool input, body.adm .tool input.adm {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  position: relative;
+  top: 0;
+  bottom: auto;
+  left: -3px;
+  width: 40px;
+  height: 26px;
+  font-size: 16px;
+  border: 1px solid #acf;
+  margin: 0 8px 0 0;
+}
+.ephoto form .tool input.user {
+  width: 100px;
+}
+/* photo users */
+.mod.puser .hd h1 {
+  background-position: 4px -1084px;
+}
+.mod.puser .bd a {
+  word-break: break-all;
+  word-wrap: break-word;
+  display: block;
+  height: 65px;
+  padding: 3px 0 0 68px;
+  width: overflow:hidden;
+  margin: 0 0 3px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.mod.puser .bd a u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mod.puser .ft {
+  text-align: center;
+  padding: 0 0 3px;
+}
+.mod.puser .ft a {
+  position: relative;
+  background: url("allicon.png") no-repeat 4px -736px #ffffff;
+  padding: 0 0 0 24px;
+  height: 17px;
+  text-align: left;
+  display: block;
+}
+.mod.puser .ft a span {
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #888888;
+  -moz-box-shadow: 2px 2px 5px #888888;
+  -webkit-box-shadow: 2px 2px 5px #888888;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888',direction=120,strength=2);
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 10000px;
+  color: #000;
+  background: #fec;
+  padding: 4px;
+  z-index: 10;
+}
+.mod.puser .ft a:hover {
+  background-color: #fff;
+  text-decoration: none;
+}
+.mod.puser .ft a:hover span {
+  bottom: 0;
+  *bottom: -3px;
+}
+/* photo uploaders */
+.puser.pupu .bd a {
+  border: 0;
+  margin: 0;
+  height: 63px;
+}
+/* user friend */
+.mod.ufriend .hd h1 {
+  background-position: 4px -1084px;
+}
+.mod.ufriend .bd a {
+  word-break: break-all;
+  word-wrap: break-word;
+  display: block;
+  height: 65px;
+  padding: 3px 0 0 68px;
+  width: overflow:hidden;
+  margin: 0 0 3px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.mod.ufriend .bd a u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mod.ufriend .ft {
+  text-align: center;
+  padding: 0 0 3px;
+}
+.mod.ufriend .ft a {
+  position: relative;
+  background: url("allicon.png") no-repeat 4px -736px #ffffff;
+  padding: 0 0 0 24px;
+  height: 17px;
+  text-align: left;
+  display: block;
+}
+.mod.ufriend .ft a span {
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #888888;
+  -moz-box-shadow: 2px 2px 5px #888888;
+  -webkit-box-shadow: 2px 2px 5px #888888;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888',direction=120,strength=2);
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 10000px;
+  color: #000;
+  background: #fec;
+  padding: 4px;
+  z-index: 10;
+}
+.mod.ufriend .ft a:hover {
+  background-color: #fff;
+  text-decoration: none;
+}
+.mod.ufriend .ft a:hover span {
+  bottom: 0;
+  *bottom: -3px;
+}
+.mod.ufriend li {
+  xxvertical-align: top;
+}
+.main .ufriend li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 32%;
+  margin: 0 1% 4px 0;
+}
+.main .ufriend p {
+  text-align: center;
+  color: #844;
+  margin: 0 0 5px;
+}
+.main .ufriend .ft {
+  text-align: center;
+  color: #444;
+}
+/* single photo */
+.photo img {
+  display: block;
+  margin: 0 auto;
+  background: #aab;
+}
+.photo h2 {
+  display: block;
+  margin: 10px auto;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+.photo a:hover i {
+  opacity: 0.8;
+  filter: alpha(opacity='80',style=0);
+}
+.photo .bd {
+  background: #666;
+  padding: 10px 7px;
+  min-height: 750px;
+  _height: 750px;
+  *width: 55.64em;
+  overflow: hidden;
+  overflow-x: auto;
+  _overflow-y: visible;
+}
+.photo .bd a {
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 1000px;
+  top: 0;
+  left: 0;
+  background: url("allicon.png") no-repeat -100px 0;
+}
+.photo .bd a.dl {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  top: auto;
+  left: auto;
+  right: 5px;
+  top: 47px;
+  height: auto;
+  width: auto;
+  display: inline;
+  background: #eeeeee;
+  padding: 3px;
+  font-weight: 900;
+  border: 3px double #aaa;
+  color: #248;
+}
+.photo .bd i {
+  opacity: 0.5;
+  filter: alpha(opacity='50',style=0);
+  background: url("allicon.png") no-repeat 0 -1248px;
+  width: 32px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  top: 350px;
+  left: 10px;
+  cursor: pointer;
+}
+.photo .bd a.pn {
+  width: 100%;
+}
+.photo .bd a.n {
+  left: auto;
+  right: 1px;
+}
+.photo .bd a.n i {
+  background-position: 0px -1280px;
+  left: auto;
+  right: 10px;
+}
+/* event people list */
+.epeople li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 348px;
+  height: 70px;
+  margin: 0 2px 3px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+  position: relative;
+}
+.epeople a {
+  display: block;
+  padding: 0 0 0 70px;
+  width: 278px;
+}
+.epeople u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  max-width: 66px;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  border: 1px solid #ddd;
+}
+.epeople p {
+  margin: 3px 0 0 70px;
+}
+/* forums */
+.forums li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 43%;
+  padding: 2px 6px;
+  margin: 2px;
+  font-size: 116%;
+  background: #ddddee;
+  -moz-border-radius: 0 10px 10px 0;
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+}
+.forums a {
+  display: block;
+}
+.forums .on {
+  background: #ccccee;
+}
+.forums .on a {
+  font-weight: 900;
+  color: #444;
+}
+.forums .ft {
+  display: none;
+}
+/* thread list */
+.p_top .mod.thread {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 360px;
+  *width: 27em;
+}
+.thread li {
+  padding: 0 0 4px 70px;
+  position: relative;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 4px;
+  zoom: 1;
+  min-height: 66px;
+  _height: 66px;
+}
+.thread li h2 {
+  margin-bottom: 5px;
+}
+.thread li a {
+  color: #008;
+}
+.thread li h2 a {
+  color: #c84;
+  font-size: 116%;
+}
+.thread li h2 a:visited {
+  color: #a88;
+}
+.thread li h2 a i {
+  font-weight: 900;
+  font-size: 12px;
+  color: #ff0000;
+}
+.thread li h2 a:visited i {
+  color: #f88;
+}
+.thread li a u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.thread li b {
+  display: block;
+  text-align: right;
+  color: #844;
+  border-top: 1px solid #eeeeee;
+  margin: 5px 0 0;
+  padding-top: 3px;
+}
+.thread li b a {
+  display: block;
+  float: left;
+  color: #6a6;
+}
+.thread li.c1 h2 a i {
+  display: none;
+}
+.tlist li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 21.38em;
+  *width: 20.85em;
+  margin: 0 3px 4px 0;
+  vertical-align: bottom;
+}
+.tlist b {
+  font-size: 85%;
+}
+/* title list */
+.titles li {
+  margin: 2px 0;
+  border-bottom: 1px dotted #ddd;
+  background: #ffffff;
+}
+.titles li a {
+  display: block;
+  padding: 2px 0 4px;
+}
+.titles li.cur a {
+  text-align: justify;
+  text-justify: distribute;
+  word-break: break-all;
+  word-wrap: break-word;
+  display: list-item;
+  list-style: outside square;
+  margin: 0 0 0 20px;
+  font-weight: 900;
+}
+.titles li i {
+  color: #ff0000;
+}
+.titles li.c1 i {
+  display: none;
+}
+body.p_newreg .mod.titles .bd, body.p_comm .mod.titles .bd {
+  margin-bottom: 0;
+}
+body.p_newreg .mod.titles .ft, body.p_comm .mod.titles .ft {
+  overflow: hidden;
+  height: 0;
+  padding: 1px 0 0;
+  background: #ffffff;
+  position: relative;
+  top: -3px;
+}
+/* post list */
+.post li {
+  position: relative;
+  padding: 0 0 8px;
+  margin: 0 0 8px;
+  border-bottom: 2px dotted #aaa;
+}
+.post div.del {
+  color: #ff0000;
+  font-weight: 900;
+  text-align: center;
+}
+.post h2 {
+  word-break: break-all;
+  word-wrap: break-word;
+  margin: 0 0 0 80px;
+  background: #eeeeee;
+  padding: 4px;
+  font-size: 123.1%;
+  font-weight: 900;
+}
+.post li.del h2 {
+  background: #fdd;
+  text-decoration: line-through;
+}
+.post a {
+  display: block;
+  margin: 0 0 0 80px;
+  padding: 4px;
+  font-weight: 900;
+}
+.post a.reply {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: right;
+  height: 2em;
+  width: 8em;
+  margin: 8px 0 0 6px;
+  border: 2px solid #444488;
+  background: #6677bb;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.8em;
+  *line-height: 2em;
+  padding: 0;
+  text-align: center;
+}
+.post b {
+  display: block;
+  padding: 3px 0 5px 80px;
+  color: #644;
+  border-bottom: 1px solid #eeeeee;
+  text-align: right;
+}
+.post a u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  _left: -85px;
+  line-height: 200px;
+  *line-height: 0;
+  border: 5px solid #eeeeff;
+}
+.post a u.del {
+  border-color: #a88;
+}
+.post div.p {
+  font-family: 細明體,monospace;
+  font-size: 16px;
+  padding: 5px 0;
+  clear: right;
+}
+.post div.p a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+.post div.quotesource {
+  display: inline;
+  color: #588;
+  font-weight: 900;
+}
+.post div.quotepara {
+  display: inline;
+  color: #558;
+}
+.post .postsign {
+  padding: 5px;
+  background: #ffd;
+  color: #666;
+}
+/* post icon */
+.p i {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  height: 19px;
+  width: 19px;
+  background: url("ficon.png") no-repeat;
+}
+.p i.f1 {
+  height: 18px;
+  width: 18px;
+  background-position: -59px 0px;
+}
+.p i.f2 {
+  height: 18px;
+  width: 18px;
+  background-position: -96px 0px;
+}
+.p i.f3 {
+  height: 18px;
+  width: 18px;
+  background-position: -22px 0px;
+}
+.p i.f4 {
+  background-position: -77px 0px;
+}
+.p i.f5 {
+  width: 30px;
+  height: 30px;
+  background: url(f/5.gif);
+}
+.p i.f6 {
+  width: 102px;
+  height: 18px;
+  background: url(f/6.gif);
+}
+.p i.f7 {
+  background-position: -40px 0px;
+}
+.p i.f8 {
+  background-position: -132px 0px;
+}
+.p i.f9 {
+  height: 18px;
+  width: 18px;
+  background-position: -114px 0px;
+}
+.p i.f10 {
+  background-position: -151px 0px;
+}
+.p i.f11 {
+  background-position: -189px 0px;
+}
+.p i.f12 {
+  background-position: -170px 0px;
+}
+.p i.f13 {
+  background-position: -208px 0px;
+}
+.p i.f14 {
+  background-position: -227px 0px;
+}
+.p i.f15 {
+  background-position: -265px 0px;
+}
+.p i.f16 {
+  background-position: -246px 0px;
+}
+.p i.f17 {
+  background-position: -284px 0px;
+}
+.p i.f18 {
+  background-position: -303px 0px;
+}
+.p i.f19 {
+  background-position: -322px 0px;
+}
+.p i.f20 {
+  background-position: -626px 0px;
+}
+.p i.f21 {
+  background-position: -341px 0px;
+}
+.p i.f22 {
+  background-position: -379px 0px;
+}
+.p i.f23 {
+  background-position: -360px 0px;
+}
+.p i.f24 {
+  background-position: -398px 0px;
+}
+.p i.f25 {
+  background-position: -417px 0px;
+}
+.p i.f26 {
+  background-position: -436px 0px;
+}
+.p i.f27 {
+  background-position: -455px 0px;
+}
+.p i.f28 {
+  background-position: -474px 0px;
+}
+.p i.f29 {
+  background-position: -493px 0px;
+}
+.p i.f30 {
+  background-position: -512px 0px;
+}
+.p i.f31 {
+  background-position: -531px 0px;
+}
+.p i.f32 {
+  background-position: -550px 0px;
+}
+.p i.f33 {
+  background-position: -569px 0px;
+}
+.p i.f35 {
+  background-position: -607px 0px;
+}
+.p i.f36 {
+  background-position: -645px 0px;
+}
+.p i.f37 {
+  background-position: -664px 0px;
+}
+.p i.f38 {
+  background-position: -683px 0px;
+}
+.p i.f39 {
+  background-position: -702px 0px;
+}
+.p i.f40 {
+  background-position: -721px 0px;
+}
+.p i.f41 {
+  background-position: -740px 0px;
+}
+.p i.f42 {
+  background-position: -759px 0px;
+}
+.p i.f43 {
+  background-position: -778px 0px;
+}
+.p i.f44 {
+  background-position: -797px 0px;
+}
+.p i.f45 {
+  background-position: -816px 0px;
+}
+.p i.f46 {
+  background-position: -835px 0px;
+}
+.p i.f47 {
+  background-position: -854px 0px;
+}
+.p i.f48 {
+  background-position: -873px 0px;
+}
+.p i.f49 {
+  background-position: -911px 0px;
+}
+.p i.f50 {
+  background-position: -892px 0px;
+}
+.p i.f51 {
+  background-position: -930px 0px;
+}
+.p i.f52 {
+  background-position: -949px 0px;
+}
+.p i.f53 {
+  height: 18px;
+  width: 18px;
+  background-position: -968px 0px;
+}
+.p i.f54 {
+  height: 18px;
+  width: 18px;
+  background-position: -986px 0px;
+}
+.p i.f55 {
+  width: 18px;
+  height: 18px;
+  background: url(f/55.gif);
+}
+.p i.f56 {
+  height: 18px;
+  width: 18px;
+  background-position: -1004px 0px;
+}
+.p i.f57 {
+  width: 18px;
+  height: 18px;
+  background: url(f/57.gif);
+}
+.p i.f58 {
+  height: 18px;
+  width: 18px;
+  background-position: -1022px 0px;
+}
+.p i.f59 {
+  width: 18px;
+  height: 18px;
+  background: url(f/59.gif);
+}
+.p i.f60 {
+  height: 18px;
+  width: 18px;
+  background-position: -1040px 0px;
+}
+.p i.f61 {
+  height: 18px;
+  width: 18px;
+  background-position: -1058px 0px;
+}
+.p i.f62 {
+  width: 18px;
+  height: 18px;
+  background: url(f/62.gif);
+}
+.p i.f63 {
+  height: 18px;
+  width: 18px;
+  background-position: -1076px 0px;
+}
+.p i.f64 {
+  height: 18px;
+  width: 18px;
+  background-position: -1094px 0px;
+}
+.p i.f65 {
+  height: 18px;
+  width: 18px;
+  background-position: -1112px 0px;
+}
+.p i.f66 {
+  height: 18px;
+  width: 18px;
+  background-position: -1130px 0px;
+}
+.p i.f67 {
+  width: 18px;
+  height: 18px;
+  background: url(f/67.gif);
+}
+.p i.f68 {
+  height: 18px;
+  width: 18px;
+  background-position: -1148px 0px;
+}
+.p i.f69 {
+  width: 22px;
+  height: 18px;
+  background: url(f/69.gif);
+}
+.p i.f70 {
+  width: 18px;
+  height: 18px;
+  background: url(f/70.gif);
+}
+.p i.f71 {
+  height: 18px;
+  width: 18px;
+  background-position: -1166px 0px;
+}
+.p i.f72 {
+  width: 18px;
+  height: 18px;
+  background: url(f/72.gif);
+}
+.p i.f73 {
+  height: 18px;
+  width: 18px;
+  background-position: -1184px 0px;
+}
+.p i.f74 {
+  width: 24px;
+  height: 18px;
+  background: url(f/74.gif);
+}
+.p i.f75 {
+  height: 18px;
+  width: 18px;
+  background-position: -1202px 0px;
+}
+.p i.f76 {
+  height: 18px;
+  width: 18px;
+  background-position: -1238px 0px;
+}
+.p i.f77 {
+  width: 18px;
+  height: 18px;
+  background: url(f/77.gif);
+}
+.p i.f78 {
+  height: 18px;
+  width: 18px;
+  background-position: -1220px 0px;
+}
+.p i.f79 {
+  height: 18px;
+  width: 18px;
+  background-position: -1256px 0px;
+}
+.p i.f80 {
+  width: 18px;
+  height: 18px;
+  background: url(f/80.gif);
+}
+.p i.f81 {
+  height: 18px;
+  width: 18px;
+  background-position: -1274px 0px;
+}
+.p i.f82 {
+  width: 18px;
+  height: 18px;
+  background: url(f/82.gif);
+}
+.p i.f83 {
+  width: 18px;
+  height: 18px;
+  background: url(f/83.gif);
+}
+.p i.f84 {
+  width: 18px;
+  height: 18px;
+  background: url(f/84.gif);
+}
+.p i.f85 {
+  width: 18px;
+  height: 18px;
+  background: url(f/85.gif);
+}
+.p i.f86 {
+  width: 24px;
+  height: 18px;
+  background: url(f/86.gif);
+}
+.p i.f87 {
+  width: 18px;
+  height: 18px;
+  background: url(f/87.gif);
+}
+.p i.f88 {
+  height: 18px;
+  width: 18px;
+  background-position: -1292px 0px;
+}
+.p i.f89 {
+  height: 18px;
+  width: 18px;
+  background-position: -1310px 0px;
+}
+.p i.f90 {
+  height: 18px;
+  width: 18px;
+  background-position: -1328px 0px;
+}
+.p i.f91 {
+  height: 18px;
+  width: 18px;
+  background-position: -1346px 0px;
+}
+.p i.f92 {
+  height: 18px;
+  width: 18px;
+  background-position: -1364px 0px;
+}
+.p i.f93 {
+  height: 18px;
+  width: 18px;
+  background-position: -1382px 0px;
+}
+.p i.f94 {
+  width: 25px;
+  height: 18px;
+  background: url(f/94.gif);
+}
+.p i.f95 {
+  width: 17px;
+  height: 18px;
+  background: url(f/95.gif);
+}
+.p i.f96 {
+  width: 18px;
+  height: 18px;
+  background: url(f/96.gif);
+}
+.p i.f97 {
+  height: 18px;
+  width: 18px;
+  background-position: -1400px 0px;
+}
+.p i.f98 {
+  width: 18px;
+  height: 18px;
+  background: url(f/98.gif);
+}
+.p i.f99 {
+  height: 18px;
+  width: 18px;
+  background-position: -1418px 0px;
+}
+.p i.f100 {
+  width: 18px;
+  height: 18px;
+  background: url(f/100.gif);
+}
+.p i.f101 {
+  height: 18px;
+  width: 18px;
+  background-position: -1436px 0px;
+}
+.p i.f102 {
+  height: 18px;
+  width: 18px;
+  background-position: -1454px 0px;
+}
+.p i.f103 {
+  width: 18px;
+  height: 18px;
+  background: url(f/103.gif);
+}
+.p i.f104 {
+  width: 18px;
+  height: 18px;
+  background: url(f/104.gif);
+}
+.p i.f105 {
+  width: 18px;
+  height: 18px;
+  background: url(f/105.gif);
+}
+.p i.f106 {
+  width: 22px;
+  height: 18px;
+  background: url(f/106.gif);
+}
+.p i.f107 {
+  width: 18px;
+  height: 18px;
+  background: url(f/107.gif);
+}
+.p i.f108 {
+  width: 18px;
+  height: 18px;
+  background: url(f/108.gif);
+}
+.p i.f109 {
+  height: 18px;
+  width: 22px;
+  background-position: 0px 0px;
+}
+.p i.f110 {
+  width: 22px;
+  height: 18px;
+  background: url(f/110.gif);
+}
+.p i.f111 {
+  width: 26px;
+  height: 18px;
+  background: url(f/111.gif);
+}
+.p i.f112 {
+  width: 42px;
+  height: 18px;
+  background: url(f/112.gif);
+}
+/* guestbook list */
+.mod.guest .hd h1 {
+  background-position: 4px -188px;
+}
+.p_top .guest {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 336px;
+  *width: 25.2em;
+  margin-right: 0.3076923076923077em;
+  *margin-right: 0.6000015000037501em;
+}
+.p_top .guest b a {
+  overflow: hidden;
+  line-height: 40px;
+  width: 0;
+  margin: 2px 0 0;
+}
+.main .guest li i {
+  width: auto;
+}
+.main .guest li p {
+  font-size: 116%;
+}
+.main .guest li b {
+  float: none;
+  clear: left;
+  display: block;
+  white-space: nowrap;
+  text-align: right;
+  color: #844;
+  border-top: 1px solid #eeeeee;
+  margin: 3px 0;
+  font-size: 12px;
+  *font-size: 100%;
+}
+.side .guest li {
+  clear: both;
+  min-height: 34px;
+  _height: 34px;
+  padding: 2px 0;
+  margin: 0;
+}
+.side .guest li p {
+  font-size: 85%;
+  clear: right;
+}
+.side .guest li b {
+  font-size: 85%;
+  float: right;
+  color: #c84;
+  white-space: nowrap;
+}
+.guest li {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 4px;
+  zoom: 1;
+}
+.guest li i {
+  display: block;
+  width: 8.0em;
+  height: 32px;
+  padding: 2px 8px 2px 2px;
+  color: #008;
+  float: left;
+  overflow: hidden;
+}
+.guest li p {
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  color: #666;
+}
+.guest li b a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+  background: url("allicon.png") no-repeat #ffffff;
+  float: left;
+  display: block;
+  height: 14px;
+  background-position: 0px -447px;
+  margin: 2px 0 0;
+  padding: 0 8px 0 18px;
+}
+.guest li b a.mail {
+  background-position: 0px -415px;
+}
+.guest li i s {
+  background: url("guest.png");
+  display: block;
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+}
+.guest li i.i1 s {
+  background-position: 0 0;
+}
+.guest li i.i2 s {
+  background-position: -32px 0px;
+}
+.guest li i.i3 s {
+  background-position: -64px 0px;
+}
+.guest li i.i4 s {
+  background-position: -96px 0px;
+}
+.guest li i.i5 s {
+  background-position: -128px 0px;
+}
+.guest li i.i6 s {
+  background-position: -160px 0px;
+}
+.guest li i.i7 s {
+  background-position: 0px -32px;
+}
+.guest li i.i8 s {
+  background-position: -32px -32px;
+}
+.guest li i.i9 s {
+  background-position: -64px -32px;
+}
+.guest li i.i10 s {
+  background-position: -96px -32px;
+}
+.guest li i.i11 s {
+  background-position: -128px -32px;
+}
+.guest li i.i12 s {
+  background-position: -160px -32px;
+}
+.guest li i.i13 s {
+  background-position: 0px -64px;
+}
+.guest li i.i14 s {
+  background-position: -32px -64px;
+}
+.guest li i.i15 s {
+  background-position: -64px -64px;
+}
+.guest li i.i16 s {
+  background-position: -96px -64px;
+}
+.guest li i.i17 s {
+  background-position: -128px -64px;
+}
+.guest li i.i18 s {
+  background-position: -160px -64px;
+}
+.guest li i.i19 s {
+  background-position: 0px -96px;
+}
+.guest li i.i20 s {
+  background-position: -32px -96px;
+}
+.guest li i.i21 s {
+  background-position: -64px -96px;
+}
+.guest li i.i22 s {
+  background-position: -96px -96px;
+}
+.guest li i.i23 s {
+  background-position: -128px -96px;
+}
+.guest li i.i24 s {
+  background-position: -160px -96px;
+}
+.guest li i.i25 s {
+  background-position: 0px -128px;
+}
+.guest li i.i26 s {
+  background-position: -32px -128px;
+}
+.guest li i.i27 s {
+  background-position: -64px -128px;
+}
+.guest li i.i28 s {
+  background-position: -96px -128px;
+}
+.guest li i.i29 s {
+  background-position: -128px -128px;
+}
+.guest li i.i30 s {
+  background-position: -160px -128px;
+}
+.guest li i.i31 s {
+  background-position: 0px -160px;
+}
+.guest li i.i32 s {
+  background-position: -32px -160px;
+}
+.guest li i.i33 s {
+  background-position: -64px -160px;
+}
+.guest li i.i34 s {
+  background-position: -96px -160px;
+}
+.guest li i.i35 s {
+  background-position: -128px -160px;
+}
+.guest li i.i36 s {
+  background-position: -160px -160px;
+}
+.guest li i.i37 s {
+  background-position: 0px -192px;
+}
+.guest li i.i38 s {
+  background-position: -32px -192px;
+}
+.guest li i.i39 s {
+  background-position: -64px -192px;
+}
+.guest li i.i40 s {
+  background-position: -96px -192px;
+}
+.guest li i.i41 s {
+  background-position: -128px -192px;
+}
+.guest li i.i42 s {
+  background-position: -160px -192px;
+}
+.guest li i.i43 s {
+  background-position: 0px -224px;
+}
+.guest li i.i44 s {
+  background-position: -32px -224px;
+}
+.guest li i.i45 s {
+  background-position: -64px -224px;
+}
+.guest li i.i46 s {
+  background-position: -96px -224px;
+}
+.guest li i.i47 s {
+  background-position: -128px -224px;
+}
+.guest li i.i48 s {
+  background-position: -160px -224px;
+}
+.guest li i.i49 s {
+  background-position: 0px -256px;
+}
+.guest li i.i50 s {
+  background-position: -32px -256px;
+}
+.guest li i.i51 s {
+  background-position: -64px -256px;
+}
+.guest li i.i52 s {
+  background-position: -96px -256px;
+}
+.guest li i.i53 s {
+  background-position: -128px -256px;
+}
+.guest li i.i54 s {
+  background-position: -160px -256px;
+}
+.guest li i.i55 s {
+  background-position: 0px -288px;
+}
+.guest li i.i56 s {
+  background-position: -32px -288px;
+}
+.guest li i.i57 s {
+  background-position: -64px -288px;
+}
+.guest li i.i58 s {
+  background-position: -96px -288px;
+}
+.guest li i.i59 s {
+  background-position: -128px -288px;
+}
+.guest li i.i60 s {
+  background-position: -160px -288px;
+}
+.guest li i.i61 s {
+  background-position: 0px -320px;
+}
+.guest li i.i62 s {
+  background-position: -32px -320px;
+}
+.guest li i.i63 s {
+  background-position: -64px -320px;
+}
+.guest li i.i64 s {
+  background-position: -96px -320px;
+}
+.guest li i.i65 s {
+  background-position: -128px -320px;
+}
+.guest li i.i66 s {
+  background-position: -160px -320px;
+}
+.guest li i.i67 s {
+  background-position: 0px -352px;
+}
+.guest li i.i68 s {
+  background-position: -32px -352px;
+}
+.guest li i.i69 s {
+  background-position: -64px -352px;
+}
+.guest li i.i70 s {
+  background-position: -96px -352px;
+}
+.guest li i.i71 s {
+  background-position: -128px -352px;
+}
+.guest li i.i72 s {
+  background-position: -160px -352px;
+}
+.guest li i.i73 s {
+  background-position: 0px -384px;
+}
+.guest li i.i74 s {
+  background-position: -32px -384px;
+}
+.guest li i.i75 s {
+  background-position: -64px -384px;
+}
+.guest li i.i76 s {
+  background-position: -96px -384px;
+}
+.guest li i.i77 s {
+  background-position: -128px -384px;
+}
+.guest li i.i78 s {
+  background-position: -160px -384px;
+}
+.guest .ft p {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  color: #888;
+  padding: 4px;
+}
+/* guest form */
+.guest_post ul {
+  clear: both;
+  position: relative;
+}
+.guest_post .guest li {
+  clear: none;
+  border: 0;
+  width: 51px;
+  height: 38px;
+  float: left;
+  background: #eeeeee;
+  padding: 0;
+  margin: 1px 2px 2px 0;
+  overflow: hidden;
+  position: relative;
+}
+.guest_post li input {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border: 0;
+  margin: 0;
+}
+.guest_post li label {
+  position: absolute;
+  border: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  right: 2px;
+  top: 4px;
+}
+.guest_post li label i {
+  margin: 0;
+  padding: 0;
+  width: 32px;
+}
+.guest_post li label i s {
+  margin: 0;
+  padding: 0;
+}
+/* event info */
+.mod.event .hd h1 {
+  background-position: 4px -1052px;
+}
+.event .bd h1 {
+  font-size: 123.1%;
+  font-weight: 900;
+  margin: 0 0 5px;
+}
+.event .bd h2 {
+  font-size: 123.1%;
+  font-weight: 900;
+  color: #666;
+  margin: 5px 0;
+  padding: 5px 0;
+  border-bottom: 1px dotted #cccccc;
+  clear: both;
+}
+.event .more {
+  width: 52px;
+}
+.event dl {
+  clear: both;
+  width: 13.05em;
+  overflow: hidden;
+}
+.event dt {
+  font-weight: 900;
+}
+.event dd {
+  padding: 0 0 4px 0.6em;
+}
+.event dd i {
+  background: #ff0000;
+  color: #fff;
+  padding: 0 3px;
+  font-weight: 900;
+}
+.event dd a {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.event iframe {
+  display: none;
+}
+.event .map {
+  position: relative;
+}
+.event .map div {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 160px;
+  background: #888 50% 50%;
+  border: 2px solid #49b;
+  position: relative;
+}
+.event .map a {
+  font-size: 13px;
+  line-height: 17px;
+  height: 15px;
+  background: url("allicon.png") no-repeat 2px -443px #ffffff;
+  display: block;
+  padding: 3px 0 3px 22px;
+  width: 4.5em;
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+.event .map a.note {
+  background-position: 0 -736px;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  cursor: help;
+  overflow: visible;
+  float: left;
+  top: 2px;
+}
+.event .map a.note:hover {
+  text-decoration: none;
+  background-color: #ff0000;
+}
+.event .map a.note span {
+  text-align: justify;
+  text-justify: distribute;
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 17px;
+  background: #fec;
+  color: #422;
+  overflow: hidden;
+}
+.event .map a.note:hover span {
+  bottom: 17px;
+  width: 114px;
+  height: auto;
+  padding: 4px;
+  border: 1px solid #422;
+}
+.main .event {
+  position: relative;
+}
+.main .event .bd h1 {
+  font-size: 197%;
+  margin-right: 340px;
+}
+.main .event .bd h2 {
+  clear: none;
+  margin-right: 340px;
+}
+.main .event .ft {
+  overflow: hidden;
+  height: 0;
+  padding: 1px 0 0;
+}
+.main .event dl {
+  display: block;
+  font-size: 123.1%;
+  margin: 3px 0;
+  clear: none;
+  margin-right: 340px;
+  width: auto;
+  overflow: show;
+}
+.main .event dl:not(*:root) {
+  margin-right: 0;
+}
+.main .event .map_exp h2 {
+  margin-right: 0;
+}
+.main .event .map_exp dl {
+  margin-right: 0;
+}
+.main .event dd {
+  padding: 0 0 10px 2em;
+}
+.main .event .map {
+  float: right;
+  position: relative;
+  top: -16px;
+}
+.main .event .map div {
+  cursor: ne-resize;
+  border: 5px solid #49b;
+  width: 321px;
+  height: 321px;
+}
+.main .event .map i {
+  left: 150px;
+  top: 150px;
+}
+.main .event .map a {
+  position: absolute;
+  top: -21px;
+  right: 0;
+  float: none;
+}
+.main .event .map a.note {
+  left: 0;
+}
+.main .event .map a.note span {
+  top: 0;
+  bottom: auto;
+  right: 17px;
+}
+.main .event .map a.note:hover span {
+  top: 0;
+  width: 183px;
+}
+.main .event .map_exp iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 0;
+}
+.main .event .map_exp b {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("allicon.png") no-repeat 0 -768px #ffffaa;
+  overflow: hidden;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  cursor: pointer;
+}
+.main .event .map_exp .map {
+  float: none;
+  border: 5px solid #49b;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  zoom: 1;
+}
+.main .event .map_exp .map div {
+  display: none;
+}
+.main .event .map_exp .map a {
+  left: 34px;
+  top: 0;
+  border: 1px solid #000000;
+  width: 16px;
+  height: 16px;
+  line-height: 100px;
+  padding: 0;
+  border: 1px solid #ffa;
+  background-position: 0 -446px;
+}
+.main .event .map_exp .map a.note {
+  display: none;
+}
+.map i {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  width: 21px;
+  height: 21px;
+  background: url(m.gif);
+}
+.ics {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  padding: 2px 0 2px 18px;
+  background: url("allicon.png") no-repeat 0 -1212px;
+}
+.main .ics {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+/* sub navi */
+.side .mod.sub_nav {
+  border: 0;
+  height: 29px;
+  z-index: 20;
+  position: relative;
+}
+.mod.sub_nav .hd {
+  display: none;
+}
+.mod.sub_nav .bd {
+  height: 26px;
+  *height: 24px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  text-align: right;
+  border-bottom: 5px double #7ad;
+  _overflow: hidden;
+}
+.mod.sub_nav ul {
+  display: inline;
+}
+.mod.sub_nav li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 116%;
+  background: #ddddee;
+  position: relative;
+}
+.mod.sub_nav li.on {
+  background: #ccccee;
+}
+.mod.sub_nav li.on a {
+  font-weight: 900;
+  color: #444;
+}
+.mod.sub_nav a {
+  font-size: 93%;
+  padding: 2px 4px;
+  _padding-bottom: 0;
+  display: block;
+}
+.mod.sub_nav a.ed {
+  color: #f00;
+  background: #ffffff;
+  display: inline;
+  padding: 0 0 0 10px;
+  margin: 0;
+}
+.mod.sub_nav .ft {
+  display: none;
+}
+/* user data */
+.mod.user_data .hd h1 {
+  background-position: 4px -1116px;
+}
+.user_data a.uphoto {
+  width: 160px;
+  height: 160px;
+  display: block;
+  background: 50% 0 #cccccc no-repeat;
+  border: 5px solid #ddd;
+  margin: 0 auto 10px;
+}
+.user_data dt {
+  white-space: nowrap;
+  float: left;
+  clear: both;
+  font-weight: 900;
+  width: 20%;
+  margin: 2px 5px 2px 0;
+  border-bottom: 1px solid #eeeeee;
+  text-align: right;
+  overflow: hidden;
+}
+.user_data dd {
+  float: left;
+  margin: 2px 0;
+  width: 75%;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+}
+.user_data dd span {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  background: transparent url("allicon.png") no-repeat;
+  padding: 0 6px 0 19px;
+  background-position: 0px -1319px;
+}
+.user_data .ft {
+  padding: 0;
+  height: 1.8em;
+}
+.user_data .ft a {
+  display: block;
+  text-align: center;
+  padding: 0.3em;
+}
+.main .user_data a.uphoto {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin: 5px;
+  border-width: 5px;
+  width: 180px;
+  height: 180px;
+}
+.main .user_data.upok dl {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 72%;
+  font-size: 116%;
+}
+/* user photo list */
+.mod.user_photo .hd h1 {
+  background-position: 4px -1084px;
+}
+.user_photo ol {
+  zoom: 1;
+}
+.user_photo li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 140px;
+  height: 160px;
+  margin: 0 3px 3px 0;
+  padding: 5px;
+  background: #dde;
+  position: relative;
+  z-index: 0;
+}
+.user_photo li a {
+  display: block;
+  width: 140px;
+  height: 160px;
+  background: #cccccc 50% 0 no-repeat;
+  position: relative;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.user_photo li a:hover {
+  text-decoration: none;
+  background-color: #aaf;
+}
+.user_photo li i {
+  opacity: 0.75;
+  filter: alpha(opacity='75',style=0);
+  display: block;
+  padding: 0 1px;
+  background: #ffffff;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #00f;
+  font-size: 93%;
+  font-weight: 900;
+}
+.user_photo li a:visited i {
+  color: #666666;
+  font-weight: 500;
+}
+.user_photo li.del {
+  background: #fca;
+}
+.user_photo b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 136px;
+  padding: 2px;
+  position: absolute;
+  top: 140px;
+  display: block;
+  background: #eeeeee;
+  cursor: pointer;
+}
+.user_photo a:hover b {
+  opacity: 0.8;
+  filter: alpha(opacity='80',style=0);
+  text-align: justify;
+  text-justify: distribute;
+  white-space: normal;
+  bottom: 0;
+  top: auto;
+  background: #ffc;
+}
+.user_photo p {
+  text-align: center;
+  color: #844;
+  margin: 0 0 5px;
+}
+.side .user_photo ol {
+  text-align: center;
+}
+.main .user_photo ol {
+  position: relative;
+  left: 2px;
+}
+/* empty module */
+.empty .bd {
+  text-align: center;
+  color: #844;
+  margin: 0 0 5px;
+}
+.empty .ft {
+  display: none;
+}
+/* user cosplay list */
+.mod.user_cos .hd h1 {
+  background-position: 4px -1052px;
+}
+.user_cos dt a {
+  font-weight: 900;
+}
+.side .user_cos i, .side .user_cos b {
+  display: none;
+  cursor: pointer;
+}
+.side .user_cos dl {
+  overflow: hidden;
+}
+.side .user_cos dt {
+  border-top: 1px solid #ddd;
+  padding: 2px 0 0 0;
+  position: relative;
+  top: -1px;
+}
+.side .user_cos dd {
+  margin: 2px 0 3px 10px;
+}
+.main .user_cos p {
+  text-align: center;
+  color: #844;
+  margin: 0 0 5px;
+}
+.main .user_cos dt {
+  clear: both;
+  float: left;
+  font-size: 116%;
+  padding: 0 5px 5px 0;
+}
+.main .user_cos i, .main .user_cos b {
+  display: block;
+  float: left;
+  width: 2.5em;
+  text-align: center;
+}
+.main .user_cos b {
+  width: 8em;
+}
+.main .user_cos dd {
+  text-align: justify;
+  text-justify: distribute;
+  border-top: 0;
+  border-bottom: 1px solid #eeeeee;
+  margin: 0 0 5px;
+  padding: 3px 0;
+}
+/* edit */
+.edit form dt {
+  width: 17%;
+  display: block;
+  float: left;
+  clear: both;
+  text-align: right;
+  height: 1.45em;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #cdf;
+  margin: 2px 0;
+  color: #46a;
+}
+.edit form dd {
+  width: 80%;
+  display: block;
+  float: left;
+  margin: 0 0 0 3px;
+}
+.main .edit form dd input {
+  width: 100%;
+  float: none;
+}
+.main .edit form dd .flags input {
+  border: 0;
+  width: auto;
+  margin: 0 2px 0 0;
+  vertical-align: middle;
+}
+.main .edit form dd .flags label {
+  border: 0;
+  text-align: left;
+  width: 33%;
+}
+.main .edit form input.submit {
+  width: 15%;
+  margin: 0 0 0 5px;
+  height: 2em;
+}
+/* admin edit */
+.adm_db h2 {
+  padding: 0 4px 3px 24px;
+  margin: 0 0 3px 0;
+  border-bottom: 1px solid #aaa;
+  background: url("allicon.png") no-repeat 0px -704px;
+  cursor: pointer;
+  clear: both;
+}
+.adm_db form {
+  display: none;
+}
+.adm_db form select {
+  width: 100%;
+}
+.adm_db form .e_flags label {
+  border: 0;
+  width: 32%;
+  text-align: left;
+}
+.adm_db form .e_flags label input {
+  width: auto;
+  height: auto;
+}
+.adm_db li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  width: 49%;
+  margin: 2px 1% 0 0;
+}
+.adm_db li.on h2 {
+  background-position: 0px -672px;
+}
+.adm_db li.on form {
+  display: block;
+}
+/* search box */
+.search #sform label, .search #sform input {
+  border: 0;
+  width: auto;
+  height: auto;
+  margin: 0 10px 0 3px;
+  *margin: 0 5px 0 3px;
+}
+.search #sform input {
+  margin: 3px 0 0;
+  *margin: 0;
+}
+.search #sform input.q {
+  border: 1px solid #888;
+  display: block;
+  height: 1.5em;
+  margin: 0 0 4px;
+  padding: 2px 0;
+  width: 13.4em;
+  *width: 12.5em;
+}
+.search #sform input.s {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 2em;
+  border: 2px solid #444488;
+  background: #6677bb;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.8em;
+  padding: 0 0 0.3em;
+  width: 30%;
+  float: right;
+  clear: both;
+  width: 80px;
+}
+.search .ft {
+  overflow: hidden;
+  height: 0;
+  padding: 1px 0 0;
+  height: 4px;
+}
+/* search result */
+.main .search li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  padding: 2px 2px 2px 75px;
+  height: 70px;
+  position: relative;
+  border-top: 1px solid #ddd;
+  width: 39%;
+  overflow: hidden;
+}
+.main .search u {
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 65px;
+  width: 65px;
+  overflow: hidden;
+  border: 2px solid #cccccc;
+  background: url("user.png") no-repeat 50% 0 #aaaaaa;
+}
+.main .search a {
+  white-space: nowrap;
+  display: block;
+}
+.main .search p a {
+  display: inline;
+}
+.main .search a.url {
+  padding: 1px 1px 1px 18px;
+  background: url("allicon.png") no-repeat 0 -445px;
+}
+.main .search a.mail {
+  padding: 1px 1px 1px 18px;
+  background: url("allicon.png") no-repeat 0 -413px;
+}
+.main .search span {
+  display: block;
+  padding: 1px 1px 1px 18px;
+  background: url("allicon.png") no-repeat 0 -1150px;
+}
+.main .search span.yim {
+  display: block;
+  padding: 1px 1px 1px 18px;
+  background: url("allicon.png") no-repeat 0 -1182px;
+}
+.main .search b {
+  font-weight: 900;
+  color: #f44;
+}
+.main .search p {
+  color: #555;
+  font-size: 123.1%;
+  padding: 4px 0;
+}
+.main .search p.wrong {
+  color: #c44;
+}
+.main .search i {
+  padding: 2px 0 0;
+  display: block;
+}
+.main .search.s_c li {
+  width: 89%;
+  overflow: show;
+  height: auto;
+  min-height: 70px;
+}
+.main .search.s_e li {
+  width: 100%;
+  height: auto;
+  padding: 4px 0;
+}
+.main .search.s_e li i {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  padding: 2px 8px 0 0;
+}
+/* photo search result */
+.main .search.s_p li {
+  width: 140px;
+  padding: 5px;
+  height: 180px;
+  margin: 0 1px 1px 0;
+  background: #cccccc;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  float: left;
+}
+.main .search.s_p li a {
+  width: 140px;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  background: 50% 0 no-repeat;
+  text-decoration: none;
+}
+.main .search.s_p li a u {
+  opacity: 0.75;
+  filter: alpha(opacity='75',style=0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+  height: 1.5em;
+  background: #ffffff;
+  margin: 0;
+  padding: 2px 0 0;
+  border: 0;
+  top: 5px;
+  left: 5px;
+}
+.main .search.s_p li a i {
+  opacity: 0.7;
+  filter: alpha(opacity='70',style=0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 136px;
+  padding: 2px 2px 3px;
+  *padding: 2px 2px 0;
+  background: #ffffff;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+.main .search.s_p li a:hover i {
+  opacity: 0.85;
+  filter: alpha(opacity='85',style=0);
+  text-align: justify;
+  text-justify: distribute;
+  white-space: normal;
+  height: auto;
+  background: #ffc;
+}
+.main .search.s_p li u {
+  cursor: pointer;
+}
+.main .search.s_p li i {
+  cursor: pointer;
+}
+/* user post */
+.user_post dl {
+  overflow: hidden;
+}
+.user_post dt {
+  float: left;
+  width: 31%;
+  clear: both;
+  padding: 3px 0;
+  position: relative;
+  z-index: 5;
+}
+.user_post dt a {
+  font-size: 123.1%;
+}
+.user_post dt i {
+  font-size: 93%;
+  color: #555;
+  margin: 0 5px;
+}
+.user_post dd {
+  padding: 5px;
+  border-top: 1px solid #cccccc;
+  *float: left;
+  *width: 63%;
+  position: relative;
+  top: -1px;
+}
+.user_post dd a i {
+  color: #ff0000;
+  position: relative;
+  top: -3px;
+  left: 2px;
+}
+.user_post dd a.c1 i {
+  display: none;
+}
+/* user_link */
+.user_link .bd p {
+  text-align: center;
+  color: #844;
+  margin: 0 0 5px;
+}
+.user_link dl {
+  font-size: 123.1%;
+}
+.user_link dt {
+  float: left;
+  width: 11%;
+  clear: both;
+  padding: 3px 5px;
+  position: relative;
+  z-index: 5;
+  text-align: right;
+}
+.user_link dd {
+  padding: 5px;
+  border-bottom: 1px solid #cccccc;
+  *float: left;
+  *width: 63%;
+  position: relative;
+  top: -1px;
+}
+.user_link dd a i {
+  font-size: 11px;
+  color: #666;
+  position: relative;
+  left: 4px;
+  top: 2px;
+}
+/* link */
+.mod.link {
+  margin: 0;
+}
+.mod.link .ft {
+  display: none;
+}
+.mod.link ul {
+  overflow: hidden;
+}
+.mod.link li {
+  word-break: break-all;
+  word-wrap: break-word;
+  border-bottom: 1px solid #eeeeee;
+  padding: 3px 0 3px;
+  position: relative;
+  top: 1px;
+}
+.mod.link a {
+  word-break: break-all;
+  word-wrap: break-word;
+  position: relative;
+  display: block;
+  padding: 0 0 0 47px;
+  height: 44px;
+}
+.mod.link a u {
+  display: block;
+  width: 66px;
+  height: 66px;
+  background: url("user.png") no-repeat 50% 0 #cccccc;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 200px;
+  *line-height: 0;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  zoom: 0.66\9;
+  -moz-transform: scale(0.66);
+  -webkit-transform: scale(0.66);
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.mod.link b {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  padding: 0 3px;
+  color: #555;
+  font-size: 85%;
+}
+.mod.links .hd, .mod.links .bd {
+  display: none;
+}
+.mod.links .ft {
+  border-top: 1px solid #cccccc;
+  padding: 2px 0 0;
+}
+/* descriptions */
+.mod.desc {
+  position: relative;
+  z-index: 10;
+}
+.desc .ft {
+  padding: 2px 0 0 0;
+}
+.desc .ft p {
+  color: #a00;
+  font-size: 13px;
+}
+.desc li {
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.desc li a {
+  white-space: nowrap;
+  display: block;
+  padding: 2px 0;
+  color: #444;
+  position: relative;
+  height: 20px;
+}
+.desc li a u {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #400;
+  margin: 0 4px 0 0;
+  background: url("user.png") no-repeat 0 100px;
+}
+.desc li a b {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: #777;
+  font-size: 85%;
+  margin: 0 0 0 8px;
+}
+.desc li a:hover {
+  z-index: 30;
+  font-weight: 900;
+  background: url("allicon.png") no-repeat 550px -542px #ffffee;
+  *background-position: 41.26em -542px;
+  white-space: nowrap;
+}
+.desc li a:hover u {
+  z-index: 30;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-position: 50% 4px;
+  background-color: #ffffff;
+  border: 4px solid #abf;
+  position: absolute;
+  height: 120px;
+  width: 110px;
+  line-height: 220px;
+  right: -5px;
+  top: -10px;
+  *top: auto;
+  *bottom: 0px;
+  cursor: pointer;
+  color: #00f;
+  padding: 3px;
+  text-align: center;
+}
+.desc form {
+  display: none;
+}
+.desc input {
+  width: 80%;
+  height: 1.8em;
+}
+.desc input.submit {
+  float: none;
+  width: 15%;
+  height: 1.92em;
+  *height: 1.95em;
+  *margin: 3px 0 0;
+}
+body.log .desc .ft {
+  height: 42px;
+}
+body.log .desc .ft .more {
+  float: right;
+}
+body.log .desc form {
+  display: block;
+  width: 89%;
+}
+/* users */
+.users ul {
+  position: relative;
+  left: 3px;
+}
+.users li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #ddf;
+  margin: 0 3px 3px 0;
+  border: 3px solid #ccf;
+  padding: 2px;
+}
+.users li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  width: 104px;
+  height: 128px;
+  text-align: center;
+}
+.users li u {
+  display: block;
+  width: 101px;
+  height: 108px;
+  line-height: 250px;
+  overflow: hidden;
+  margin: 2px auto;
+  background: url("user.png") no-repeat 50% 50% #ffffff;
+  *background-position: center 0;
+  font-size: 0;
+}
+/* photo upload */
+.pup form input#iPup {
+  height: 22px;
+  width: auto;
+}
+.pup form ul {
+  float: left;
+  margin-right: -31%;
+}
+.pup form ul input {
+  border-color: #ffffff;
+  width: 22px;
+}
+.pup form li {
+  display: inline;
+}
+.pup form ul label {
+  white-space: nowrap;
+  width: 14em;
+  text-align: left;
+  padding: 0;
+}
+.pup form li.tos {
+  display: block;
+}
+.pup form ul .tos label {
+  width: auto;
+  color: #622;
+  border-color: #ffffff;
+}
+.pup form input.submit {
+  clear: right;
+}
+.pup form div.mup {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #6677bb;
+  height: 20px;
+  margin: 2px 2px 2px 0;
+  position: relative;
+  background: #cccccc;
+  line-height: 1.5em;
+  padding: 0 4px;
+  left: -10000px;
+  *top: 1px;
+}
+.pup form div.mup.ok {
+  left: 0;
+}
+.pup form div.mup:hover {
+  background: #dddddd;
+  color: #44f;
+}
+.pup form div.mup div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.pup form .lst {
+  display: none;
+}
+.req .tos .isreq {
+  padding-left: 20px;
+}
+.mod.pup .ft {
+  overflow: hidden;
+  height: 0;
+  padding: 1px 0 0;
+}
+.pup form.lst input#iPup, .pup form.lst div.mup {
+  display: none;
+}
+.pup form.lst .lst {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 1px solid #6677bb;
+  height: 20px;
+  margin: 2px 2px 2px 0;
+  background: #eef;
+  text-align: center;
+  width: 62%;
+  cursor: progress;
+}
+/* phoeo edit */
+.pedit {
+  display: none;
+}
+.pedit dt {
+  font-weight: 900;
+}
+.pedit dd {
+  margin: 2px 0 5px 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.pedit form input {
+  width: 100%;
+  float: none;
+}
+.pedit form select {
+  width: 100%;
+}
+body.owner .pedit {
+  xdisplay: block;
+}
+/* help */
+.help .bd, .about .bd, .faq .bd {
+  text-align: justify;
+  text-justify: distribute;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.help dt, .about dt, .faq dt {
+  font-weight: 900;
+  font-size: 123.1%;
+}
+.help dd, .about dd, .faq dd {
+  margin: 4px 3% 10px 40px;
+}
+.about a img {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: bottom;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin: 0 5px 0 0;
+}
+.faq b {
+  font-weight: 900;
+  color: #600;
+}
+/* footer */
+#ft {
+  zoom: 1;
+  color: #444;
+  border-top: 3px double #cccccc;
+  position: relative;
+}
+#ft .copy {
+  color: #444;
+  text-align: center;
+  float: left;
+  width: 26em;
+  *width: 24em;
+  margin: 10px 0 10px 0;
+  line-height: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+#ft .fb_iframe_widget {
+  margin: 4px 0;
+}
+#ft dl {
+  margin: 10px 0 10px 27em;
+  *margin-left: 25em;
+  border-left: 1px dotted #000000;
+}
+#ft dd {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+  margin: 2em 5px 0 0;
+  width: 8.2em;
+  padding: 3px;
+}
+#ft dd a {
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  margin: 0 0 3px;
+  padding: 2px 3px;
+}
+#ft dt {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width: 8.2em;
+  padding: 3px;
+  margin: 0 0 0 5px;
+  display: inline;
+  position: absolute;
+  height: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  background: #eeeeff;
+  *padding: 6px 0 0;
+}
+#ft dt a {
+  display: block;
+}
+.fbclr li {
+  padding: 2px;
+}
+.fbclr li a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 4px;
+  display: block;
+  border: 1px solid #cccccc;
+}
+.fbpgs li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.fbpgs li a {
+  display: block;
+  width: 140px;
+  height: 160px;
+  background: #cccccc 50% 0 no-repeat;
+  position: relative;
+  -moz-background-size: cover;
+  background-size: cover;
+  box-shadow: 2px 2px 5px #888888;
+  -moz-box-shadow: 2px 2px 5px #888888;
+  -webkit-box-shadow: 2px 2px 5px #888888;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888',direction=120,strength=2);
+  margin: 6px;
+  width: 180px;
+  height: 180px;
+}
+.fbpgs li a i {
+  bottom: 0;
+  opacity: 0.5;
+  filter: alpha(opacity='50',style=0);
+  position: absolute;
+  padding: 4px;
+  background: #000;
+  color: #FFA;
+}
+.fbpgs li a u {
+  position: absolute;
+  padding: 4px;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  filter: alpha(opacity='0',style=0);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #000;
+  color: #FAA;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+.fbpgs li a:hover {
+  box-shadow: 5px 5px 8px #888888;
+  -moz-box-shadow: 5px 5px 8px #888888;
+  -webkit-box-shadow: 5px 5px 8px #888888;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888',direction=120,strength=5);
+}
+.fbpgs li a:hover i {
+  opacity: 0.7;
+  filter: alpha(opacity='70',style=0);
+}
+.fbpgs li a:hover u {
+  opacity: 0.7;
+  filter: alpha(opacity='70',style=0);
+}
+.fbch li {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 4px;
+  padding: 0 0 4px;
+}
+.fbch li i {
+  position: relative;
+  float: right;
+}
+.fbch li h3 {
+  color: #666;
+  font-weight: 900;
+}
+.fbch li s {
+  height: 10px;
+  display: block;
+  clear: left;
+  width: 100%;
+}
+.fbch li a.page b {
+  font-weight: 900;
+  color: #004;
+}
+.fbch li a.page img {
+  border: 1px solid #aaa;
+  width: 50px;
+  height: 50px;
+  margin: 0 4px 0 0;
+  float: left;
+}
+.fbch li a.cnt {
+  clear: both;
+  display: block;
+  color: #888;
+}
+.fbch li a.cnt p {
+  text-align: justify;
+  text-justify: distribute;
+  letter-spacing: 1px;
+  word-break: break-all;
+  word-wrap: break-word;
+  display: inline;
+  white-space: pre-wrap;
+}
+.fbch li a.cnt img {
+  max-width: 70%;
+  display: block;
+  margin: 4px 4px 4px 0;
+  float: left;
+}
+/* versions */
+#ft .versions {
+  float: left;
+  clear: left;
+}
+#ft .versions li {
+  display: inline;
+  padding: 3px;
+}
+#ft .versions .full {
+  font-weight: 900;
+  color: #224;
+}
+html.mobile #ft .versions .full {
+  font-weight: 500;
+  color: #0000ee;
+}
+html.mobile #ft .versions .mobile {
+  font-weight: 900;
+  color: #224;
+}
+/* debug */
+textarea#dump {
+  width: 100%;
+  height: 500px;
+}
+/* mobile styles */
+html.mobile #doc2,
+html.mobile #srh .bd,
+html.mobile #srh .bd span,
+html.mobile #srh .ft span,
+html.mobile #nav,
+html.mobile #nav .bd,
+html.mobile ul.path,
+html.mobile .main,
+html.mobile .side,
+html.mobile .mod.ephotol div.el,
+html.mobile .mod.ephotol div.el h2,
+html.mobile .mod.ephotol div.el dl,
+html.mobile .main .ephotol li,
+html.mobile .main .ephotol div.er,
+html.mobile .p_top .guest,
+html.mobile .p_top .mod.thread,
+html.mobile .main .event .bd h1,
+html.mobile .main .event .bd h2,
+html.mobile .main .event .map,
+html.mobile .main .event dl,
+html.mobile .user_post dt,
+html.mobile .user_post dd,
+html.mobile .mod.sub_nav,
+html.mobile .mod.sub_nav .bd,
+html.mobile .main .event .map a,
+html.mobile .elist h3,
+html.mobile .elist dl,
+html.mobile .main .user_data dl,
+html.mobile .captcha b,
+html.mobile #ft .copy,
+html.mobile #ft ul {
+  float: none;
+  clear: both;
+  display: block;
+  width: auto;
+  height: auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+}
+html.mobile .main .event .map a.note,
+html.mobile #ft dl,
+html.mobile .elist .tmap,
+html.mobile .mod.puser .ft a,
+html.mobile .photo .bd a.dl,
+html.mobile .desc li a:hover u {
+  display: none;
+}
+html.mobile .elist a div, html.mobile .main .user_data a.uphoto {
+  display: block;
+  margin: 0 auto;
+  float: none;
+}
+html.mobile .main .photo img {
+  width: 100%;
+}
+html.mobile #nav .bd, html.mobile ul.path {
+  border-bottom: 1px solid #ccccee;
+}
+html.mobile {
+  overflow-x: hidden;
+}
+html.mobile .mod {
+  clear: both;
+  margin: 0 auto 8px;
+}
+html.mobile .side .mod {
+  width: 95%;
+}
+html.mobile #hd {
+  margin: 5px;
+}
+html.mobile body.adm #hd {
+  padding: 0 0 5px;
+}
+html.mobile body.adm #ft {
+  padding: 0;
+}
+html.mobile #ft ul {
+  text-align: center;
+}
+html.mobile #srh {
+  background: none;
+  border: 0;
+}
+html.mobile #srh .hd {
+  float: none;
+  margin: 0 auto;
+}
+html.mobile #srh .bd form {
+  float: none;
+  margin: 0 auto;
+}
+html.mobile #srh .bd span {
+  text-align: center;
+}
+html.mobile #srh .ft span {
+  margin: 10px;
+  display: block;
+  text-align: center;
+}
+html.mobile ul.path {
+  margin-bottom: 4px;
+}
+html.mobile .mod.ephotol i {
+  clear: both;
+}
+html.mobile .mod.ephotol .er a i {
+  left: auto;
+  right: 1px;
+}
+html.mobile .ephoto .hd i.bk {
+  font-size: 85%;
+  width: 20em;
+}
+html.mobile .ephoto li {
+  width: 77px;
+  height: 100px;
+  padding: 1px;
+  margin: 0 1px 1px 0;
+}
+html.mobile .ephoto li a {
+  width: 77px;
+  height: 100px;
+}
+html.mobile .ephoto li a b {
+  top: -1px;
+  left: 40px;
+}
+html.mobile .mod.ephotov .er a {
+  height: 100px;
+  width: 97px;
+}
+html.mobile .elist h3 i {
+  top: 0;
+  right: 0;
+}
+html.mobile .elist a div {
+  top: 0;
+  width: 300px;
+}
+html.mobile .elist a div i {
+  visibility: visible;
+}
+html.mobile .main .ecal dd.dat {
+  display: block;
+}
+html.mobile .main .event .map div {
+  width: 300px;
+}
+html.mobile .main .event .map div i {
+  left: 140px;
+}
+html.mobile .epeople li {
+  width: 300px;
+}
+html.mobile .epeople a {
+  width: 230px;
+}
+html.mobile .user_data dt {
+  width: 30%;
+}
+html.mobile .user_data dd {
+  width: 67%;
+}
+html.mobile .main .mod.ephotol div.er a.p0 {
+  width: 155px;
+  height: 207px;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+html.mobile .photo .bd {
+  min-height: 0;
+  padding: 10px 0 0;
+}
+html.mobile .mod.sub_nav .bd {
+  position: static;
+  right: auto;
+  text-align: center;
+}
+html.mobile .ft .pg {
+  height: auto;
+}
+html.mobile .ft .pg p {
+  float: none;
+}
+html.mobile form label {
+  width: 35%;
+}
+html.mobile form input#iCaptcha {
+  width: 62%;
+}
+html.mobile #captchaimg {
+  display: block;
+  margin-left: auto;
+}
+html.mobile .mod.admin {
+  position: relative;
+  buttom: auto;
+  top: 20px;
+}
+html.mobile .guest li b a {
+  width: 0;
+  overflow: hidden;
+  color: #fff;
+}
+/* pad styles */
+html.pad.mobile .side .mod {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+/* refine portrait mode */
+@media screen and (max-width:320px) {
+  .ephoto li.cur {
+    display: none;
+  }
+}
+/* refine landscape mode */
+@media screen and (min-width:321px) and (max-device-width:480px) {
+  .main .mod.ephotol div.er a {
+    background-size: cover;
+    width: 93px;
+    height: 93px;
+  }
+}
+/* CSS Loading */
+body {
+  background: #ffffff !important;
+}
+#doc2 {
+  display: block !important;
+}
+.nowload {
+  display: none !important;
+}
