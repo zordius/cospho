@@ -743,7 +743,6 @@ form input#iCaptcha {
 }
 /* Master head */
 #srh {
-  background: url(http://l.yimg.com/f/i/tw/hp/masthead/yhtw_mh_bg.gif) repeat-x;
   border-bottom: 1px solid #cccccc;
 }
 #srh .hd {
@@ -762,7 +761,6 @@ form input#iCaptcha {
 }
 #srh .bd {
   float: right;
-  background: url(http://l.yimg.com/f/i/tw/hp/masthead/yhtw_mh_paddle.gif) no-repeat;
   width: 275px;
 }
 #srh .bd span {
