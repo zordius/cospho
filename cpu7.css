@@ -4675,6 +4675,7 @@ body.p_newreg .mod.titles .ft, body.p_comm .mod.titles .ft {
 .desc li {
   position: relative;
   border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
 }
 .desc li a {
   white-space: nowrap;
