@@ -23,6 +23,7 @@
 }
 /* scroll and font */
 body {
+  touch-action: manipulation;
   overflow: visible;
   -webkit-text-size-adjust: none;
   font-family: arial,MingLiu;
@@ -758,6 +759,7 @@ form input#iCaptcha {
   line-height: 100px;
   width: 100%;
   height: 100%;
+  font-size: 12px;
 }
 #srh .bd {
   float: right;
@@ -4954,7 +4956,7 @@ body.owner .pedit {
   width: 26em;
   *width: 24em;
   margin: 10px 0 10px 0;
-  line-height: 20px;
+  line-height: 130%;
   border-bottom: 1px solid #eeeeee;
 }
 #ft .fb_iframe_widget {
@@ -5213,6 +5215,9 @@ html.mobile #nav .bd, html.mobile ul.path {
 }
 html.mobile {
   overflow-x: hidden;
+}
+html.mobile body {
+  font-size: larger;
 }
 html.mobile .mod {
   clear: both;
