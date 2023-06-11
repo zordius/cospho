@@ -2646,6 +2646,17 @@ div.ephoto form .tool input, body.adm .tool input.adm {
 .forums .ft {
   display: none;
 }
+.forums dl {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 123.1%;
+}
+.forums dt {
+  width: 5.5em;
+}
+.forums dd {
+  width: calc(100% - 5.5em);
+}
 /* thread list */
 .p_top .mod.thread {
   display: inline-block;
