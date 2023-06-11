@@ -2653,9 +2653,13 @@ div.ephoto form .tool input, body.adm .tool input.adm {
 }
 .forums dt {
   width: 5.5em;
+  padding: 3px 0;
+  border-bottom: 1px solid #000;
 }
 .forums dd {
   width: calc(100% - 5.5em);
+  padding: 3px 0;
+  border-bottom: 1px solid #444;
 }
 /* thread list */
 .p_top .mod.thread {
