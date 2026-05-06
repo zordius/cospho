@@ -1,0 +1,14 @@
+{
+  "name": "@cospho/reflickr",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Download from Flickr, enhance, upload back",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": "22.22.2"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
