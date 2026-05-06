@@ -1,0 +1,17 @@
+{
+  "name": "@cospho/catalog",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Cospho site catalog: collections, events, and Flickr orchestration",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": "22.22.2"
+  },
+  "scripts": {
+    "oauth-init": "node --env-file=../../.env scripts/oauth-init.js"
+  },
+  "dependencies": {
+    "flickr-sdk": "^7.1.0"
+  }
+}
