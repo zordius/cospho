@@ -9,7 +9,8 @@
     "node": "22.22.2"
   },
   "scripts": {
-    "oauth-init": "node --env-file=../../.env scripts/oauth-init.js"
+    "oauth-init": "node --env-file=../../.env scripts/oauth-init.js",
+    "list-collections": "node --env-file=../../.env scripts/list-collections.js"
   },
   "dependencies": {
     "flickr-sdk": "^7.1.0"
