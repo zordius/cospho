@@ -10,7 +10,8 @@
   },
   "scripts": {
     "oauth-init": "node --env-file=../../.env scripts/oauth-init.js",
-    "list-collections": "node --env-file=../../.env scripts/list-collections.js"
+    "list-collections": "node --env-file=../../.env scripts/list-collections.js",
+    "list-photos": "node --env-file=../../.env scripts/list-photos.js"
   },
   "dependencies": {
     "flickr-sdk": "^7.1.0"

@@ -1,12 +1,26 @@
-import { createFlickrClient, fetchPhotosets, collectAlbumsFromTree } from './flickr.js';
-import { readAlbums, saveAlbums } from './store.js';
+import {
+  createFlickrClient,
+  fetchPhotosets,
+  collectAlbumsFromTree,
+  fetchPhotosInAlbum,
+  normalizePhoto,
+} from './flickr.js';
+import { readAlbums, saveAlbums, readPhotos, savePhotos } from './store.js';
 
 const COLLECTION_IDS = {
   v1: '72157600057261241',
   v2: '72157724912260499',
 };
 
-export { saveAlbums, readAlbums, getAlbumsPath, getDataDir } from './store.js';
+export {
+  saveAlbums,
+  readAlbums,
+  getAlbumsPath,
+  getDataDir,
+  readPhotos,
+  savePhotos,
+  getPhotosPath,
+} from './store.js';
 
 export function getCollectionId(version) {
   const id = COLLECTION_IDS[version];
@@ -29,4 +43,15 @@ export async function getAlbums(version) {
   const albums = collectAlbumsFromTree(tree, photosets);
   await saveAlbums(albums, version);
   return albums;
+}
+
+export async function getPhotos(version, albumId) {
+  const cached = await readPhotos(version, albumId);
+  if (cached.length > 0) return cached;
+
+  const { flickr } = createFlickrClient();
+  const raw = await fetchPhotosInAlbum(flickr, albumId);
+  const photos = raw.map(normalizePhoto);
+  await savePhotos(photos, version, albumId);
+  return photos;
 }

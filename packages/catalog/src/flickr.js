@@ -39,6 +39,12 @@ function toIso(unixSeconds) {
   return Number.isFinite(ms) ? new Date(ms).toISOString() : null;
 }
 
+// Flickr returns date_taken as "YYYY-MM-DD HH:MM:SS" with no timezone — preserve as ISO-like.
+function toIsoFromDateTaken(s) {
+  if (!s || typeof s !== 'string') return null;
+  return s.replace(' ', 'T');
+}
+
 export function normalizeAlbum(set) {
   const photoCount = Number(set?.photos);
   const videoCount = Number(set?.videos);
@@ -88,4 +94,53 @@ export function collectAlbumsFromTree(tree, photosets) {
   }
   walk(asArray(tree?.collections?.collection));
   return out;
+}
+
+function sizedFromExtras(photo, suffix) {
+  const url = photo?.[`url_${suffix}`];
+  if (!url) return null;
+  const w = photo?.[`width_${suffix}`];
+  const h = photo?.[`height_${suffix}`];
+  return {
+    url,
+    width: w != null ? Number(w) : null,
+    height: h != null ? Number(h) : null,
+  };
+}
+
+export function normalizePhoto(photo) {
+  return {
+    id: photo.id,
+    title: text(photo.title),
+    description: text(photo.description),
+    dateTaken: toIsoFromDateTaken(photo?.datetaken),
+    dateUploaded: toIso(photo?.dateupload),
+    sizes: {
+      small: sizedFromExtras(photo, 's'),
+      medium: sizedFromExtras(photo, 'm'),
+      original: sizedFromExtras(photo, 'o'),
+    },
+    originalFormat: photo?.originalformat ?? null,
+    media: photo?.media ?? 'photo',
+  };
+}
+
+const PHOTO_EXTRAS = 'description,date_taken,date_upload,url_s,url_m,url_o,original_format,media';
+
+export async function fetchPhotosInAlbum(flickr, albumId, perPage = 500) {
+  const all = [];
+  let page = 1;
+  while (true) {
+    const res = await flickr('flickr.photosets.getPhotos', {
+      photoset_id: albumId,
+      page: String(page),
+      per_page: String(perPage),
+      extras: PHOTO_EXTRAS,
+    });
+    all.push(...asArray(res?.photoset?.photo));
+    const totalPages = Number(res?.photoset?.pages ?? 1);
+    if (page >= totalPages) break;
+    page += 1;
+  }
+  return all;
 }
