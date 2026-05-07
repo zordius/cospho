@@ -11,9 +11,11 @@
   "scripts": {
     "oauth-init": "node --env-file=../../.env scripts/oauth-init.js",
     "list-collections": "node --env-file=../../.env scripts/list-collections.js",
-    "list-photos": "node --env-file=../../.env scripts/list-photos.js"
+    "list-photos": "node --env-file=../../.env scripts/list-photos.js",
+    "generate-sprite": "node --env-file=../../.env scripts/generate-sprite.js"
   },
   "dependencies": {
-    "flickr-sdk": "^7.1.0"
+    "flickr-sdk": "^7.1.0",
+    "sharp": "^0.33.0"
   }
 }

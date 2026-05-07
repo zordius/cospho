@@ -60,6 +60,19 @@ export async function readPhotos(version, albumId) {
   }
 }
 
+// Photos are stored sorted by title-as-int. Throws if any title isn't numeric.
+function compareTitleAsInt(a, b) {
+  const aN = parseInt(a.title, 10);
+  const bN = parseInt(b.title, 10);
+  if (Number.isNaN(aN)) {
+    throw new Error(`Photo ${a.id} has non-numeric title "${a.title}"; cannot sort.`);
+  }
+  if (Number.isNaN(bN)) {
+    throw new Error(`Photo ${b.id} has non-numeric title "${b.title}"; cannot sort.`);
+  }
+  return aN - bN;
+}
+
 export async function savePhotos(photos, version, albumId) {
   const path = photosPath(version, albumId);
   const existing = await readPhotos(version, albumId);
@@ -71,6 +84,7 @@ export async function savePhotos(photos, version, albumId) {
       seen.add(photo.id);
     }
   }
+  merged.sort(compareTitleAsInt);
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path, JSON.stringify(merged, null, 2) + '\n');
 }
