@@ -175,8 +175,9 @@ export function buildHtml(photos, opts = {}) {
     .join('\n');
 
   const lazyScript = `<script>
+const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
-const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src){if(i.complete)o.unobserve(i);else i.removeAttribute('src')}}},{rootMargin:'200px 0px'});
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
 </script>`;
 
