@@ -108,24 +108,53 @@ function sizedFromExtras(photo, suffix) {
   };
 }
 
+// Flickr size suffixes: sq=75² q=150² t=100 s=240 n=320 m=500 z=640 c=800
+// l=1024 h=1600 k=2048 3k=3072 4k=4096 f=6144(panorama) 5k=5120 6k=6144 o=original
+const SIZE_KEYS = [
+  'sq',
+  'q',
+  't',
+  's',
+  'n',
+  'm',
+  'z',
+  'c',
+  'l',
+  'h',
+  'k',
+  '3k',
+  '4k',
+  'f',
+  '5k',
+  '6k',
+  'o',
+];
+
 export function normalizePhoto(photo) {
+  const sizes = {};
+  for (const k of SIZE_KEYS) {
+    sizes[k] = sizedFromExtras(photo, k);
+  }
   return {
     id: photo.id,
     title: text(photo.title),
     description: text(photo.description),
     dateTaken: toIsoFromDateTaken(photo?.datetaken),
     dateUploaded: toIso(photo?.dateupload),
-    sizes: {
-      small: sizedFromExtras(photo, 's'),
-      medium: sizedFromExtras(photo, 'm'),
-      original: sizedFromExtras(photo, 'o'),
-    },
+    sizes,
     originalFormat: photo?.originalformat ?? null,
     media: photo?.media ?? 'photo',
   };
 }
 
-const PHOTO_EXTRAS = 'description,date_taken,date_upload,url_s,url_m,url_o,original_format,media';
+const PHOTO_EXTRAS = [
+  'description',
+  'date_taken',
+  'date_upload',
+  'original_format',
+  'media',
+  ...SIZE_KEYS.map((k) => `url_${k}`),
+].join(',');
 
 export async function fetchPhotosInAlbum(flickr, albumId, perPage = 500) {
   const all = [];

@@ -33,31 +33,34 @@ async function downloadAndResize(url, blockSize) {
   return sharp(buf).resize(blockSize, blockSize, { fit: 'fill' }).toBuffer();
 }
 
-async function downloadAll(urls, blockSize) {
+async function downloadAll(urls, blockSize, onProgress) {
   const out = new Array(urls.length);
+  let done = 0;
   for (let i = 0; i < urls.length; i += DOWNLOAD_CONCURRENCY) {
     const batch = urls.slice(i, i + DOWNLOAD_CONCURRENCY);
     const results = await Promise.all(batch.map((u) => downloadAndResize(u, blockSize)));
     for (let j = 0; j < results.length; j += 1) {
       out[i + j] = results[j];
+      done += 1;
+      onProgress?.(done, urls.length);
     }
   }
   return out;
 }
 
-export async function generateAlbumSprite16(version, albumId) {
+export async function getAlbumSprite16(version, albumId, { onProgress } = {}) {
   const blockSize = 16;
   const path = spritePath(version, albumId, blockSize);
   if (await fileExists(path)) return path;
 
   const photos = await getPhotos(version, albumId);
-  const eligible = photos.filter((p) => p.media === 'photo' && p.sizes?.small?.url);
+  const eligible = photos.filter((p) => p.media === 'photo' && p.sizes?.s?.url);
   if (eligible.length === 0) {
     throw new Error(`No eligible photos for album ${albumId}`);
   }
 
-  const urls = eligible.map((p) => p.sizes.small.url);
-  const tiles = await downloadAll(urls, blockSize);
+  const urls = eligible.map((p) => p.sizes.s.url);
+  const tiles = await downloadAll(urls, blockSize, onProgress);
 
   const cols = COLS;
   const rows = Math.ceil(eligible.length / cols);

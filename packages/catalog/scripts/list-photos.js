@@ -20,7 +20,7 @@ console.log(`Album ${albumId}: ${photos.length} photos\n`);
 
 for (const p of photos) {
   const date = p.dateTaken ? p.dateTaken.slice(0, 10) : '?';
-  const o = p.sizes?.original;
+  const o = p.sizes?.o;
   const dim = o?.width && o?.height ? `${o.width}×${o.height}` : '?';
   const fmt = p.originalFormat ?? '?';
   const title = p.title || '(untitled)';
