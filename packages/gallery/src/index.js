@@ -61,8 +61,8 @@ function buildCss(o, totalHeight, sprite, cols, rows) {
   inset:0;
   background-image:url(${sprite.url});
   background-repeat:no-repeat;
-  background-size:calc(${cols}*${o.width}*1px) calc(${rows}*var(--h)*1px);
-  background-position:calc(var(--c)*${o.width}*-1px) calc(var(--r)*var(--h)*-1px);
+  background-size:calc(${cols}*100vw) calc(${rows}*var(--h)*var(--s)*1px);
+  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);
   ${o.placeholder === 'blur' ? 'filter:blur(8px);' : ''}
   ${o.placeholder === 'pixelated' ? 'image-rendering:pixelated;' : ''}
 }`
@@ -70,6 +70,7 @@ function buildCss(o, totalHeight, sprite, cols, rows) {
 
   return `
 *{margin:0;padding:0;box-sizing:border-box}
+:root{--s:calc(100vw / ${o.width}px)}
 body{
   background:#000;
   overscroll-behavior-y:contain;
@@ -78,18 +79,18 @@ body{
 }
 .g{
   position:relative;
-  width:${o.width}px;
-  height:${totalHeight}px;
+  width:100vw;
+  height:calc(${totalHeight}*var(--s)*1px);
 }
 .g>div{
   position:absolute;
   left:0;
-  width:${o.width}px;
-  top:calc(var(--y)*1px);
-  height:calc(var(--h)*1px);
+  width:100vw;
+  top:calc(var(--y)*var(--s)*1px);
+  height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:${o.width}px calc(var(--h)*1px);
+  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
 }${placeholderBg}
 .g>div img{
   position:relative;
@@ -144,7 +145,7 @@ export function buildHtml(photos, opts = {}) {
         ? ` srcset="${e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',')}"`
         : '';
     const style = sprite ? `--y:${e.y};--h:${e.h};--c:${c};--r:${r}` : `--y:${e.y};--h:${e.h}`;
-    return `<div style="${style}"><img src="${baseUrl}"${srcsetAttr} loading="lazy" decoding="async" alt=""></div>`;
+    return `<div style="${style}"><img src="${baseUrl}"${srcsetAttr} loading="lazy" decoding="async"></div>`;
   });
 
   if (placeholders.length > 0) {
@@ -153,6 +154,7 @@ export function buildHtml(photos, opts = {}) {
 
   const head = [
     '<meta charset="utf-8">',
+    '<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">',
     `<meta name="viewport" content="width=${o.width},initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">`,
     `<title>${escapeHtml(o.title)}</title>`,
     '<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>',
