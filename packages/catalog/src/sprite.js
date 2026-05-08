@@ -1,14 +1,14 @@
 import { mkdir, access } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import sharp from 'sharp';
-import { getDataDir } from './store.js';
+import { getDocsDir } from './store.js';
 import { getPhotos } from './photos.js';
 
 const COLS = 10;
 const DOWNLOAD_CONCURRENCY = 4;
 
 function spritePath(version, albumId, blockSize) {
-  return resolve(getDataDir(), version, 'sprites', `${albumId}-${blockSize}.png`);
+  return resolve(getDocsDir(), 'sprites', `${albumId}-${blockSize}.png`);
 }
 
 export function getSpritePath(version, albumId, blockSize) {

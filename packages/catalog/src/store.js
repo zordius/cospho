@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 
 const DATA_DIR = resolve(import.meta.dirname, '../data');
+const DOCS_DIR = resolve(import.meta.dirname, '../../../docs');
 
 function albumsPath(version) {
   return resolve(DATA_DIR, version, 'albums.json');
@@ -13,6 +14,10 @@ function photosPath(version, albumId) {
 
 export function getDataDir() {
   return DATA_DIR;
+}
+
+export function getDocsDir() {
+  return DOCS_DIR;
 }
 
 export function getAlbumsPath(version) {

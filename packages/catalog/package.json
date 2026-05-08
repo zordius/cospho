@@ -13,7 +13,8 @@
     "list-collections": "node --env-file=../../.env scripts/list-collections.js",
     "list-photos": "node --env-file=../../.env scripts/list-photos.js",
     "generate-sprite": "node --env-file=../../.env scripts/generate-sprite.js",
-    "generate-html": "node --env-file=../../.env scripts/generate-html.js"
+    "generate-html": "node --env-file=../../.env scripts/generate-html.js",
+    "build-index": "node --env-file=../../.env scripts/build-index.js"
   },
   "dependencies": {
     "@cospho/gallery": "workspace:*",

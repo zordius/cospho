@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve, relative, basename } from 'node:path';
 import { buildHtml } from '@cospho/gallery';
-import { getAlbums, getPhotos, getAlbumSprite16, getDataDir } from '../src/index.js';
+import { getAlbums, getPhotos, getAlbumSprite16, getDocsDir } from '../src/index.js';
 
 const VERSION = 'v1';
 const albumId = process.argv[2];
@@ -25,10 +25,10 @@ const [albums, photos, spriteAbs] = await Promise.all([
 const album = albums.find((a) => a.id === albumId);
 const title = album?.title || `Album ${albumId}`;
 
-const outDir = resolve(getDataDir(), VERSION, 'html');
+const outDir = resolve(getDocsDir(), 'albums');
 const outFile = resolve(outDir, `${albumId}.html`);
 
-// HTML lives at data/v1/html/<id>.html, sprite at data/v1/sprites/<id>-16.png
+// HTML lives at docs/albums/<id>.html, sprite at docs/sprites/<id>-16.png
 const spriteRelativeUrl = `../sprites/${basename(spriteAbs)}`;
 
 const html = buildHtml(photos, {
