@@ -1,8 +1,9 @@
 const DEFAULTS = {
   width: 390,
   densities: [1, 2],
-  placeholder: 'pixelated', // 'pixelated' | 'blur' | 'none'
+  placeholder: 'none', // 'none' | 'pixelated' | 'blur'
   title: 'Gallery',
+  eagerCount: 2,
 };
 
 // Flickr sizes in ascending long-side order. Square crops (sq, q) excluded
@@ -77,6 +78,12 @@ body{
   touch-action:pan-y;
   font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
+h1{
+  color:#fff;
+  padding:16px;
+  font-size:18px;
+  font-weight:400;
+}
 .g{
   position:relative;
   width:100vw;
@@ -140,22 +147,25 @@ export function buildHtml(photos, opts = {}) {
     const c = sprite ? i % cols : 0;
     const r = sprite ? Math.floor(i / cols) : 0;
     const baseUrl = e.picks[0].sz.url;
-    const srcsetAttr =
-      e.picks.length > 1
-        ? ` srcset="${e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',')}"`
-        : '';
+    const srcsetValue =
+      e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
     const style = sprite ? `--y:${e.y};--h:${e.h};--c:${c};--r:${r}` : `--y:${e.y};--h:${e.h}`;
-    return `<div style="${style}"><img src="${baseUrl}"${srcsetAttr} loading="lazy" decoding="async"></div>`;
-  });
 
-  if (placeholders.length > 0) {
-    placeholders[0] = placeholders[0].replace(' loading="lazy"', ' fetchpriority="high"');
-  }
+    if (i < o.eagerCount) {
+      const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
+      return `<div style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
+    }
+    const urls = [...e.picks]
+      .sort((a, b) => a.d - b.d)
+      .map(({ sz }) => sz.url)
+      .join(',');
+    return `<div style="${style}"><img data-src="${urls}"></div>`;
+  });
 
   const head = [
     '<meta charset="utf-8">',
     '<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">',
-    `<meta name="viewport" content="width=${o.width},initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">`,
+    `<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">`,
     `<title>${escapeHtml(o.title)}</title>`,
     '<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>',
     sprite ? `<link rel="preload" as="image" href="${sprite.url}">` : '',
@@ -164,15 +174,23 @@ export function buildHtml(photos, opts = {}) {
     .filter(Boolean)
     .join('\n');
 
+  const lazyScript = `<script>
+const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src){if(i.complete)o.unobserve(i);else i.removeAttribute('src')}}},{rootMargin:'200px 0px'});
+for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
+</script>`;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 ${head}
 </head>
 <body>
+<h1>${escapeHtml(o.title)}</h1>
 <div class="g">
 ${placeholders.join('\n')}
 </div>
+${lazyScript}
 </body>
 </html>
 `;
