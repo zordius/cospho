@@ -1,0 +1,11 @@
+{
+  "name": "@cospho/gallery",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Pure-function HTML builder for cospho photo galleries",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": "22.22.2"
+  }
+}

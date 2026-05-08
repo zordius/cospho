@@ -23,12 +23,17 @@ importers:
 
   packages/catalog:
     dependencies:
+      '@cospho/gallery':
+        specifier: workspace:*
+        version: link:../gallery
       flickr-sdk:
         specifier: ^7.1.0
         version: 7.1.0
       sharp:
         specifier: ^0.33.0
         version: 0.33.5
+
+  packages/gallery: {}
 
   packages/reflickr: {}
 
