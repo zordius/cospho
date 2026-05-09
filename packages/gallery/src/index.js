@@ -92,12 +92,28 @@ h1{
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);${spriteRules}
+  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;${spriteRules}
 }
 .g>div img{
   display:block;
   width:100%;
-  height:100%;${isPixelated ? '\n  image-rendering:auto;' : ''}
+  height:100%;
+  pointer-events:none;${isPixelated ? '\n  image-rendering:auto;' : ''}
+}
+.g>div:active::after{
+  content:attr(data-t);
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:2;
+  padding:6px 10px;
+  background:rgba(0,0,0,.7);
+  color:#fff;
+  font-size:12px;
+  pointer-events:none;
 }
 @media (hover:hover){
   .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
@@ -144,16 +160,17 @@ export function buildHtml(photos, opts = {}) {
     const srcsetValue =
       e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
     const style = sprite ? `--y:${e.y};--h:${e.h};--c:${c};--r:${r}` : `--y:${e.y};--h:${e.h}`;
+    const titleAttr = e.photo.title ? ` data-t="${escapeHtml(e.photo.title)}"` : '';
 
     if (i < o.eagerCount) {
       const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
-      return `<div style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
+      return `<div${titleAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
     }
     const urls = [...e.picks]
       .sort((a, b) => a.d - b.d)
       .map(({ sz }) => sz.url)
       .join(',');
-    return `<div style="${style}"><img data-src="${urls}"></div>`;
+    return `<div${titleAttr} style="${style}"><img data-src="${urls}"></div>`;
   });
 
   const head = [
