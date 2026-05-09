@@ -24,6 +24,7 @@ const [albums, photos, spriteAbs] = await Promise.all([
 
 const album = albums.find((a) => a.id === albumId);
 const title = album?.title || `Album ${albumId}`;
+const count = album?.photoCount ?? photos.length;
 
 const outDir = resolve(getDocsDir(), 'albums');
 const outFile = resolve(outDir, `${albumId}.html`);
@@ -35,6 +36,7 @@ const html = buildHtml(photos, {
   width: 390,
   title,
   sprite: { url: spriteRelativeUrl, blockSize: 16, cols: 10 },
+  beforeG: `<p>${count}張照片</p>`,
 });
 
 await mkdir(outDir, { recursive: true });

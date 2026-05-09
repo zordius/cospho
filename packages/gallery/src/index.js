@@ -8,6 +8,8 @@ const DEFAULTS = {
   alwaysShowTitle: false,
   linkUrl: null, // (photo) => string  — when set, click navigates to result
   faviconBase: '../',
+  beforeG: '',
+  afterG: '',
 };
 
 // Flickr sizes in ascending long-side order. Square crops (sq, q) excluded
@@ -212,9 +214,11 @@ ${head}
 </head>
 <body>
 <h1>${escapeHtml(o.title)}</h1>
+${o.beforeG}
 <div class="g">
 ${placeholders.join('\n')}
 </div>
+${o.afterG}
 ${lazyScript}
 </body>
 </html>

@@ -14,18 +14,22 @@ if (cachedAlbums.length === 0) {
   process.exit(1);
 }
 
-// Each album becomes a "photo" record using its cover photo's sizes.
+const totalPhotos = cachedAlbums.reduce((s, a) => s + (a.photoCount ?? 0), 0);
+
 const indexPhotos = await Promise.all(
   cachedAlbums.map(async (a) => {
     const cover = await getPrimaryPhoto(VERSION, a.id);
+    const count = a.photoCount ?? 0;
     return {
       id: a.id,
-      title: a.title,
+      title: `${a.title} · ${count}張照片`,
       media: 'photo',
       sizes: cover?.sizes ?? {},
     };
   }),
 );
+
+const summary = `<p>共${totalPhotos}張照片</p><p>共${cachedAlbums.length}本活動相簿</p>`;
 
 const html = buildHtml(indexPhotos, {
   title: 'Cospho',
@@ -33,6 +37,7 @@ const html = buildHtml(indexPhotos, {
   linkUrl: (p) => `albums/${p.id}.html`,
   faviconBase: '',
   eagerCount: 4,
+  beforeG: summary,
 });
 
 await mkdir(OUT_DIR, { recursive: true });
