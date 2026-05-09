@@ -1,9 +1,10 @@
 const DEFAULTS = {
   width: 390,
   densities: [1, 2],
-  placeholder: 'none', // 'none' | 'pixelated' | 'blur'
+  placeholder: 'none', // 'none' | 'pixelated'
   title: 'Gallery',
   eagerCount: 2,
+  gap: 4,
 };
 
 // Flickr sizes in ascending long-side order. Square crops (sq, q) excluded
@@ -54,19 +55,13 @@ function pickAspect(p) {
 }
 
 function buildCss(o, totalHeight, sprite, cols, rows) {
-  const placeholderBg = sprite
+  const isPixelated = o.placeholder === 'pixelated';
+  const spriteRules = sprite
     ? `
-.g>div::before{
-  content:'';
-  position:absolute;
-  inset:0;
   background-image:url(${sprite.url});
   background-repeat:no-repeat;
   background-size:calc(${cols}*100vw) calc(${rows}*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);
-  ${o.placeholder === 'blur' ? 'filter:blur(8px);' : ''}
-  ${o.placeholder === 'pixelated' ? 'image-rendering:pixelated;' : ''}
-}`
+  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
     : '';
 
   return `
@@ -97,14 +92,12 @@ h1{
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
-}${placeholderBg}
+  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);${spriteRules}
+}
 .g>div img{
-  position:relative;
-  z-index:1;
   display:block;
   width:100%;
-  height:100%;
+  height:100%;${isPixelated ? '\n  image-rendering:auto;' : ''}
 }
 @media (hover:hover){
   .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
@@ -133,9 +126,10 @@ export function buildHtml(photos, opts = {}) {
   }
 
   let cumY = 0;
-  for (const e of eligible) {
-    e.y = cumY;
-    cumY += e.h;
+  for (let i = 0; i < eligible.length; i += 1) {
+    if (i > 0) cumY += o.gap;
+    eligible[i].y = cumY;
+    cumY += eligible[i].h;
   }
   const totalHeight = cumY;
 
