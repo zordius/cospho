@@ -74,12 +74,12 @@ function buildCss(o, totalHeight, sprite, cols, rows) {
 :root{--s:calc(100vw / ${o.width}px)}
 body{
   background:#000;
+  color:#fff;
   overscroll-behavior-y:contain;
   touch-action:pan-y;
   font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
 h1{
-  color:#fff;
   padding:16px;
   font-size:18px;
   font-weight:400;
@@ -115,7 +115,6 @@ h1{
   z-index:2;
   padding:10px 16px;
   background:rgba(0,0,0,.8);
-  color:#fff;
   font-size:14px;
   border-radius:4px;
   pointer-events:none;

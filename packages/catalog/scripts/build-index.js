@@ -29,7 +29,7 @@ const indexPhotos = await Promise.all(
   }),
 );
 
-const summary = `<p>共${totalPhotos}張照片</p><p>共${cachedAlbums.length}本活動相簿</p>`;
+const summary = `<p>共${cachedAlbums.length}本活動相簿·${totalPhotos}張照片</p>`;
 
 const html = buildHtml(indexPhotos, {
   title: 'Cospho',
