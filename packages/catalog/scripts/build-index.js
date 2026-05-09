@@ -29,10 +29,11 @@ const indexPhotos = await Promise.all(
   }),
 );
 
-const summary = `<p>共${cachedAlbums.length}本活動相簿·${totalPhotos}張照片</p>`;
+const summary = `<p>本站為針對手機最佳化版本,僅提供照片瀏覽功能</p>
+<p>共${cachedAlbums.length}本活動相簿·${totalPhotos}張照片</p>`;
 
 const html = buildHtml(indexPhotos, {
-  title: 'Cospho',
+  title: 'CosPho Up向上委員會·手機版',
   alwaysShowTitle: true,
   linkUrl: (p) => `albums/${p.id}.html`,
   faviconBase: '',

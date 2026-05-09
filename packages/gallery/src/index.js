@@ -67,7 +67,8 @@ function buildCss(o, totalHeight, sprite, cols, rows) {
   background-repeat:no-repeat;
   background-size:calc(${cols}*100vw) calc(${rows}*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
-    : '';
+    : `
+  background:#888;`;
 
   return `
 *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +84,9 @@ h1{
   padding:16px;
   font-size:18px;
   font-weight:400;
+}
+p{
+  padding:0 16px 16px;
 }
 .g{
   position:relative;
