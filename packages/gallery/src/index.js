@@ -102,18 +102,24 @@ h1{
   height:100%;
   pointer-events:none;${isPixelated ? '\n  image-rendering:auto;' : ''}
 }
-.g>div:active::after{
+.g>div[data-t]::after{
   content:attr(data-t);
   position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
+  left:16px;
+  top:16px;
   z-index:2;
-  padding:6px 10px;
-  background:rgba(0,0,0,.7);
+  padding:10px 16px;
+  background:rgba(0,0,0,.8);
   color:#fff;
-  font-size:12px;
+  font-size:14px;
+  border-radius:4px;
   pointer-events:none;
+  opacity:0;
+  transition:opacity .5s;
+}
+.g>div[data-t].s::after{
+  opacity:1;
+  transition:opacity 0s;
 }
 @media (hover:hover){
   .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
@@ -196,6 +202,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
+document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>`;
 
   return `<!DOCTYPE html>
