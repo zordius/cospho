@@ -5,6 +5,9 @@ const DEFAULTS = {
   title: 'Gallery',
   eagerCount: 2,
   gap: 4,
+  alwaysShowTitle: false,
+  linkUrl: null, // (photo) => string  — when set, click navigates to result
+  faviconBase: '../',
 };
 
 // Flickr sizes in ascending long-side order. Square crops (sq, q) excluded
@@ -114,13 +117,8 @@ h1{
   font-size:14px;
   border-radius:4px;
   pointer-events:none;
-  opacity:0;
-  transition:opacity .5s;
-}
-.g>div[data-t].s::after{
-  opacity:1;
-  transition:opacity 0s;
-}
+  opacity:${o.alwaysShowTitle ? 1 : 0};${o.alwaysShowTitle ? '' : '\n  transition:opacity .5s;'}
+}${o.alwaysShowTitle ? '' : `\n.g>div[data-t].s::after{opacity:1;transition:opacity 0s}`}
 @media (hover:hover){
   .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
 }
@@ -167,27 +165,29 @@ export function buildHtml(photos, opts = {}) {
       e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
     const style = sprite ? `--y:${e.y};--h:${e.h};--c:${c};--r:${r}` : `--y:${e.y};--h:${e.h}`;
     const titleAttr = e.photo.title ? ` data-t="${escapeHtml(e.photo.title)}"` : '';
+    const url = o.linkUrl ? o.linkUrl(e.photo) : null;
+    const linkAttr = url ? ` data-h="${escapeHtml(url)}"` : '';
 
     if (i < o.eagerCount) {
       const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
-      return `<div${titleAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
+      return `<div${titleAttr}${linkAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
     }
     const urls = [...e.picks]
       .sort((a, b) => a.d - b.d)
       .map(({ sz }) => sz.url)
       .join(',');
-    return `<div${titleAttr} style="${style}"><img data-src="${urls}"></div>`;
+    return `<div${titleAttr}${linkAttr} style="${style}"><img data-src="${urls}"></div>`;
   });
 
   const head = [
     '<meta charset="utf-8">',
     '<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">',
     '<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">',
-    '<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">',
-    '<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">',
-    '<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">',
-    '<link rel="manifest" href="../site.webmanifest">',
-    '<link rel="shortcut icon" href="../favicon.ico">',
+    `<link rel="icon" type="image/png" sizes="32x32" href="${o.faviconBase}favicon-32x32.png">`,
+    `<link rel="icon" type="image/png" sizes="16x16" href="${o.faviconBase}favicon-16x16.png">`,
+    `<link rel="apple-touch-icon" sizes="180x180" href="${o.faviconBase}apple-touch-icon.png">`,
+    `<link rel="manifest" href="${o.faviconBase}site.webmanifest">`,
+    `<link rel="shortcut icon" href="${o.faviconBase}favicon.ico">`,
     '<meta name="theme-color" content="#000000">',
     `<title>${escapeHtml(o.title)}</title>`,
     '<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>',
@@ -202,7 +202,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
+${o.linkUrl ? `document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
 
   return `<!DOCTYPE html>

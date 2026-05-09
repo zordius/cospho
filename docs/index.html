@@ -11,22 +11,75 @@
 <link rel="shortcut icon" href="favicon.ico">
 <meta name="theme-color" content="#000000">
 <title>Cospho</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
-h1{padding:16px;font-size:18px;font-weight:400}
-.list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:8px}
-.list a{display:block;text-decoration:none;color:inherit}
-.list a img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
-.list a .t{padding:8px;font-size:14px}
-</style>
+<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--s:calc(100vw / 390px)}
+body{
+  background:#000;
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+h1{
+  color:#fff;
+  padding:16px;
+  font-size:18px;
+  font-weight:400;
+}
+.g{
+  position:relative;
+  width:100vw;
+  height:calc(1467*var(--s)*1px);
+}
+.g>div{
+  position:absolute;
+  left:0;
+  width:100vw;
+  top:calc(var(--y)*var(--s)*1px);
+  height:calc(var(--h)*var(--s)*1px);
+  overflow:hidden;
+  content-visibility:auto;
+  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.g>div img{
+  display:block;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+.g>div[data-t]::after{
+  content:attr(data-t);
+  position:absolute;
+  left:16px;
+  top:16px;
+  z-index:2;
+  padding:10px 16px;
+  background:rgba(0,0,0,.8);
+  color:#fff;
+  font-size:14px;
+  border-radius:4px;
+  pointer-events:none;
+  opacity:1;
+}
+@media (hover:hover){
+  .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
+}</style>
 </head>
 <body>
-<h1>Cospho — 3 albums</h1>
-<div class="list">
-<a href="albums/1044361.html"><img src="https://live.staticflickr.com/31/47706780_bbab422605.jpg" loading="lazy" decoding="async"><div class="t">1999-07-31 Comic World 8</div></a>
-<a href="albums/1039495.html"><img src="https://live.staticflickr.com/24/47704521_4e2349b856.jpg" loading="lazy" decoding="async"><div class="t">1999-08-07 漫畫嘉年華</div></a>
-<a href="albums/1039450.html"><img src="https://live.staticflickr.com/33/47695091_b730e47101.jpg" loading="lazy" decoding="async"><div class="t">1999-08-14 夏典</div></a>
+<h1>Cospho</h1>
+<div class="g">
+<div data-t="1999-07-31 Comic World 8" data-h="albums/1044361.html" style="--y:0;--h:195"><img src="https://live.staticflickr.com/31/47706780_bbab422605.jpg" srcset="https://live.staticflickr.com/31/47706780_bbab422605.jpg 1x,https://live.staticflickr.com/31/47706780_bbab422605_c.jpg 2x" decoding="async"></div>
+<div data-t="1999-08-07 漫畫嘉年華" data-h="albums/1039495.html" style="--y:199;--h:685"><img src="https://live.staticflickr.com/24/47704521_4e2349b856_c.jpg" srcset="https://live.staticflickr.com/24/47704521_4e2349b856_c.jpg 1x,https://live.staticflickr.com/24/47704521_09649408fd_o.jpg 2x" decoding="async"></div>
+<div data-t="1999-08-14 夏典" data-h="albums/1039450.html" style="--y:888;--h:579"><img src="https://live.staticflickr.com/33/47695091_b730e47101_z.jpg" srcset="https://live.staticflickr.com/33/47695091_b730e47101_z.jpg 1x,https://live.staticflickr.com/33/47695091_8a456736d1_o.jpg 2x" decoding="async"></div>
 </div>
+<script>
+const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+const p=innerWidth*devicePixelRatio>=702?1:0;
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
+for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
+document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});
+</script>
 </body>
 </html>

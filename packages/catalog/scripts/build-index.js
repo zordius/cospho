@@ -1,18 +1,11 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
+import { buildHtml } from '@cospho/gallery';
 import { listCachedAlbums, getPrimaryPhoto, getDocsDir } from '../src/index.js';
 
 const VERSION = 'v1';
 const OUT_DIR = getDocsDir();
 const OUT_FILE = resolve(OUT_DIR, 'index.html');
-
-function escapeHtml(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
 
 const cachedAlbums = await listCachedAlbums(VERSION);
 
@@ -21,52 +14,26 @@ if (cachedAlbums.length === 0) {
   process.exit(1);
 }
 
-const items = await Promise.all(
+// Each album becomes a "photo" record using its cover photo's sizes.
+const indexPhotos = await Promise.all(
   cachedAlbums.map(async (a) => {
     const cover = await getPrimaryPhoto(VERSION, a.id);
-    const url = cover?.sizes?.m?.url || cover?.sizes?.s?.url || '';
-    return { id: a.id, title: a.title, photoCount: a.photoCount, url };
+    return {
+      id: a.id,
+      title: a.title,
+      media: 'photo',
+      sizes: cover?.sizes ?? {},
+    };
   }),
 );
 
-const tiles = items
-  .map(
-    (i) =>
-      `<a href="albums/${i.id}.html"><img src="${i.url}" loading="lazy" decoding="async"><div class="t">${escapeHtml(i.title)}</div></a>`,
-  )
-  .join('\n');
-
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" href="favicon.ico">
-<meta name="theme-color" content="#000000">
-<title>Cospho</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
-h1{padding:16px;font-size:18px;font-weight:400}
-.list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:8px}
-.list a{display:block;text-decoration:none;color:inherit}
-.list a img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
-.list a .t{padding:8px;font-size:14px}
-</style>
-</head>
-<body>
-<h1>Cospho — ${cachedAlbums.length} albums</h1>
-<div class="list">
-${tiles}
-</div>
-</body>
-</html>
-`;
+const html = buildHtml(indexPhotos, {
+  title: 'Cospho',
+  alwaysShowTitle: true,
+  linkUrl: (p) => `albums/${p.id}.html`,
+  faviconBase: '',
+  eagerCount: 4,
+});
 
 await mkdir(OUT_DIR, { recursive: true });
 await writeFile(OUT_FILE, html);
