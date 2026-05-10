@@ -13,7 +13,7 @@
 <title>2000-04-22 KOF聚會</title>
 <link rel="preconnect" href="https://live.staticflickr.com" crossorigin>
 <link rel="preload" as="image" href="../sprites/1032506-16.png">
-<style>*{margin:0;padding:0;box-sizing:border-box}
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--s:calc(100vw / 390px)}
 body{
   background:#000;
@@ -33,23 +33,23 @@ p{
 .g{
   position:relative;
   width:100vw;
-  height:calc(17355*var(--s)*1px);
+  height:calc(4760*var(--s)*1px);
 }
 .g>div{
   position:absolute;
-  left:0;
-  width:100vw;
+  left:calc(var(--x)*var(--s)*1px);
+  width:calc(var(--w)*var(--s)*1px);
   top:calc(var(--y)*var(--s)*1px);
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/1032506-16.png);
   background-repeat:no-repeat;
-  background-size:calc(10*100vw) calc(3*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);
+  background-size:calc(10*var(--w)*var(--s)*1px) calc(3*var(--h)*var(--s)*1px);
+  background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
 .g>div img{
   display:block;
@@ -63,7 +63,9 @@ p{
   left:16px;
   top:16px;
   z-index:2;
-  padding:10px 16px;
+  padding:6px 10px;
+  max-width:calc(100% - 32px);
+  overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
   border-radius:4px;
@@ -80,35 +82,35 @@ p{
 <h1>2000-04-22 KOF聚會</h1>
 <p>29張照片</p>
 <div class="g">
-<div data-t="4146" style="--y:0;--h:589;--c:0;--r:0"><img src="https://live.staticflickr.com/28/47366000_d086c99cd0_z.jpg" srcset="https://live.staticflickr.com/28/47366000_d086c99cd0_z.jpg 1x,https://live.staticflickr.com/28/47366000_d086c99cd0_o.jpg 2x" decoding="async"></div>
-<div data-t="4147" style="--y:593;--h:590;--c:1;--r:0"><img src="https://live.staticflickr.com/25/47366002_6f540e5ca7_z.jpg" srcset="https://live.staticflickr.com/25/47366002_6f540e5ca7_z.jpg 1x,https://live.staticflickr.com/25/47366002_6f540e5ca7_o.jpg 2x" decoding="async"></div>
-<div data-t="4148" style="--y:1187;--h:583;--c:2;--r:0"><img data-src="https://live.staticflickr.com/30/47366009_93441bce9a_z.jpg,https://live.staticflickr.com/30/47366009_93441bce9a_o.jpg"></div>
-<div data-t="4149" style="--y:1774;--h:589;--c:3;--r:0"><img data-src="https://live.staticflickr.com/28/47366011_735c596eca_z.jpg,https://live.staticflickr.com/28/47366011_735c596eca_o.jpg"></div>
-<div data-t="4150" style="--y:2367;--h:582;--c:4;--r:0"><img data-src="https://live.staticflickr.com/32/47366015_cb0365e177_z.jpg,https://live.staticflickr.com/32/47366015_cb0365e177_o.jpg"></div>
-<div data-t="4151" style="--y:2953;--h:594;--c:5;--r:0"><img data-src="https://live.staticflickr.com/30/47366027_f6d57c5932_z.jpg,https://live.staticflickr.com/30/47366027_f6d57c5932_o.jpg"></div>
-<div data-t="4152" style="--y:3551;--h:582;--c:6;--r:0"><img data-src="https://live.staticflickr.com/25/47366031_50dfcbd977_z.jpg,https://live.staticflickr.com/25/47366031_50dfcbd977_o.jpg"></div>
-<div data-t="4153" style="--y:4137;--h:580;--c:7;--r:0"><img data-src="https://live.staticflickr.com/24/47366035_4c252c210f_z.jpg,https://live.staticflickr.com/24/47366035_4c252c210f_o.jpg"></div>
-<div data-t="4154" style="--y:4721;--h:608;--c:8;--r:0"><img data-src="https://live.staticflickr.com/24/47366045_ede5a99785_z.jpg,https://live.staticflickr.com/24/47366045_ede5a99785_o.jpg"></div>
-<div data-t="4155" style="--y:5333;--h:581;--c:9;--r:0"><img data-src="https://live.staticflickr.com/27/47366052_70cb3d68d2_z.jpg,https://live.staticflickr.com/27/47366052_70cb3d68d2_o.jpg"></div>
-<div data-t="4156" style="--y:5918;--h:586;--c:0;--r:1"><img data-src="https://live.staticflickr.com/25/47366054_090749985a_z.jpg,https://live.staticflickr.com/25/47366054_090749985a_o.jpg"></div>
-<div data-t="4157" style="--y:6508;--h:618;--c:1;--r:1"><img data-src="https://live.staticflickr.com/33/47366067_e3f8aaa295_z.jpg,https://live.staticflickr.com/33/47366067_e3f8aaa295_o.jpg"></div>
-<div data-t="4158" style="--y:7130;--h:619;--c:2;--r:1"><img data-src="https://live.staticflickr.com/33/47366077_633e997f21_z.jpg,https://live.staticflickr.com/33/47366077_633e997f21_o.jpg"></div>
-<div data-t="4159" style="--y:7753;--h:618;--c:3;--r:1"><img data-src="https://live.staticflickr.com/28/47366081_c8980403c2_z.jpg,https://live.staticflickr.com/28/47366081_c8980403c2_o.jpg"></div>
-<div data-t="4160" style="--y:8375;--h:607;--c:4;--r:1"><img data-src="https://live.staticflickr.com/29/47366085_f7ab80c69d_z.jpg,https://live.staticflickr.com/29/47366085_f7ab80c69d_o.jpg"></div>
-<div data-t="4161" style="--y:8986;--h:589;--c:5;--r:1"><img data-src="https://live.staticflickr.com/30/47366099_045485b646_z.jpg,https://live.staticflickr.com/30/47366099_045485b646_o.jpg"></div>
-<div data-t="4162" style="--y:9579;--h:599;--c:6;--r:1"><img data-src="https://live.staticflickr.com/32/47366103_23af4e93ce_z.jpg,https://live.staticflickr.com/32/47366103_23af4e93ce_o.jpg"></div>
-<div data-t="4163" style="--y:10182;--h:596;--c:7;--r:1"><img data-src="https://live.staticflickr.com/25/47366110_4573adfb54_z.jpg,https://live.staticflickr.com/25/47366110_4573adfb54_o.jpg"></div>
-<div data-t="4164" style="--y:10782;--h:589;--c:8;--r:1"><img data-src="https://live.staticflickr.com/30/47366113_1d71e3149e_z.jpg,https://live.staticflickr.com/30/47366113_1d71e3149e_o.jpg"></div>
-<div data-t="4165" style="--y:11375;--h:588;--c:9;--r:1"><img data-src="https://live.staticflickr.com/28/47366117_4b3285c647_z.jpg,https://live.staticflickr.com/28/47366117_4b3285c647_o.jpg"></div>
-<div data-t="4166" style="--y:11967;--h:585;--c:0;--r:2"><img data-src="https://live.staticflickr.com/32/47366120_b80a9692c7_z.jpg,https://live.staticflickr.com/32/47366120_b80a9692c7_o.jpg"></div>
-<div data-t="4167" style="--y:12556;--h:582;--c:1;--r:2"><img data-src="https://live.staticflickr.com/32/47366123_b06cb01a79_z.jpg,https://live.staticflickr.com/32/47366123_b06cb01a79_o.jpg"></div>
-<div data-t="4168" style="--y:13142;--h:592;--c:2;--r:2"><img data-src="https://live.staticflickr.com/31/47366132_a73f3f6b63_z.jpg,https://live.staticflickr.com/31/47366132_a73f3f6b63_o.jpg"></div>
-<div data-t="4169" style="--y:13738;--h:595;--c:3;--r:2"><img data-src="https://live.staticflickr.com/33/47366133_8c535d95dc_z.jpg,https://live.staticflickr.com/33/47366133_8c535d95dc_o.jpg"></div>
-<div data-t="4170" style="--y:14337;--h:606;--c:4;--r:2"><img data-src="https://live.staticflickr.com/29/47366136_a3d7dccfcd_z.jpg,https://live.staticflickr.com/29/47366136_a3d7dccfcd_o.jpg"></div>
-<div data-t="4171" style="--y:14947;--h:599;--c:5;--r:2"><img data-src="https://live.staticflickr.com/27/47366142_bed94b6f69_z.jpg,https://live.staticflickr.com/27/47366142_bed94b6f69_o.jpg"></div>
-<div data-t="4172" style="--y:15550;--h:617;--c:6;--r:2"><img data-src="https://live.staticflickr.com/29/47366146_4adea10a87_z.jpg,https://live.staticflickr.com/29/47366146_4adea10a87_o.jpg"></div>
-<div data-t="4173" style="--y:16171;--h:599;--c:7;--r:2"><img data-src="https://live.staticflickr.com/33/47366149_43c8ac950d_z.jpg,https://live.staticflickr.com/33/47366149_43c8ac950d_o.jpg"></div>
-<div data-t="4174" style="--y:16774;--h:581;--c:8;--r:2"><img data-src="https://live.staticflickr.com/28/47366154_abe88b6e81_z.jpg,https://live.staticflickr.com/28/47366154_abe88b6e81_o.jpg"></div>
+<div data-t="4146" style="--x:0;--y:0;--w:193;--h:292;--c:0;--r:0"><img src="https://live.staticflickr.com/28/47366000_d086c99cd0_n.jpg" srcset="https://live.staticflickr.com/28/47366000_d086c99cd0_n.jpg 1x,https://live.staticflickr.com/28/47366000_d086c99cd0_z.jpg 2x" decoding="async"></div>
+<div data-t="4147" style="--x:197;--y:0;--w:193;--h:292;--c:1;--r:0"><img src="https://live.staticflickr.com/25/47366002_6f540e5ca7_n.jpg" srcset="https://live.staticflickr.com/25/47366002_6f540e5ca7_n.jpg 1x,https://live.staticflickr.com/25/47366002_6f540e5ca7_z.jpg 2x" decoding="async"></div>
+<div data-t="4148" style="--x:0;--y:296;--w:194;--h:290;--c:2;--r:0"><img src="https://live.staticflickr.com/30/47366009_93441bce9a_n.jpg" srcset="https://live.staticflickr.com/30/47366009_93441bce9a_n.jpg 1x,https://live.staticflickr.com/30/47366009_93441bce9a_z.jpg 2x" decoding="async"></div>
+<div data-t="4149" style="--x:198;--y:296;--w:192;--h:290;--c:3;--r:0"><img src="https://live.staticflickr.com/28/47366011_735c596eca_n.jpg" srcset="https://live.staticflickr.com/28/47366011_735c596eca_n.jpg 1x,https://live.staticflickr.com/28/47366011_735c596eca_z.jpg 2x" decoding="async"></div>
+<div data-t="4150" style="--x:0;--y:590;--w:195;--h:291;--c:4;--r:0"><img src="https://live.staticflickr.com/32/47366015_cb0365e177_n.jpg" srcset="https://live.staticflickr.com/32/47366015_cb0365e177_n.jpg 1x,https://live.staticflickr.com/32/47366015_cb0365e177_z.jpg 2x" decoding="async"></div>
+<div data-t="4151" style="--x:199;--y:590;--w:191;--h:291;--c:5;--r:0"><img src="https://live.staticflickr.com/30/47366027_f6d57c5932_n.jpg" srcset="https://live.staticflickr.com/30/47366027_f6d57c5932_n.jpg 1x,https://live.staticflickr.com/30/47366027_f6d57c5932_z.jpg 2x" decoding="async"></div>
+<div data-t="4152" style="--x:0;--y:885;--w:192;--h:287;--c:6;--r:0"><img src="https://live.staticflickr.com/25/47366031_50dfcbd977_n.jpg" srcset="https://live.staticflickr.com/25/47366031_50dfcbd977_n.jpg 1x,https://live.staticflickr.com/25/47366031_50dfcbd977_z.jpg 2x" decoding="async"></div>
+<div data-t="4153" style="--x:196;--y:885;--w:194;--h:287;--c:7;--r:0"><img src="https://live.staticflickr.com/24/47366035_4c252c210f_n.jpg" srcset="https://live.staticflickr.com/24/47366035_4c252c210f_n.jpg 1x,https://live.staticflickr.com/24/47366035_4c252c210f_z.jpg 2x" decoding="async"></div>
+<div data-t="4154" style="--x:0;--y:1176;--w:189;--h:294;--c:8;--r:0"><img data-src="https://live.staticflickr.com/24/47366045_ede5a99785_n.jpg,https://live.staticflickr.com/24/47366045_ede5a99785_z.jpg"></div>
+<div data-t="4155" style="--x:193;--y:1176;--w:197;--h:294;--c:9;--r:0"><img data-src="https://live.staticflickr.com/27/47366052_70cb3d68d2_n.jpg,https://live.staticflickr.com/27/47366052_70cb3d68d2_z.jpg"></div>
+<div data-t="4156" style="--x:0;--y:1474;--w:198;--h:298;--c:0;--r:1"><img data-src="https://live.staticflickr.com/25/47366054_090749985a_n.jpg,https://live.staticflickr.com/25/47366054_090749985a_z.jpg"></div>
+<div data-t="4157" style="--x:202;--y:1474;--w:188;--h:298;--c:1;--r:1"><img data-src="https://live.staticflickr.com/33/47366067_e3f8aaa295_n.jpg,https://live.staticflickr.com/33/47366067_e3f8aaa295_z.jpg"></div>
+<div data-t="4158" style="--x:0;--y:1776;--w:193;--h:306;--c:2;--r:1"><img data-src="https://live.staticflickr.com/33/47366077_633e997f21_n.jpg,https://live.staticflickr.com/33/47366077_633e997f21_z.jpg"></div>
+<div data-t="4159" style="--x:197;--y:1776;--w:193;--h:306;--c:3;--r:1"><img data-src="https://live.staticflickr.com/28/47366081_c8980403c2_n.jpg,https://live.staticflickr.com/28/47366081_c8980403c2_z.jpg"></div>
+<div data-t="4160" style="--x:0;--y:2086;--w:190;--h:296;--c:4;--r:1"><img data-src="https://live.staticflickr.com/29/47366085_f7ab80c69d_n.jpg,https://live.staticflickr.com/29/47366085_f7ab80c69d_z.jpg"></div>
+<div data-t="4161" style="--x:194;--y:2086;--w:196;--h:296;--c:5;--r:1"><img data-src="https://live.staticflickr.com/30/47366099_045485b646_n.jpg,https://live.staticflickr.com/30/47366099_045485b646_z.jpg"></div>
+<div data-t="4162" style="--x:0;--y:2386;--w:193;--h:296;--c:6;--r:1"><img data-src="https://live.staticflickr.com/32/47366103_23af4e93ce_n.jpg,https://live.staticflickr.com/32/47366103_23af4e93ce_z.jpg"></div>
+<div data-t="4163" style="--x:197;--y:2386;--w:193;--h:296;--c:7;--r:1"><img data-src="https://live.staticflickr.com/25/47366110_4573adfb54_n.jpg,https://live.staticflickr.com/25/47366110_4573adfb54_z.jpg"></div>
+<div data-t="4164" style="--x:0;--y:2686;--w:193;--h:291;--c:8;--r:1"><img data-src="https://live.staticflickr.com/30/47366113_1d71e3149e_n.jpg,https://live.staticflickr.com/30/47366113_1d71e3149e_z.jpg"></div>
+<div data-t="4165" style="--x:197;--y:2686;--w:193;--h:291;--c:9;--r:1"><img data-src="https://live.staticflickr.com/28/47366117_4b3285c647_n.jpg,https://live.staticflickr.com/28/47366117_4b3285c647_z.jpg"></div>
+<div data-t="4166" style="--x:0;--y:2981;--w:193;--h:289;--c:0;--r:2"><img data-src="https://live.staticflickr.com/32/47366120_b80a9692c7_n.jpg,https://live.staticflickr.com/32/47366120_b80a9692c7_z.jpg"></div>
+<div data-t="4167" style="--x:197;--y:2981;--w:193;--h:289;--c:1;--r:2"><img data-src="https://live.staticflickr.com/32/47366123_b06cb01a79_n.jpg,https://live.staticflickr.com/32/47366123_b06cb01a79_z.jpg"></div>
+<div data-t="4168" style="--x:0;--y:3274;--w:194;--h:294;--c:2;--r:2"><img data-src="https://live.staticflickr.com/31/47366132_a73f3f6b63_n.jpg,https://live.staticflickr.com/31/47366132_a73f3f6b63_z.jpg"></div>
+<div data-t="4169" style="--x:198;--y:3274;--w:192;--h:294;--c:3;--r:2"><img data-src="https://live.staticflickr.com/33/47366133_8c535d95dc_n.jpg,https://live.staticflickr.com/33/47366133_8c535d95dc_z.jpg"></div>
+<div data-t="4170" style="--x:0;--y:3572;--w:192;--h:298;--c:4;--r:2"><img data-src="https://live.staticflickr.com/29/47366136_a3d7dccfcd_n.jpg,https://live.staticflickr.com/29/47366136_a3d7dccfcd_z.jpg"></div>
+<div data-t="4171" style="--x:196;--y:3572;--w:194;--h:298;--c:5;--r:2"><img data-src="https://live.staticflickr.com/27/47366142_bed94b6f69_n.jpg,https://live.staticflickr.com/27/47366142_bed94b6f69_z.jpg"></div>
+<div data-t="4172" style="--x:0;--y:3874;--w:190;--h:301;--c:6;--r:2"><img data-src="https://live.staticflickr.com/29/47366146_4adea10a87_n.jpg,https://live.staticflickr.com/29/47366146_4adea10a87_z.jpg"></div>
+<div data-t="4173" style="--x:194;--y:3874;--w:196;--h:301;--c:7;--r:2"><img data-src="https://live.staticflickr.com/33/47366149_43c8ac950d_n.jpg,https://live.staticflickr.com/33/47366149_43c8ac950d_z.jpg"></div>
+<div data-t="4174" style="--x:0;--y:4179;--w:390;--h:581;--c:8;--r:2"><img data-src="https://live.staticflickr.com/28/47366154_abe88b6e81_z.jpg,https://live.staticflickr.com/28/47366154_abe88b6e81_o.jpg"></div>
 </div>
 
 <script>

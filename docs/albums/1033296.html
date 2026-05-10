@@ -13,7 +13,7 @@
 <title>1999-12-05 風城茶會</title>
 <link rel="preconnect" href="https://live.staticflickr.com" crossorigin>
 <link rel="preload" as="image" href="../sprites/1033296-16.png">
-<style>*{margin:0;padding:0;box-sizing:border-box}
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--s:calc(100vw / 390px)}
 body{
   background:#000;
@@ -33,23 +33,23 @@ p{
 .g{
   position:relative;
   width:100vw;
-  height:calc(11118*var(--s)*1px);
+  height:calc(3213*var(--s)*1px);
 }
 .g>div{
   position:absolute;
-  left:0;
-  width:100vw;
+  left:calc(var(--x)*var(--s)*1px);
+  width:calc(var(--w)*var(--s)*1px);
   top:calc(var(--y)*var(--s)*1px);
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/1033296-16.png);
   background-repeat:no-repeat;
-  background-size:calc(10*100vw) calc(2*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);
+  background-size:calc(10*var(--w)*var(--s)*1px) calc(2*var(--h)*var(--s)*1px);
+  background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
 .g>div img{
   display:block;
@@ -63,7 +63,9 @@ p{
   left:16px;
   top:16px;
   z-index:2;
-  padding:10px 16px;
+  padding:6px 10px;
+  max-width:calc(100% - 32px);
+  overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
   border-radius:4px;
@@ -80,25 +82,25 @@ p{
 <h1>1999-12-05 風城茶會</h1>
 <p>19張照片</p>
 <div class="g">
-<div data-t="3100" style="--y:0;--h:587;--c:0;--r:0"><img src="https://live.staticflickr.com/28/47398259_434674f80f_z.jpg" srcset="https://live.staticflickr.com/28/47398259_434674f80f_z.jpg 1x,https://live.staticflickr.com/28/47398259_434674f80f_o.jpg 2x" decoding="async"></div>
-<div data-t="3101" style="--y:591;--h:580;--c:1;--r:0"><img src="https://live.staticflickr.com/27/47398266_ffce03f07b_z.jpg" srcset="https://live.staticflickr.com/27/47398266_ffce03f07b_z.jpg 1x,https://live.staticflickr.com/27/47398266_b5063093e5_o.jpg 2x" decoding="async"></div>
-<div data-t="3102" style="--y:1175;--h:583;--c:2;--r:0"><img data-src="https://live.staticflickr.com/25/47398270_d70ec4c97e_z.jpg,https://live.staticflickr.com/25/47398270_71febae1bb_o.jpg"></div>
-<div data-t="3103" style="--y:1762;--h:585;--c:3;--r:0"><img data-src="https://live.staticflickr.com/29/47398276_2b8d3ebdcc_z.jpg,https://live.staticflickr.com/29/47398276_e7e9fd607d_o.jpg"></div>
-<div data-t="3104" style="--y:2351;--h:582;--c:4;--r:0"><img data-src="https://live.staticflickr.com/27/47398284_04e684e305_z.jpg,https://live.staticflickr.com/27/47398284_04e684e305_o.jpg"></div>
-<div data-t="3105" style="--y:2937;--h:586;--c:5;--r:0"><img data-src="https://live.staticflickr.com/24/47398291_6ceb7b4a85_z.jpg,https://live.staticflickr.com/24/47398291_eee977755e_o.jpg"></div>
-<div data-t="3106" style="--y:3527;--h:583;--c:6;--r:0"><img data-src="https://live.staticflickr.com/28/47398298_a7e6bc973f_z.jpg,https://live.staticflickr.com/28/47398298_5b8115b7d0_o.jpg"></div>
-<div data-t="3107" style="--y:4114;--h:585;--c:7;--r:0"><img data-src="https://live.staticflickr.com/26/47398304_d77e6a294a_z.jpg,https://live.staticflickr.com/26/47398304_d77e6a294a_o.jpg"></div>
-<div data-t="3108" style="--y:4703;--h:581;--c:8;--r:0"><img data-src="https://live.staticflickr.com/29/47398310_521a549454_z.jpg,https://live.staticflickr.com/29/47398310_c5444bc305_o.jpg"></div>
-<div data-t="3109" style="--y:5288;--h:586;--c:9;--r:0"><img data-src="https://live.staticflickr.com/30/47398315_a766c53470_z.jpg,https://live.staticflickr.com/30/47398315_361be1ae0b_o.jpg"></div>
-<div data-t="3110" style="--y:5878;--h:586;--c:0;--r:1"><img data-src="https://live.staticflickr.com/28/47398322_025d6ee053_z.jpg,https://live.staticflickr.com/28/47398322_025d6ee053_o.jpg"></div>
-<div data-t="3111" style="--y:6468;--h:591;--c:1;--r:1"><img data-src="https://live.staticflickr.com/33/47398333_20f692782a_z.jpg,https://live.staticflickr.com/33/47398333_8158c59f67_o.jpg"></div>
-<div data-t="3112" style="--y:7063;--h:583;--c:2;--r:1"><img data-src="https://live.staticflickr.com/28/47398346_5e5c4a2465_z.jpg,https://live.staticflickr.com/28/47398346_9b825eaeee_o.jpg"></div>
-<div data-t="3113" style="--y:7650;--h:520;--c:3;--r:1"><img data-src="https://live.staticflickr.com/24/47398356_419f659ec1_z.jpg,https://live.staticflickr.com/24/47398356_cf39be8e51_o.jpg"></div>
-<div data-t="3114" style="--y:8174;--h:583;--c:4;--r:1"><img data-src="https://live.staticflickr.com/33/47398359_3b09066108_z.jpg,https://live.staticflickr.com/33/47398359_55417d2650_o.jpg"></div>
-<div data-t="3115" style="--y:8761;--h:584;--c:5;--r:1"><img data-src="https://live.staticflickr.com/27/47398363_e11d09c0b3_z.jpg,https://live.staticflickr.com/27/47398363_dd6f9ce1b6_o.jpg"></div>
-<div data-t="3116" style="--y:9349;--h:589;--c:6;--r:1"><img data-src="https://live.staticflickr.com/24/47398367_1055c61231_z.jpg,https://live.staticflickr.com/24/47398367_09680717f4_o.jpg"></div>
-<div data-t="3117" style="--y:9942;--h:582;--c:7;--r:1"><img data-src="https://live.staticflickr.com/25/47398371_fd15dd3901_z.jpg,https://live.staticflickr.com/25/47398371_0d63113ffd_o.jpg"></div>
-<div data-t="3118" style="--y:10528;--h:590;--c:8;--r:1"><img data-src="https://live.staticflickr.com/26/47398374_01e1bf30e9_z.jpg,https://live.staticflickr.com/26/47398374_bde6c9881a_o.jpg"></div>
+<div data-t="3100" style="--x:0;--y:0;--w:192;--h:289;--c:0;--r:0"><img src="https://live.staticflickr.com/28/47398259_434674f80f_n.jpg" srcset="https://live.staticflickr.com/28/47398259_434674f80f_n.jpg 1x,https://live.staticflickr.com/28/47398259_434674f80f_z.jpg 2x" decoding="async"></div>
+<div data-t="3101" style="--x:196;--y:0;--w:194;--h:289;--c:1;--r:0"><img src="https://live.staticflickr.com/27/47398266_ffce03f07b_n.jpg" srcset="https://live.staticflickr.com/27/47398266_ffce03f07b_n.jpg 1x,https://live.staticflickr.com/27/47398266_ffce03f07b_z.jpg 2x" decoding="async"></div>
+<div data-t="3102" style="--x:0;--y:293;--w:193;--h:289;--c:2;--r:0"><img src="https://live.staticflickr.com/25/47398270_d70ec4c97e_n.jpg" srcset="https://live.staticflickr.com/25/47398270_d70ec4c97e_n.jpg 1x,https://live.staticflickr.com/25/47398270_d70ec4c97e_z.jpg 2x" decoding="async"></div>
+<div data-t="3103" style="--x:197;--y:293;--w:193;--h:289;--c:3;--r:0"><img src="https://live.staticflickr.com/29/47398276_2b8d3ebdcc_n.jpg" srcset="https://live.staticflickr.com/29/47398276_2b8d3ebdcc_n.jpg 1x,https://live.staticflickr.com/29/47398276_2b8d3ebdcc_z.jpg 2x" decoding="async"></div>
+<div data-t="3104" style="--x:0;--y:586;--w:194;--h:289;--c:4;--r:0"><img src="https://live.staticflickr.com/27/47398284_04e684e305_n.jpg" srcset="https://live.staticflickr.com/27/47398284_04e684e305_n.jpg 1x,https://live.staticflickr.com/27/47398284_04e684e305_z.jpg 2x" decoding="async"></div>
+<div data-t="3105" style="--x:198;--y:586;--w:192;--h:289;--c:5;--r:0"><img src="https://live.staticflickr.com/24/47398291_6ceb7b4a85_n.jpg" srcset="https://live.staticflickr.com/24/47398291_6ceb7b4a85_n.jpg 1x,https://live.staticflickr.com/24/47398291_6ceb7b4a85_z.jpg 2x" decoding="async"></div>
+<div data-t="3106" style="--x:0;--y:879;--w:193;--h:289;--c:6;--r:0"><img src="https://live.staticflickr.com/28/47398298_a7e6bc973f_n.jpg" srcset="https://live.staticflickr.com/28/47398298_a7e6bc973f_n.jpg 1x,https://live.staticflickr.com/28/47398298_a7e6bc973f_z.jpg 2x" decoding="async"></div>
+<div data-t="3107" style="--x:197;--y:879;--w:193;--h:289;--c:7;--r:0"><img src="https://live.staticflickr.com/26/47398304_d77e6a294a_n.jpg" srcset="https://live.staticflickr.com/26/47398304_d77e6a294a_n.jpg 1x,https://live.staticflickr.com/26/47398304_d77e6a294a_z.jpg 2x" decoding="async"></div>
+<div data-t="3108" style="--x:0;--y:1172;--w:194;--h:289;--c:8;--r:0"><img data-src="https://live.staticflickr.com/29/47398310_521a549454_n.jpg,https://live.staticflickr.com/29/47398310_521a549454_z.jpg"></div>
+<div data-t="3109" style="--x:198;--y:1172;--w:192;--h:289;--c:9;--r:0"><img data-src="https://live.staticflickr.com/30/47398315_a766c53470_n.jpg,https://live.staticflickr.com/30/47398315_a766c53470_z.jpg"></div>
+<div data-t="3110" style="--x:0;--y:1465;--w:194;--h:291;--c:0;--r:1"><img data-src="https://live.staticflickr.com/28/47398322_025d6ee053_n.jpg,https://live.staticflickr.com/28/47398322_025d6ee053_z.jpg"></div>
+<div data-t="3111" style="--x:198;--y:1465;--w:192;--h:291;--c:1;--r:1"><img data-src="https://live.staticflickr.com/33/47398333_20f692782a_n.jpg,https://live.staticflickr.com/33/47398333_20f692782a_z.jpg"></div>
+<div data-t="3112" style="--x:0;--y:1760;--w:182;--h:272;--c:2;--r:1"><img data-src="https://live.staticflickr.com/28/47398346_5e5c4a2465_n.jpg,https://live.staticflickr.com/28/47398346_5e5c4a2465_z.jpg"></div>
+<div data-t="3113" style="--x:186;--y:1760;--w:204;--h:272;--c:3;--r:1"><img data-src="https://live.staticflickr.com/24/47398356_419f659ec1_n.jpg,https://live.staticflickr.com/24/47398356_419f659ec1_z.jpg"></div>
+<div data-t="3114" style="--x:0;--y:2036;--w:193;--h:289;--c:4;--r:1"><img data-src="https://live.staticflickr.com/33/47398359_3b09066108_n.jpg,https://live.staticflickr.com/33/47398359_3b09066108_z.jpg"></div>
+<div data-t="3115" style="--x:197;--y:2036;--w:193;--h:289;--c:5;--r:1"><img data-src="https://live.staticflickr.com/27/47398363_e11d09c0b3_n.jpg,https://live.staticflickr.com/27/47398363_e11d09c0b3_z.jpg"></div>
+<div data-t="3116" style="--x:0;--y:2329;--w:192;--h:290;--c:6;--r:1"><img data-src="https://live.staticflickr.com/24/47398367_1055c61231_n.jpg,https://live.staticflickr.com/24/47398367_1055c61231_z.jpg"></div>
+<div data-t="3117" style="--x:196;--y:2329;--w:194;--h:290;--c:7;--r:1"><img data-src="https://live.staticflickr.com/25/47398371_fd15dd3901_n.jpg,https://live.staticflickr.com/25/47398371_fd15dd3901_z.jpg"></div>
+<div data-t="3118" style="--x:0;--y:2623;--w:390;--h:590;--c:8;--r:1"><img data-src="https://live.staticflickr.com/26/47398374_01e1bf30e9_z.jpg,https://live.staticflickr.com/26/47398374_bde6c9881a_o.jpg"></div>
 </div>
 
 <script>

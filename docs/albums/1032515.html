@@ -13,7 +13,7 @@
 <title>2000-03-24 中央大學</title>
 <link rel="preconnect" href="https://live.staticflickr.com" crossorigin>
 <link rel="preload" as="image" href="../sprites/1032515-16.png">
-<style>*{margin:0;padding:0;box-sizing:border-box}
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--s:calc(100vw / 390px)}
 body{
   background:#000;
@@ -33,23 +33,23 @@ p{
 .g{
   position:relative;
   width:100vw;
-  height:calc(7648*var(--s)*1px);
+  height:calc(2299*var(--s)*1px);
 }
 .g>div{
   position:absolute;
-  left:0;
-  width:100vw;
+  left:calc(var(--x)*var(--s)*1px);
+  width:calc(var(--w)*var(--s)*1px);
   top:calc(var(--y)*var(--s)*1px);
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/1032515-16.png);
   background-repeat:no-repeat;
-  background-size:calc(10*100vw) calc(2*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);
+  background-size:calc(10*var(--w)*var(--s)*1px) calc(2*var(--h)*var(--s)*1px);
+  background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
 .g>div img{
   display:block;
@@ -63,7 +63,9 @@ p{
   left:16px;
   top:16px;
   z-index:2;
-  padding:10px 16px;
+  padding:6px 10px;
+  max-width:calc(100% - 32px);
+  overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
   border-radius:4px;
@@ -80,20 +82,20 @@ p{
 <h1>2000-03-24 中央大學</h1>
 <p>14張照片</p>
 <div class="g">
-<div data-t="4132" style="--y:0;--h:595;--c:0;--r:0"><img src="https://live.staticflickr.com/30/47367029_3f234e2cde_o.jpg" srcset="https://live.staticflickr.com/30/47367029_3f234e2cde_o.jpg 1x,https://live.staticflickr.com/30/47367029_3f234e2cde_o.jpg 2x" decoding="async"></div>
-<div data-t="4133" style="--y:599;--h:601;--c:1;--r:0"><img src="https://live.staticflickr.com/30/47367036_9d017969d0_o.jpg" srcset="https://live.staticflickr.com/30/47367036_9d017969d0_o.jpg 1x,https://live.staticflickr.com/30/47367036_9d017969d0_o.jpg 2x" decoding="async"></div>
-<div data-t="4134" style="--y:1204;--h:553;--c:2;--r:0"><img data-src="https://live.staticflickr.com/25/47367043_00ff08c3a0_o.jpg,https://live.staticflickr.com/25/47367043_00ff08c3a0_o.jpg"></div>
-<div data-t="4135" style="--y:1761;--h:594;--c:3;--r:0"><img data-src="https://live.staticflickr.com/27/47367047_838306fd26_o.jpg,https://live.staticflickr.com/27/47367047_838306fd26_o.jpg"></div>
-<div data-t="4136" style="--y:2359;--h:604;--c:4;--r:0"><img data-src="https://live.staticflickr.com/28/47367055_39d977b85b_o.jpg,https://live.staticflickr.com/28/47367055_39d977b85b_o.jpg"></div>
-<div data-t="4137" style="--y:2967;--h:596;--c:5;--r:0"><img data-src="https://live.staticflickr.com/24/47367058_ce45b8c061_o.jpg,https://live.staticflickr.com/24/47367058_ce45b8c061_o.jpg"></div>
-<div data-t="4138" style="--y:3567;--h:601;--c:6;--r:0"><img data-src="https://live.staticflickr.com/30/47367065_5847db2042_o.jpg,https://live.staticflickr.com/30/47367065_5847db2042_o.jpg"></div>
-<div data-t="4139" style="--y:4172;--h:584;--c:7;--r:0"><img data-src="https://live.staticflickr.com/27/47367068_9bf387c67b_o.jpg,https://live.staticflickr.com/27/47367068_9bf387c67b_o.jpg"></div>
-<div data-t="4140" style="--y:4760;--h:586;--c:8;--r:0"><img data-src="https://live.staticflickr.com/29/47367075_9cc939e837_o.jpg,https://live.staticflickr.com/29/47367075_9cc939e837_o.jpg"></div>
-<div data-t="4141" style="--y:5350;--h:587;--c:9;--r:0"><img data-src="https://live.staticflickr.com/31/47367077_4007d9e8e2_o.jpg,https://live.staticflickr.com/31/47367077_4007d9e8e2_o.jpg"></div>
-<div data-t="4142" style="--y:5941;--h:586;--c:0;--r:1"><img data-src="https://live.staticflickr.com/25/47367079_b0931660fe_o.jpg,https://live.staticflickr.com/25/47367079_b0931660fe_o.jpg"></div>
-<div data-t="4143" style="--y:6531;--h:588;--c:1;--r:1"><img data-src="https://live.staticflickr.com/24/47367081_711a9fd2f0_o.jpg,https://live.staticflickr.com/24/47367081_711a9fd2f0_o.jpg"></div>
-<div data-t="4144" style="--y:7123;--h:259;--c:2;--r:1"><img data-src="https://live.staticflickr.com/32/47367084_265d96e92e.jpg,https://live.staticflickr.com/32/47367084_265d96e92e_o.jpg"></div>
-<div data-t="4145" style="--y:7386;--h:262;--c:3;--r:1"><img data-src="https://live.staticflickr.com/26/47367089_6ab5893fb8.jpg,https://live.staticflickr.com/26/47367089_6ab5893fb8_o.jpg"></div>
+<div data-t="4132" style="--x:0;--y:0;--w:194;--h:296;--c:0;--r:0"><img src="https://live.staticflickr.com/30/47367029_3f234e2cde_n.jpg" srcset="https://live.staticflickr.com/30/47367029_3f234e2cde_n.jpg 1x,https://live.staticflickr.com/30/47367029_3f234e2cde_o.jpg 2x" decoding="async"></div>
+<div data-t="4133" style="--x:198;--y:0;--w:192;--h:296;--c:1;--r:0"><img src="https://live.staticflickr.com/30/47367036_9d017969d0_n.jpg" srcset="https://live.staticflickr.com/30/47367036_9d017969d0_n.jpg 1x,https://live.staticflickr.com/30/47367036_9d017969d0_o.jpg 2x" decoding="async"></div>
+<div data-t="4134" style="--x:0;--y:300;--w:200;--h:283;--c:2;--r:0"><img src="https://live.staticflickr.com/25/47367043_00ff08c3a0_n.jpg" srcset="https://live.staticflickr.com/25/47367043_00ff08c3a0_n.jpg 1x,https://live.staticflickr.com/25/47367043_00ff08c3a0_o.jpg 2x" decoding="async"></div>
+<div data-t="4135" style="--x:204;--y:300;--w:186;--h:283;--c:3;--r:0"><img src="https://live.staticflickr.com/27/47367047_838306fd26_n.jpg" srcset="https://live.staticflickr.com/27/47367047_838306fd26_n.jpg 1x,https://live.staticflickr.com/27/47367047_838306fd26_o.jpg 2x" decoding="async"></div>
+<div data-t="4136" style="--x:0;--y:587;--w:192;--h:297;--c:4;--r:0"><img src="https://live.staticflickr.com/28/47367055_39d977b85b_n.jpg" srcset="https://live.staticflickr.com/28/47367055_39d977b85b_n.jpg 1x,https://live.staticflickr.com/28/47367055_39d977b85b_o.jpg 2x" decoding="async"></div>
+<div data-t="4137" style="--x:196;--y:587;--w:194;--h:297;--c:5;--r:0"><img src="https://live.staticflickr.com/24/47367058_ce45b8c061_n.jpg" srcset="https://live.staticflickr.com/24/47367058_ce45b8c061_n.jpg 1x,https://live.staticflickr.com/24/47367058_ce45b8c061_o.jpg 2x" decoding="async"></div>
+<div data-t="4138" style="--x:0;--y:888;--w:190;--h:293;--c:6;--r:0"><img src="https://live.staticflickr.com/30/47367065_5847db2042_n.jpg" srcset="https://live.staticflickr.com/30/47367065_5847db2042_n.jpg 1x,https://live.staticflickr.com/30/47367065_5847db2042_o.jpg 2x" decoding="async"></div>
+<div data-t="4139" style="--x:194;--y:888;--w:196;--h:293;--c:7;--r:0"><img src="https://live.staticflickr.com/27/47367068_9bf387c67b_n.jpg" srcset="https://live.staticflickr.com/27/47367068_9bf387c67b_n.jpg 1x,https://live.staticflickr.com/27/47367068_9bf387c67b_o.jpg 2x" decoding="async"></div>
+<div data-t="4140" style="--x:0;--y:1185;--w:193;--h:290;--c:8;--r:0"><img data-src="https://live.staticflickr.com/29/47367075_9cc939e837_n.jpg,https://live.staticflickr.com/29/47367075_9cc939e837_o.jpg"></div>
+<div data-t="4141" style="--x:197;--y:1185;--w:193;--h:290;--c:9;--r:0"><img data-src="https://live.staticflickr.com/31/47367077_4007d9e8e2_n.jpg,https://live.staticflickr.com/31/47367077_4007d9e8e2_o.jpg"></div>
+<div data-t="4142" style="--x:0;--y:1479;--w:194;--h:291;--c:0;--r:1"><img data-src="https://live.staticflickr.com/25/47367079_b0931660fe_n.jpg,https://live.staticflickr.com/25/47367079_b0931660fe_o.jpg"></div>
+<div data-t="4143" style="--x:198;--y:1479;--w:192;--h:291;--c:1;--r:1"><img data-src="https://live.staticflickr.com/24/47367081_711a9fd2f0_n.jpg,https://live.staticflickr.com/24/47367081_711a9fd2f0_o.jpg"></div>
+<div data-t="4144" style="--x:0;--y:1774;--w:390;--h:259;--c:2;--r:1"><img data-src="https://live.staticflickr.com/32/47367084_265d96e92e.jpg,https://live.staticflickr.com/32/47367084_265d96e92e_o.jpg"></div>
+<div data-t="4145" style="--x:0;--y:2037;--w:390;--h:262;--c:3;--r:1"><img data-src="https://live.staticflickr.com/26/47367089_6ab5893fb8.jpg,https://live.staticflickr.com/26/47367089_6ab5893fb8_o.jpg"></div>
 </div>
 
 <script>
