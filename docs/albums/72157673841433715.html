@@ -30,10 +30,19 @@ h1{
 p{
   padding:0 16px 16px;
 }
+h2{
+  position:sticky;
+  top:0;
+  z-index:3;
+  background:#222;
+  padding:8px 16px;
+  font-size:14px;
+  font-weight:400;
+}
 .g{
   position:relative;
   width:100vw;
-  height:calc(13028*var(--s)*1px);
+  height:calc(var(--gh)*var(--s)*1px);
 }
 .g>div{
   position:absolute;
@@ -45,11 +54,19 @@ p{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
+  scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/72157673841433715-16.png);
   background-repeat:no-repeat;
   background-size:calc(10*var(--w)*var(--s)*1px) calc(6*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
+}
+.g>div.s{
+  left:0;
+  width:100vw;
+  height:calc(100vw * var(--h) / var(--w));
+  z-index:100;
+  transition:left .3s,width .3s,height .3s;
 }
 .g>div img{
   display:block;
@@ -64,7 +81,7 @@ p{
   top:16px;
   z-index:2;
   padding:6px 10px;
-  max-width:calc(100% - 32px);
+  max-width:min(calc(100% - 32px), 480px);
   overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
@@ -81,7 +98,7 @@ p{
 <body>
 <h1>2016-04-24 うたの☆プリンスさまっ♪</h1>
 <p>53張照片</p>
-<div class="g">
+<div class="g" style="--gh:13028">
 <div data-t="DSC_2151" style="--x:0;--y:0;--w:390;--h:260;--c:0;--r:0"><img src="https://live.staticflickr.com/8051/29585095501_58cfbf05b3.jpg" srcset="https://live.staticflickr.com/8051/29585095501_58cfbf05b3.jpg 1x,https://live.staticflickr.com/8051/29585095501_58cfbf05b3_c.jpg 2x" decoding="async"></div>
 <div data-t="DSC_2154" style="--x:0;--y:264;--w:390;--h:260;--c:1;--r:0"><img src="https://live.staticflickr.com/8414/29375603670_ee89039024.jpg" srcset="https://live.staticflickr.com/8414/29375603670_ee89039024.jpg 1x,https://live.staticflickr.com/8414/29375603670_ee89039024_c.jpg 2x" decoding="async"></div>
 <div data-t="DSC_2179" style="--x:0;--y:528;--w:390;--h:585;--c:2;--r:0"><img src="https://live.staticflickr.com/8480/29041782593_5a4289b783_z.jpg" srcset="https://live.staticflickr.com/8480/29041782593_5a4289b783_z.jpg 1x,https://live.staticflickr.com/8480/29041782593_ed00c2d71a_h.jpg 2x" decoding="async"></div>
@@ -142,7 +159,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=702?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
+document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>
 </body>
 </html>

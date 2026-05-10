@@ -30,10 +30,19 @@ h1{
 p{
   padding:0 16px 16px;
 }
+h2{
+  position:sticky;
+  top:0;
+  z-index:3;
+  background:#222;
+  padding:8px 16px;
+  font-size:14px;
+  font-weight:400;
+}
 .g{
   position:relative;
   width:100vw;
-  height:calc(18644*var(--s)*1px);
+  height:calc(var(--gh)*var(--s)*1px);
 }
 .g>div{
   position:absolute;
@@ -45,11 +54,19 @@ p{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
+  scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/724025-16.png);
   background-repeat:no-repeat;
   background-size:calc(10*var(--w)*var(--s)*1px) calc(15*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
+}
+.g>div.s{
+  left:0;
+  width:100vw;
+  height:calc(100vw * var(--h) / var(--w));
+  z-index:100;
+  transition:left .3s,width .3s,height .3s;
 }
 .g>div img{
   display:block;
@@ -64,7 +81,7 @@ p{
   top:16px;
   z-index:2;
   padding:6px 10px;
-  max-width:calc(100% - 32px);
+  max-width:min(calc(100% - 32px), 480px);
   overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
@@ -81,7 +98,7 @@ p{
 <body>
 <h1>2003-03-08 沙灘COSPLAY外拍板聚</h1>
 <p>144張照片</p>
-<div class="g">
+<div class="g" style="--gh:18644">
 <div data-t="25450" style="--x:0;--y:0;--w:193;--h:257;--c:0;--r:0"><img src="https://live.staticflickr.com/22/32549565_c8e8794c03_n.jpg" srcset="https://live.staticflickr.com/22/32549565_c8e8794c03_n.jpg 1x,https://live.staticflickr.com/22/32549565_c8e8794c03_z.jpg 2x" decoding="async"></div>
 <div data-t="25451" style="--x:197;--y:0;--w:193;--h:257;--c:1;--r:0"><img src="https://live.staticflickr.com/22/32549573_ade7281ad8_n.jpg" srcset="https://live.staticflickr.com/22/32549573_ade7281ad8_n.jpg 1x,https://live.staticflickr.com/22/32549573_ade7281ad8_z.jpg 2x" decoding="async"></div>
 <div data-t="25452" style="--x:0;--y:261;--w:193;--h:257;--c:2;--r:0"><img src="https://live.staticflickr.com/21/32549578_2c3bddb14c_n.jpg" srcset="https://live.staticflickr.com/21/32549578_2c3bddb14c_n.jpg 1x,https://live.staticflickr.com/21/32549578_2c3bddb14c_z.jpg 2x" decoding="async"></div>
@@ -233,7 +250,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=702?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
+document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>
 </body>
 </html>

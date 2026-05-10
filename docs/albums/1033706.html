@@ -61,11 +61,12 @@ h2{
   background-size:calc(10*var(--w)*var(--s)*1px) calc(2*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
-.g>div.x{
+.g>div.s{
   left:0;
   width:100vw;
   height:calc(100vw * var(--h) / var(--w));
   z-index:100;
+  transition:left .3s,width .3s,height .3s;
 }
 .g>div img{
   display:block;
@@ -80,7 +81,7 @@ h2{
   top:16px;
   z-index:2;
   padding:6px 10px;
-  max-width:calc(100% - 32px);
+  max-width:min(calc(100% - 32px), 480px);
   overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
@@ -116,7 +117,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=702?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');const x=document.querySelector('.g>div.x');if(x&&(!d||d===x)){x.classList.remove('x');return}if(!d)return;if(x)x.classList.remove('x');d.classList.add('x');d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
+document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>
 </body>
 </html>

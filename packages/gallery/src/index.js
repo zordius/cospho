@@ -198,6 +198,7 @@ h2{
   width:100vw;
   height:calc(100vw * var(--h) / var(--w));
   z-index:100;
+  transition:left .3s,width .3s,height .3s;
 }
 .g>div img{
   display:block;
