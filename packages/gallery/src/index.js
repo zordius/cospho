@@ -193,6 +193,12 @@ h2{
   scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;${spriteRules}
 }
+.g>div.s{
+  left:0;
+  width:100vw;
+  height:calc(100vw * var(--h) / var(--w));
+  z-index:100;
+}
 .g>div img{
   display:block;
   width:100%;
@@ -206,7 +212,7 @@ h2{
   top:16px;
   z-index:2;
   padding:6px 10px;
-  max-width:calc(100% - 32px);
+  max-width:min(calc(100% - 32px), 480px);
   overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
@@ -345,7 +351,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
+${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
 
   return `<!DOCTYPE html>

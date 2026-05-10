@@ -61,6 +61,12 @@ h2{
   background-size:calc(10*var(--w)*var(--s)*1px) calc(18*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
+.g>div.s{
+  left:0;
+  width:100vw;
+  height:calc(100vw * var(--h) / var(--w));
+  z-index:100;
+}
 .g>div img{
   display:block;
   width:100%;
@@ -74,7 +80,7 @@ h2{
   top:16px;
   z-index:2;
   padding:6px 10px;
-  max-width:calc(100% - 32px);
+  max-width:min(calc(100% - 32px), 480px);
   overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;

@@ -30,10 +30,19 @@ h1{
 p{
   padding:0 16px 16px;
 }
+h2{
+  position:sticky;
+  top:0;
+  z-index:3;
+  background:#222;
+  padding:8px 16px;
+  font-size:14px;
+  font-weight:400;
+}
 .g{
   position:relative;
   width:100vw;
-  height:calc(24577*var(--s)*1px);
+  height:calc(var(--gh)*var(--s)*1px);
 }
 .g>div{
   position:absolute;
@@ -45,11 +54,18 @@ p{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
+  scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;
   background-image:url(../sprites/1025811-16.png);
   background-repeat:no-repeat;
   background-size:calc(10*var(--w)*var(--s)*1px) calc(19*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
+}
+.g>div.x{
+  left:0;
+  width:100vw;
+  height:calc(100vw * var(--h) / var(--w));
+  z-index:100;
 }
 .g>div img{
   display:block;
@@ -81,7 +97,7 @@ p{
 <body>
 <h1>2000-08-20 COSPLAY嘉年華</h1>
 <p>187張照片</p>
-<div class="g">
+<div class="g" style="--gh:24577">
 <div data-t="7994" style="--x:0;--y:0;--w:193;--h:257;--c:0;--r:0"><img src="https://live.staticflickr.com/26/47050173_071ebc7d64_n.jpg" srcset="https://live.staticflickr.com/26/47050173_071ebc7d64_n.jpg 1x,https://live.staticflickr.com/26/47050173_071ebc7d64_z.jpg 2x" decoding="async"></div>
 <div data-t="7995" style="--x:197;--y:0;--w:193;--h:257;--c:1;--r:0"><img src="https://live.staticflickr.com/33/47050186_5741310235_n.jpg" srcset="https://live.staticflickr.com/33/47050186_5741310235_n.jpg 1x,https://live.staticflickr.com/33/47050186_5741310235_z.jpg 2x" decoding="async"></div>
 <div data-t="7996" style="--x:0;--y:261;--w:193;--h:257;--c:2;--r:0"><img src="https://live.staticflickr.com/24/47050194_6c73a97e63_n.jpg" srcset="https://live.staticflickr.com/24/47050194_6c73a97e63_n.jpg 1x,https://live.staticflickr.com/24/47050194_6c73a97e63_z.jpg 2x" decoding="async"></div>
@@ -276,7 +292,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=702?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
+document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');const x=document.querySelector('.g>div.x');if(x&&(!d||d===x)){x.classList.remove('x');return}if(!d)return;if(x)x.classList.remove('x');d.classList.add('x');d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>
 </body>
 </html>
