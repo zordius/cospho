@@ -33,7 +33,6 @@ const outFile = resolve(outDir, `${albumId}.html`);
 const spriteRelativeUrl = `../sprites/${basename(spriteAbs)}`;
 
 const html = buildHtml(photos, {
-  width: 390,
   title,
   sprite: { url: spriteRelativeUrl, blockSize: 16, cols: 10 },
   beforeG: `<p>${count}張照片</p>`,

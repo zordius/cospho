@@ -3,8 +3,12 @@ const DEFAULTS = {
   densities: [1, 2],
   placeholder: 'none', // 'none' | 'pixelated'
   title: 'Gallery',
-  eagerCount: 2,
+  eagerRows: 4,
   gap: 4,
+  hgap: null, // horizontal gap inside paired rows; falls back to gap
+  pair: true, // auto-pair non-wide photos; wide photos stay solo
+  soloAspectMin: 1.2, // photo with w/h >= this counts as wide
+  forceSoloAspectMin: 1.4, // photo with w/h > this always goes solo, never pairs
   alwaysShowTitle: false,
   linkUrl: null, // (photo) => string  — when set, click navigates to result
   faviconBase: '../',
@@ -48,7 +52,7 @@ function escapeHtml(s) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/"/g, '&quot;')
 }
 
 function pickAspect(p) {
@@ -59,19 +63,39 @@ function pickAspect(p) {
   return null;
 }
 
+function packRow(items, containerW, hgap) {
+  if (items.length === 1) {
+    const { aspect } = items[0];
+    const h = Math.round((containerW * aspect.h) / aspect.w);
+    return [{ ...items[0], x: 0, w: containerW, h }];
+  }
+  const aspects = items.map((it) => it.aspect.w / it.aspect.h);
+  const sumA = aspects.reduce((s, a) => s + a, 0);
+  const h = Math.round((containerW - hgap * (items.length - 1)) / sumA);
+  const out = [];
+  let x = 0;
+  for (let i = 0; i < items.length; i += 1) {
+    const isLast = i === items.length - 1;
+    const w = isLast ? containerW - x : Math.round(h * aspects[i]);
+    out.push({ ...items[i], x, w, h });
+    x += w + hgap;
+  }
+  return out;
+}
+
 function buildCss(o, totalHeight, sprite, cols, rows) {
   const isPixelated = o.placeholder === 'pixelated';
   const spriteRules = sprite
     ? `
   background-image:url(${sprite.url});
   background-repeat:no-repeat;
-  background-size:calc(${cols}*100vw) calc(${rows}*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*100vw*-1) calc(var(--r)*var(--h)*var(--s)*-1px);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
+  background-size:calc(${cols}*var(--w)*var(--s)*1px) calc(${rows}*var(--h)*var(--s)*1px);
+  background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
     : `
   background:#888;`;
 
   return `
-*{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--s:calc(100vw / ${o.width}px)}
 body{
   background:#000;
@@ -95,13 +119,13 @@ p{
 }
 .g>div{
   position:absolute;
-  left:0;
-  width:100vw;
+  left:calc(var(--x)*var(--s)*1px);
+  width:calc(var(--w)*var(--s)*1px);
   top:calc(var(--y)*var(--s)*1px);
   height:calc(var(--h)*var(--s)*1px);
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:100vw calc(var(--h)*var(--s)*1px);
+  contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;${spriteRules}
 }
@@ -117,7 +141,9 @@ p{
   left:16px;
   top:16px;
   z-index:2;
-  padding:10px 16px;
+  padding:6px 10px;
+  max-width:calc(100% - 32px);
+  overflow-wrap:break-word;
   background:rgba(0,0,0,.8);
   font-size:14px;
   border-radius:4px;
@@ -133,34 +159,61 @@ p{
 export function buildHtml(photos, opts = {}) {
   const o = { ...DEFAULTS, ...opts };
 
-  const eligible = [];
+  const items = [];
   for (const p of photos) {
     if (p.media !== 'photo') continue;
-    const picks = o.densities
-      .map((d) => ({ d, sz: pickSize(p, o.width * d) }))
-      .filter(({ sz }) => sz?.url);
-    if (picks.length === 0) continue;
     const aspect = pickAspect(p);
     if (!aspect) continue;
-    const h = Math.round((o.width * aspect.h) / aspect.w);
-    eligible.push({ photo: p, h, y: 0, picks });
+    if (!pickSize(p, 1)) continue;
+    items.push({ photo: p, aspect });
   }
 
-  if (eligible.length === 0) {
+  if (items.length === 0) {
     throw new Error('No eligible photos to render');
   }
 
+  const hgap = o.hgap ?? o.gap;
+  const aspectOf = (it) => it.aspect.w / it.aspect.h;
+  const isWide = (it) => aspectOf(it) >= o.soloAspectMin;
+  const isForceSolo = (it) => aspectOf(it) > o.forceSoloAspectMin;
+
+  const rows = [];
+  let i = 0;
+  while (i < items.length) {
+    const a = items[i];
+    if (!o.pair || i + 1 >= items.length || isForceSolo(a)) {
+      rows.push([a]);
+      i += 1;
+      continue;
+    }
+    const b = items[i + 1];
+    if (isForceSolo(b) || (isWide(a) && isWide(b))) {
+      rows.push([a]);
+      i += 1;
+    } else {
+      rows.push([a, b]);
+      i += 2;
+    }
+  }
+
+  const eligible = [];
   let cumY = 0;
-  for (let i = 0; i < eligible.length; i += 1) {
-    if (i > 0) cumY += o.gap;
-    eligible[i].y = cumY;
-    cumY += eligible[i].h;
+  for (let r = 0; r < rows.length; r += 1) {
+    const placed = packRow(rows[r], o.width, hgap);
+    if (r > 0) cumY += o.gap;
+    for (const cell of placed) {
+      cell.picks = o.densities
+        .map((d) => ({ d, sz: pickSize(cell.photo, cell.w * d) }))
+        .filter(({ sz }) => sz?.url);
+      eligible.push({ ...cell, y: cumY, rowIdx: r });
+    }
+    cumY += placed[0].h;
   }
   const totalHeight = cumY;
 
   const sprite = o.sprite ?? null;
   const cols = sprite?.cols ?? 0;
-  const rows = sprite ? Math.ceil(eligible.length / cols) : 0;
+  const spriteRows = sprite ? Math.ceil(eligible.length / cols) : 0;
 
   const placeholders = eligible.map((e, i) => {
     const c = sprite ? i % cols : 0;
@@ -168,12 +221,13 @@ export function buildHtml(photos, opts = {}) {
     const baseUrl = e.picks[0].sz.url;
     const srcsetValue =
       e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
-    const style = sprite ? `--y:${e.y};--h:${e.h};--c:${c};--r:${r}` : `--y:${e.y};--h:${e.h}`;
+    const base = `--x:${e.x};--y:${e.y};--w:${e.w};--h:${e.h}`;
+    const style = sprite ? `${base};--c:${c};--r:${r}` : base;
     const titleAttr = e.photo.title ? ` data-t="${escapeHtml(e.photo.title)}"` : '';
     const url = o.linkUrl ? o.linkUrl(e.photo) : null;
     const linkAttr = url ? ` data-h="${escapeHtml(url)}"` : '';
 
-    if (i < o.eagerCount) {
+    if (e.rowIdx < o.eagerRows) {
       const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
       return `<div${titleAttr}${linkAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
     }
@@ -197,7 +251,7 @@ export function buildHtml(photos, opts = {}) {
     `<title>${escapeHtml(o.title)}</title>`,
     '<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>',
     sprite ? `<link rel="preload" as="image" href="${sprite.url}">` : '',
-    `<style>${buildCss(o, totalHeight, sprite, cols, rows)}</style>`,
+    `<style>${buildCss(o, totalHeight, sprite, cols, spriteRows)}</style>`,
   ]
     .filter(Boolean)
     .join('\n');

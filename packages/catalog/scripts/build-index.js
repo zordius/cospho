@@ -37,7 +37,6 @@ const html = buildHtml(indexPhotos, {
   alwaysShowTitle: true,
   linkUrl: (p) => `albums/${p.id}.html`,
   faviconBase: '',
-  eagerCount: 4,
   beforeG: summary,
 });
 
