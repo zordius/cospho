@@ -30,6 +30,23 @@ const indexPhotos = covers.map(({ album, cover }) => ({
   sizes: cover.sizes,
 }));
 
+const yearOf = (album) => album.title.match(/^(\d{4})/)?.[1] ?? 'Unknown';
+const yearCounts = covers.reduce((acc, { album }) => {
+  const y = yearOf(album);
+  acc[y] = (acc[y] ?? 0) + 1;
+  return acc;
+}, {});
+
+const sections = [];
+let prevYear = null;
+for (let i = 0; i < covers.length; i += 1) {
+  const y = yearOf(covers[i].album);
+  if (y !== prevYear) {
+    sections.push({ at: i, title: `${y} · ${yearCounts[y]}本相簿` });
+    prevYear = y;
+  }
+}
+
 const summary = `<p>本站為針對手機最佳化版本,僅提供照片瀏覽功能</p>
 <p>共${covers.length}本活動相簿·${totalPhotos}張照片</p>`;
 
@@ -42,6 +59,7 @@ const html = buildHtml(indexPhotos, {
   faviconBase: '',
   beforeG: summary,
   sprite: { url: spriteRelativeUrl, blockSize: 16, cols: 10 },
+  sections,
 });
 
 await mkdir(OUT_DIR, { recursive: true });

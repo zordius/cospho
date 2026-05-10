@@ -14,6 +14,11 @@ const DEFAULTS = {
   faviconBase: '../',
   beforeG: '',
   afterG: '',
+  // Optional sticky-header sections. Array of { at, title } sorted by `at`.
+  // `at` indexes into the `photos` argument; the photo at that index begins a
+  // new group with `title` rendered as a sticky header above. Pair packing
+  // restarts at each boundary, so a pair never spans two groups.
+  sections: null,
 };
 
 // Flickr sizes in ascending long-side order. Square crops (sq, q) excluded
@@ -52,7 +57,7 @@ function escapeHtml(s) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
+    .replace(/"/g, '&quot;');
 }
 
 function pickAspect(p) {
@@ -83,7 +88,56 @@ function packRow(items, containerW, hgap) {
   return out;
 }
 
-function buildCss(o, totalHeight, sprite, cols, rows) {
+function buildRows(items, o) {
+  const aspectOf = (it) => it.aspect.w / it.aspect.h;
+  const isWide = (it) => aspectOf(it) >= o.soloAspectMin;
+  const isForceSolo = (it) => aspectOf(it) > o.forceSoloAspectMin;
+
+  const rows = [];
+  let i = 0;
+  while (i < items.length) {
+    const a = items[i];
+    if (!o.pair || i + 1 >= items.length || isForceSolo(a)) {
+      rows.push([a]);
+      i += 1;
+      continue;
+    }
+    const b = items[i + 1];
+    if (isForceSolo(b) || (isWide(a) && isWide(b))) {
+      rows.push([a]);
+      i += 1;
+    } else {
+      rows.push([a, b]);
+      i += 2;
+    }
+  }
+  return rows;
+}
+
+function renderCell(e, o, sprite, cols) {
+  const c = sprite ? e.idx % cols : 0;
+  const r = sprite ? Math.floor(e.idx / cols) : 0;
+  const baseUrl = e.picks[0].sz.url;
+  const srcsetValue =
+    e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
+  const base = `--x:${e.x};--y:${e.y};--w:${e.w};--h:${e.h}`;
+  const style = sprite ? `${base};--c:${c};--r:${r}` : base;
+  const titleAttr = e.photo.title ? ` data-t="${escapeHtml(e.photo.title)}"` : '';
+  const url = o.linkUrl ? o.linkUrl(e.photo) : null;
+  const linkAttr = url ? ` data-h="${escapeHtml(url)}"` : '';
+
+  if (e.rowIdx < o.eagerRows) {
+    const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
+    return `<div${titleAttr}${linkAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
+  }
+  const urls = [...e.picks]
+    .sort((a, b) => a.d - b.d)
+    .map(({ sz }) => sz.url)
+    .join(',');
+  return `<div${titleAttr}${linkAttr} style="${style}"><img data-src="${urls}"></div>`;
+}
+
+function buildCss(o, sprite, cols, rows) {
   const isPixelated = o.placeholder === 'pixelated';
   const spriteRules = sprite
     ? `
@@ -112,10 +166,19 @@ h1{
 p{
   padding:0 16px 16px;
 }
+h2{
+  position:sticky;
+  top:0;
+  z-index:3;
+  background:#222;
+  padding:8px 16px;
+  font-size:14px;
+  font-weight:400;
+}
 .g{
   position:relative;
   width:100vw;
-  height:calc(${totalHeight}*var(--s)*1px);
+  height:calc(var(--gh)*var(--s)*1px);
 }
 .g>div{
   position:absolute;
@@ -127,6 +190,7 @@ p{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
+  scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;${spriteRules}
 }
 .g>div img{
@@ -156,8 +220,14 @@ p{
 `.trim();
 }
 
-export function buildHtml(photos, opts = {}) {
+// Build one <div class="g"> block from a slice of photos.
+// `offsets.cellIdxOffset` and `offsets.rowIdxOffset` let multi-group callers
+// thread global counters so sprite tile lookup and eager-row checks remain
+// continuous across blocks. Returns { html, cellCount, rowCount } so the
+// caller can advance offsets for the next block.
+export function buildGroup(photos, opts = {}, offsets = {}) {
   const o = { ...DEFAULTS, ...opts };
+  const { cellIdxOffset = 0, rowIdxOffset = 0 } = offsets;
 
   const items = [];
   for (const p of photos) {
@@ -169,34 +239,13 @@ export function buildHtml(photos, opts = {}) {
   }
 
   if (items.length === 0) {
-    throw new Error('No eligible photos to render');
+    return { html: '', cellCount: 0, rowCount: 0 };
   }
 
   const hgap = o.hgap ?? o.gap;
-  const aspectOf = (it) => it.aspect.w / it.aspect.h;
-  const isWide = (it) => aspectOf(it) >= o.soloAspectMin;
-  const isForceSolo = (it) => aspectOf(it) > o.forceSoloAspectMin;
+  const rows = buildRows(items, o);
 
-  const rows = [];
-  let i = 0;
-  while (i < items.length) {
-    const a = items[i];
-    if (!o.pair || i + 1 >= items.length || isForceSolo(a)) {
-      rows.push([a]);
-      i += 1;
-      continue;
-    }
-    const b = items[i + 1];
-    if (isForceSolo(b) || (isWide(a) && isWide(b))) {
-      rows.push([a]);
-      i += 1;
-    } else {
-      rows.push([a, b]);
-      i += 2;
-    }
-  }
-
-  const eligible = [];
+  const cells = [];
   let cumY = 0;
   for (let r = 0; r < rows.length; r += 1) {
     const placed = packRow(rows[r], o.width, hgap);
@@ -205,7 +254,12 @@ export function buildHtml(photos, opts = {}) {
       cell.picks = o.densities
         .map((d) => ({ d, sz: pickSize(cell.photo, cell.w * d) }))
         .filter(({ sz }) => sz?.url);
-      eligible.push({ ...cell, y: cumY, rowIdx: r });
+      cells.push({
+        ...cell,
+        y: cumY,
+        rowIdx: rowIdxOffset + r,
+        idx: cellIdxOffset + cells.length,
+      });
     }
     cumY += placed[0].h;
   }
@@ -213,30 +267,60 @@ export function buildHtml(photos, opts = {}) {
 
   const sprite = o.sprite ?? null;
   const cols = sprite?.cols ?? 0;
-  const spriteRows = sprite ? Math.ceil(eligible.length / cols) : 0;
+  const placeholders = cells.map((e) => renderCell(e, o, sprite, cols));
 
-  const placeholders = eligible.map((e, i) => {
-    const c = sprite ? i % cols : 0;
-    const r = sprite ? Math.floor(i / cols) : 0;
-    const baseUrl = e.picks[0].sz.url;
-    const srcsetValue =
-      e.picks.length > 1 ? e.picks.map(({ d, sz }) => `${sz.url} ${d}x`).join(',') : '';
-    const base = `--x:${e.x};--y:${e.y};--w:${e.w};--h:${e.h}`;
-    const style = sprite ? `${base};--c:${c};--r:${r}` : base;
-    const titleAttr = e.photo.title ? ` data-t="${escapeHtml(e.photo.title)}"` : '';
-    const url = o.linkUrl ? o.linkUrl(e.photo) : null;
-    const linkAttr = url ? ` data-h="${escapeHtml(url)}"` : '';
+  return {
+    html: `<div class="g" style="--gh:${totalHeight}">\n${placeholders.join('\n')}\n</div>`,
+    cellCount: cells.length,
+    rowCount: rows.length,
+  };
+}
 
-    if (e.rowIdx < o.eagerRows) {
-      const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
-      return `<div${titleAttr}${linkAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
+export function buildHtml(photos, opts = {}) {
+  const o = { ...DEFAULTS, ...opts };
+
+  const sectionsIn = (o.sections ?? []).slice().sort((a, b) => a.at - b.at);
+  if (sectionsIn.length === 0 || sectionsIn[0].at !== 0) {
+    sectionsIn.unshift({ at: 0, title: null });
+  }
+
+  const groups = sectionsIn
+    .map((s, i) => ({
+      title: s.title,
+      photos: photos.slice(
+        Math.max(0, s.at),
+        Math.min(photos.length, sectionsIn[i + 1]?.at ?? photos.length),
+      ),
+    }))
+    .filter((g) => g.photos.length > 0);
+
+  let cellOffset = 0;
+  let rowOffset = 0;
+  const groupParts = [];
+  for (const grp of groups) {
+    const result = buildGroup(grp.photos, opts, {
+      cellIdxOffset: cellOffset,
+      rowIdxOffset: rowOffset,
+    });
+    if (result.cellCount === 0) continue;
+    if (grp.title) {
+      groupParts.push(
+        `<section><h2>${escapeHtml(grp.title)}</h2>\n${result.html}\n</section>`,
+      );
+    } else {
+      groupParts.push(result.html);
     }
-    const urls = [...e.picks]
-      .sort((a, b) => a.d - b.d)
-      .map(({ sz }) => sz.url)
-      .join(',');
-    return `<div${titleAttr}${linkAttr} style="${style}"><img data-src="${urls}"></div>`;
-  });
+    cellOffset += result.cellCount;
+    rowOffset += result.rowCount;
+  }
+
+  if (cellOffset === 0) {
+    throw new Error('No eligible photos to render');
+  }
+
+  const sprite = o.sprite ?? null;
+  const cols = sprite?.cols ?? 0;
+  const spriteRows = sprite ? Math.ceil(cellOffset / cols) : 0;
 
   const head = [
     '<meta charset="utf-8">',
@@ -251,7 +335,7 @@ export function buildHtml(photos, opts = {}) {
     `<title>${escapeHtml(o.title)}</title>`,
     '<link rel="preconnect" href="https://live.staticflickr.com" crossorigin>',
     sprite ? `<link rel="preload" as="image" href="${sprite.url}">` : '',
-    `<style>${buildCss(o, totalHeight, sprite, cols, spriteRows)}</style>`,
+    `<style>${buildCss(o, sprite, cols, spriteRows)}</style>`,
   ]
     .filter(Boolean)
     .join('\n');
@@ -261,7 +345,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-${o.linkUrl ? `document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.querySelector('.g').addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
+${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-t]');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
 
   return `<!DOCTYPE html>
@@ -272,9 +356,7 @@ ${head}
 <body>
 <h1>${escapeHtml(o.title)}</h1>
 ${o.beforeG}
-<div class="g">
-${placeholders.join('\n')}
-</div>
+${groupParts.join('\n')}
 ${o.afterG}
 ${lazyScript}
 </body>

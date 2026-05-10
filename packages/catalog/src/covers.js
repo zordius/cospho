@@ -28,8 +28,9 @@ export async function getPrimaryPhoto(version, albumId) {
 
 // For each cached album with a primary photo, return the album, its cover photo,
 // and the cover's index inside the album's sprite (eligible-photo order).
-// Albums without a usable cover are skipped, so the returned order matches what
-// buildHtml will render and what the index sprite expects.
+// Albums without a usable cover are skipped. Sorted by album title (which
+// begins with YYYY-MM-DD) so consumers can group by year and so the index
+// sprite tile order matches what buildHtml renders.
 export async function getIndexCovers(version) {
   const albums = await listCachedAlbums(version);
   const out = [];
@@ -41,5 +42,6 @@ export async function getIndexCovers(version) {
     if (eligibleIdx === -1) continue;
     out.push({ album, cover: eligible[eligibleIdx], eligibleIdx });
   }
+  out.sort((a, b) => a.album.title.localeCompare(b.album.title));
   return out;
 }
