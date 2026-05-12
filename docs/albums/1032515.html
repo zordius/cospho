@@ -107,18 +107,18 @@ h2{
 <div data-t="4137" style="--x:196;--y:588;--w:194;--h:297;--c:5;--r:0"><img src="https://live.staticflickr.com/24/47367058_ce45b8c061_n.jpg" srcset="https://live.staticflickr.com/24/47367058_ce45b8c061_n.jpg 1x,https://live.staticflickr.com/24/47367058_ce45b8c061_o.jpg 2x" decoding="async"></div>
 <div data-t="4138" style="--x:0;--y:889;--w:190;--h:293;--c:6;--r:0"><img src="https://live.staticflickr.com/30/47367065_5847db2042_n.jpg" srcset="https://live.staticflickr.com/30/47367065_5847db2042_n.jpg 1x,https://live.staticflickr.com/30/47367065_5847db2042_o.jpg 2x" decoding="async"></div>
 <div data-t="4139" style="--x:194;--y:889;--w:196;--h:293;--c:7;--r:0"><img src="https://live.staticflickr.com/27/47367068_9bf387c67b_n.jpg" srcset="https://live.staticflickr.com/27/47367068_9bf387c67b_n.jpg 1x,https://live.staticflickr.com/27/47367068_9bf387c67b_o.jpg 2x" decoding="async"></div>
-<div data-t="4140" style="--x:0;--y:1186;--w:193;--h:290;--c:8;--r:0"><img data-src="https://live.staticflickr.com/29/47367075_9cc939e837_n.jpg,https://live.staticflickr.com/29/47367075_9cc939e837_o.jpg"></div>
-<div data-t="4141" style="--x:197;--y:1186;--w:193;--h:290;--c:9;--r:0"><img data-src="https://live.staticflickr.com/31/47367077_4007d9e8e2_n.jpg,https://live.staticflickr.com/31/47367077_4007d9e8e2_o.jpg"></div>
-<div data-t="4142" style="--x:0;--y:1480;--w:194;--h:291;--c:0;--r:1"><img data-src="https://live.staticflickr.com/25/47367079_b0931660fe_n.jpg,https://live.staticflickr.com/25/47367079_b0931660fe_o.jpg"></div>
-<div data-t="4143" style="--x:198;--y:1480;--w:192;--h:291;--c:1;--r:1"><img data-src="https://live.staticflickr.com/24/47367081_711a9fd2f0_n.jpg,https://live.staticflickr.com/24/47367081_711a9fd2f0_o.jpg"></div>
-<div data-t="4144" style="--x:0;--y:1775;--w:390;--h:259;--c:2;--r:1"><img data-src="https://live.staticflickr.com/32/47367084_265d96e92e.jpg,https://live.staticflickr.com/32/47367084_265d96e92e_o.jpg"></div>
-<div data-t="4145" style="--x:0;--y:2038;--w:390;--h:262;--c:3;--r:1"><img data-src="https://live.staticflickr.com/26/47367089_6ab5893fb8.jpg,https://live.staticflickr.com/26/47367089_6ab5893fb8_o.jpg"></div>
+<div data-t="4140" style="--x:0;--y:1186;--w:193;--h:290;--c:8;--r:0"><img data-src="29/47367075_9cc939e837_n.jpg,29/47367075_9cc939e837_o.jpg"></div>
+<div data-t="4141" style="--x:197;--y:1186;--w:193;--h:290;--c:9;--r:0"><img data-src="31/47367077_4007d9e8e2_n.jpg,31/47367077_4007d9e8e2_o.jpg"></div>
+<div data-t="4142" style="--x:0;--y:1480;--w:194;--h:291;--c:0;--r:1"><img data-src="25/47367079_b0931660fe_n.jpg,25/47367079_b0931660fe_o.jpg"></div>
+<div data-t="4143" style="--x:198;--y:1480;--w:192;--h:291;--c:1;--r:1"><img data-src="24/47367081_711a9fd2f0_n.jpg,24/47367081_711a9fd2f0_o.jpg"></div>
+<div data-t="4144" style="--x:0;--y:1775;--w:390;--h:259;--c:2;--r:1"><img data-src="32/47367084_265d96e92e.jpg,32/47367084_265d96e92e_o.jpg"></div>
+<div data-t="4145" style="--x:0;--y:2038;--w:390;--h:262;--c:3;--r:1"><img data-src="26/47367089_6ab5893fb8.jpg,26/47367089_6ab5893fb8_o.jpg"></div>
 </div>
 
 <script>
 const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-const p=innerWidth*devicePixelRatio>=702?1:0;
-const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
+const F="https://live.staticflickr.com/";const p=innerWidth*devicePixelRatio>=702?1:0;
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=F+(u[p]||u[0])}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
 document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>

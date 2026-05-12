@@ -107,15 +107,15 @@ h2{
 <div data-t="2683" style="--x:270;--y:475;--w:120;--h:179;--c:5;--r:0"><img src="https://live.staticflickr.com/26/47419879_242b69879d_m.jpg" srcset="https://live.staticflickr.com/26/47419879_242b69879d_m.jpg 1x,https://live.staticflickr.com/26/47419879_242b69879d.jpg 2x" decoding="async"></div>
 <div data-t="2685" style="--x:0;--y:658;--w:191;--h:289;--c:6;--r:0"><img src="https://live.staticflickr.com/27/47419883_d403821a9f_n.jpg" srcset="https://live.staticflickr.com/27/47419883_d403821a9f_n.jpg 1x,https://live.staticflickr.com/27/47419883_d403821a9f_z.jpg 2x" decoding="async"></div>
 <div data-t="2722" style="--x:195;--y:658;--w:195;--h:289;--c:7;--r:0"><img src="https://live.staticflickr.com/24/47419887_17bda7882e_n.jpg" srcset="https://live.staticflickr.com/24/47419887_17bda7882e_n.jpg 1x,https://live.staticflickr.com/24/47419887_17bda7882e_z.jpg 2x" decoding="async"></div>
-<div data-t="2723" style="--x:0;--y:951;--w:119;--h:178;--c:8;--r:0"><img data-src="https://live.staticflickr.com/27/47419897_7668191971_m.jpg,https://live.staticflickr.com/27/47419897_7668191971.jpg"></div>
-<div data-t="2724" style="--x:123;--y:951;--w:267;--h:178;--c:9;--r:0"><img data-src="https://live.staticflickr.com/28/47419906_36bb57ab04_n.jpg,https://live.staticflickr.com/28/47419906_36bb57ab04_z.jpg"></div>
-<div data-t="2725" style="--x:0;--y:1133;--w:390;--h:260;--c:0;--r:1"><img data-src="https://live.staticflickr.com/27/47419911_81ed5320dc.jpg,https://live.staticflickr.com/27/47419911_81ed5320dc_c.jpg"></div>
+<div data-t="2723" style="--x:0;--y:951;--w:119;--h:178;--c:8;--r:0"><img data-src="27/47419897_7668191971_m.jpg,27/47419897_7668191971.jpg"></div>
+<div data-t="2724" style="--x:123;--y:951;--w:267;--h:178;--c:9;--r:0"><img data-src="28/47419906_36bb57ab04_n.jpg,28/47419906_36bb57ab04_z.jpg"></div>
+<div data-t="2725" style="--x:0;--y:1133;--w:390;--h:260;--c:0;--r:1"><img data-src="27/47419911_81ed5320dc.jpg,27/47419911_81ed5320dc_c.jpg"></div>
 </div>
 
 <script>
 const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-const p=innerWidth*devicePixelRatio>=702?1:0;
-const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
+const F="https://live.staticflickr.com/";const p=innerWidth*devicePixelRatio>=702?1:0;
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=F+(u[p]||u[0])}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
 document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});
 </script>

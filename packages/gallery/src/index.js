@@ -60,6 +60,30 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+// Longest URL prefix common to every photo's every size. Used to factor a
+// shared host/path out of `data-src` attributes; returned empty when there is
+// no useful common prefix (or fewer than ~10 chars saved per URL).
+function computeLazyUrlPrefix(photos) {
+  let prefix = null;
+  for (const p of photos) {
+    if (p.media !== 'photo') continue;
+    for (const sz of Object.values(p.sizes ?? {})) {
+      const u = sz?.url;
+      if (!u) continue;
+      if (prefix === null) {
+        prefix = u;
+        continue;
+      }
+      let i = 0;
+      const len = Math.min(prefix.length, u.length);
+      while (i < len && prefix.charCodeAt(i) === u.charCodeAt(i)) i += 1;
+      prefix = prefix.slice(0, i);
+      if (prefix.length < 10) return '';
+    }
+  }
+  return prefix && prefix.length >= 10 ? prefix : '';
+}
+
 function pickAspect(p) {
   // Flickr pre-rotates derivative sizes but returns `o` ambiguously: raw EXIF
   // dims when a larger pipeline exists, pre-rotated when `o` is the only/last
@@ -123,7 +147,7 @@ function buildRows(items, o) {
   return rows;
 }
 
-function renderCell(e, o, sprite, cols) {
+function renderCell(e, o, sprite, cols, urlPrefix) {
   const c = sprite ? e.idx % cols : 0;
   const r = sprite ? Math.floor(e.idx / cols) : 0;
   const baseUrl = e.picks[0].sz.url;
@@ -139,9 +163,10 @@ function renderCell(e, o, sprite, cols) {
     const srcsetAttr = srcsetValue ? ` srcset="${srcsetValue}"` : '';
     return `<div${titleAttr}${linkAttr} style="${style}"><img src="${baseUrl}"${srcsetAttr} decoding="async"></div>`;
   }
+  const strip = urlPrefix ? urlPrefix.length : 0;
   const urls = [...e.picks]
     .sort((a, b) => a.d - b.d)
-    .map(({ sz }) => sz.url)
+    .map(({ sz }) => (strip ? sz.url.slice(strip) : sz.url))
     .join(',');
   return `<div${titleAttr}${linkAttr} style="${style}"><img data-src="${urls}"></div>`;
 }
@@ -288,7 +313,7 @@ export function buildGroup(photos, opts = {}, offsets = {}) {
 
   const sprite = o.sprite ?? null;
   const cols = sprite?.cols ?? 0;
-  const placeholders = cells.map((e) => renderCell(e, o, sprite, cols));
+  const placeholders = cells.map((e) => renderCell(e, o, sprite, cols, o._urlPrefix));
 
   return {
     html: `<div class="g" style="--gh:${totalHeight}">\n${placeholders.join('\n')}\n</div>`,
@@ -315,11 +340,14 @@ export function buildHtml(photos, opts = {}) {
     }))
     .filter((g) => g.photos.length > 0);
 
+  const urlPrefix = computeLazyUrlPrefix(photos);
+  const groupOpts = { ...opts, _urlPrefix: urlPrefix };
+
   let cellOffset = 0;
   let rowOffset = 0;
   const groupParts = [];
   for (const grp of groups) {
-    const result = buildGroup(grp.photos, opts, {
+    const result = buildGroup(grp.photos, groupOpts, {
       cellIdxOffset: cellOffset,
       rowIdxOffset: rowOffset,
     });
@@ -361,10 +389,12 @@ export function buildHtml(photos, opts = {}) {
     .filter(Boolean)
     .join('\n');
 
+  const prefixDecl = urlPrefix ? `const F=${JSON.stringify(urlPrefix)};` : '';
+  const setSrc = urlPrefix ? `i.src=F+(u[p]||u[0])` : `i.src=u[p]||u[0]`;
   const lazyScript = `<script>
 const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
-const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');i.src=u[p]||u[0]}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
+${prefixDecl}const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
+const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');${setSrc}}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
 ${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
