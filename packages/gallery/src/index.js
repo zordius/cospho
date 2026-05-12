@@ -396,7 +396,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 ${prefixDecl}const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');${setSrc}}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{const d=e.target.closest('.g>div');if(!d)return;d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
+${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{let d=e.target.closest('.g>div');if(!d)return;if(d.classList.contains('s')){const a=document.querySelectorAll('.g>div');const t=a[[].indexOf.call(a,d)+(e.clientX<innerWidth/2?-1:1)];if(!t)return;clearTimeout(d._t);d.classList.remove('s');d=t}d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
 
   return `<!DOCTYPE html>
