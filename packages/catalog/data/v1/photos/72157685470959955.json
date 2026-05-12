@@ -61,7 +61,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131926340",
@@ -125,7 +126,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131926150",
@@ -189,7 +191,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131926020",
@@ -253,7 +256,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518220895",
@@ -317,7 +321,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131925870",
@@ -381,7 +386,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131925700",
@@ -445,7 +451,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518218885",
@@ -509,7 +516,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518218425",
@@ -573,7 +581,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518217925",
@@ -637,7 +646,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518217605",
@@ -701,7 +711,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518216925",
@@ -765,7 +776,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518216565",
@@ -829,7 +841,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518216235",
@@ -893,7 +906,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518215645",
@@ -957,7 +971,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518214355",
@@ -1021,7 +1036,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518214165",
@@ -1085,7 +1101,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518213565",
@@ -1149,7 +1166,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518213275",
@@ -1213,7 +1231,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479139846",
@@ -1277,7 +1296,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479139596",
@@ -1341,7 +1361,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518212125",
@@ -1405,7 +1426,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518211845",
@@ -1469,7 +1491,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131921950",
@@ -1533,7 +1556,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677048794",
@@ -1597,7 +1621,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677048554",
@@ -1661,7 +1686,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708704833",
@@ -1725,7 +1751,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677048134",
@@ -1789,7 +1816,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131921040",
@@ -1853,7 +1881,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677048014",
@@ -1917,7 +1946,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131920890",
@@ -1981,7 +2011,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047844",
@@ -2045,7 +2076,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131920750",
@@ -2109,7 +2141,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047734",
@@ -2173,7 +2206,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131920630",
@@ -2237,7 +2271,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047674",
@@ -2301,7 +2336,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351249572",
@@ -2365,7 +2401,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047644",
@@ -2429,7 +2466,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047534",
@@ -2493,7 +2531,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131920400",
@@ -2557,7 +2596,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919950",
@@ -2621,7 +2661,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047144",
@@ -2685,7 +2726,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919840",
@@ -2749,7 +2791,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677047024",
@@ -2813,7 +2856,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919710",
@@ -2877,7 +2921,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677046944",
@@ -2941,7 +2986,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919520",
@@ -3005,7 +3051,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677046874",
@@ -3069,7 +3116,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919380",
@@ -3133,7 +3181,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479135476",
@@ -3197,7 +3246,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479135416",
@@ -3261,7 +3311,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131919160",
@@ -3325,7 +3376,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479135256",
@@ -3389,7 +3441,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131918990",
@@ -3453,7 +3506,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479135086",
@@ -3517,7 +3571,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134996",
@@ -3581,7 +3636,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134916",
@@ -3645,7 +3701,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134856",
@@ -3709,7 +3766,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134766",
@@ -3773,7 +3831,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131918540",
@@ -3837,7 +3896,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134616",
@@ -3901,7 +3961,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131918410",
@@ -3965,7 +4026,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134476",
@@ -4029,7 +4091,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131918300",
@@ -4093,7 +4156,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134336",
@@ -4157,7 +4221,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351247152",
@@ -4221,7 +4286,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479134166",
@@ -4285,7 +4351,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351246912",
@@ -4349,7 +4416,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133956",
@@ -4413,7 +4481,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351246772",
@@ -4477,7 +4546,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133796",
@@ -4541,7 +4611,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133676",
@@ -4605,7 +4676,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133646",
@@ -4669,7 +4741,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133486",
@@ -4733,7 +4806,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702903",
@@ -4797,7 +4871,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133356",
@@ -4861,7 +4936,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702833",
@@ -4925,7 +5001,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479133106",
@@ -4989,7 +5066,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702803",
@@ -5053,7 +5131,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479132936",
@@ -5117,7 +5196,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702753",
@@ -5181,7 +5261,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479132866",
@@ -5245,7 +5326,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702703",
@@ -5309,7 +5391,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131916150",
@@ -5373,7 +5456,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131916050",
@@ -5437,7 +5521,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702593",
@@ -5501,7 +5586,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479132566",
@@ -5565,7 +5651,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702523",
@@ -5629,7 +5716,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387646531",
@@ -5693,7 +5781,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677044684",
@@ -5757,7 +5846,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702413",
@@ -5821,7 +5911,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677044544",
@@ -5885,7 +5976,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702333",
@@ -5949,7 +6041,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677044484",
@@ -6013,7 +6106,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702303",
@@ -6077,7 +6171,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677044414",
@@ -6141,7 +6236,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131915000",
@@ -6205,7 +6301,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708702183",
@@ -6269,7 +6366,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479131436",
@@ -6333,7 +6431,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387645521",
@@ -6397,7 +6496,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677044294",
@@ -6461,7 +6561,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387645391",
@@ -6525,7 +6626,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479131326",
@@ -6589,7 +6691,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387645231",
@@ -6653,7 +6756,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479130866",
@@ -6717,7 +6821,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479130446",
@@ -6781,7 +6886,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387644961",
@@ -6845,7 +6951,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479130346",
@@ -6909,7 +7016,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351243242",
@@ -6973,7 +7081,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479130116",
@@ -7037,7 +7146,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351243092",
@@ -7101,7 +7211,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242832",
@@ -7165,7 +7276,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479129856",
@@ -7229,7 +7341,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242702",
@@ -7293,7 +7406,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242592",
@@ -7357,7 +7471,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242482",
@@ -7421,7 +7536,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479129546",
@@ -7485,7 +7601,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242372",
@@ -7549,7 +7666,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479129356",
@@ -7613,7 +7731,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518201485",
@@ -7677,7 +7796,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351242152",
@@ -7741,7 +7861,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518201335",
@@ -7805,7 +7926,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479128906",
@@ -7869,7 +7991,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479128576",
@@ -7933,7 +8056,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518201115",
@@ -7997,7 +8121,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387643551",
@@ -8061,7 +8186,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387643401",
@@ -8125,7 +8251,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479127566",
@@ -8189,7 +8316,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351240622",
@@ -8253,7 +8381,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479127296",
@@ -8317,7 +8446,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351240142",
@@ -8381,7 +8511,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351239942",
@@ -8445,7 +8576,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351239522",
@@ -8509,7 +8641,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351239142",
@@ -8573,7 +8706,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351238912",
@@ -8637,7 +8771,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387641411",
@@ -8701,7 +8836,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387641281",
@@ -8765,7 +8901,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387641031",
@@ -8829,7 +8966,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387640681",
@@ -8893,7 +9031,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387640451",
@@ -8957,7 +9096,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387640161",
@@ -9021,7 +9161,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387640131",
@@ -9085,7 +9226,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387639751",
@@ -9149,7 +9291,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708698073",
@@ -9213,7 +9356,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708697823",
@@ -9277,7 +9421,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677040324",
@@ -9341,7 +9486,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677040154",
@@ -9405,7 +9551,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677040054",
@@ -9469,7 +9616,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677039894",
@@ -9533,7 +9681,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677039804",
@@ -9597,7 +9746,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677039704",
@@ -9661,7 +9811,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677039634",
@@ -9725,7 +9876,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351234762",
@@ -9789,7 +9941,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131906220",
@@ -9853,7 +10006,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677039264",
@@ -9917,7 +10071,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387635841",
@@ -9981,7 +10136,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387635571",
@@ -10045,7 +10201,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387635221",
@@ -10109,7 +10266,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387634961",
@@ -10173,7 +10331,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387634761",
@@ -10237,7 +10396,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387634391",
@@ -10301,7 +10461,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387634091",
@@ -10365,7 +10526,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131904020",
@@ -10429,7 +10591,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131903740",
@@ -10493,7 +10656,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131903410",
@@ -10557,7 +10721,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131902690",
@@ -10621,7 +10786,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131902430",
@@ -10685,7 +10851,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131902190",
@@ -10749,7 +10916,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131902000",
@@ -10813,7 +10981,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708692403",
@@ -10877,7 +11046,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708692213",
@@ -10941,7 +11111,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708692073",
@@ -11005,7 +11176,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708691753",
@@ -11069,7 +11241,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677036904",
@@ -11133,7 +11306,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677036784",
@@ -11197,7 +11371,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131900450",
@@ -11261,7 +11436,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131900230",
@@ -11325,7 +11501,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131899890",
@@ -11389,7 +11566,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131899530",
@@ -11453,7 +11631,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677036224",
@@ -11517,7 +11696,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677036104",
@@ -11581,7 +11761,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131898800",
@@ -11645,7 +11826,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34677035924",
@@ -11709,7 +11891,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131898100",
@@ -11773,7 +11956,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131897920",
@@ -11837,7 +12021,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131897680",
@@ -11901,7 +12086,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708688833",
@@ -11965,7 +12151,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131897220",
@@ -12029,7 +12216,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "34708688613",
@@ -12093,7 +12281,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35387627861",
@@ -12157,7 +12346,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131896810",
@@ -12221,7 +12411,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518192295",
@@ -12285,7 +12476,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518192145",
@@ -12349,7 +12541,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518191965",
@@ -12413,7 +12606,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518191845",
@@ -12477,7 +12671,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131894620",
@@ -12541,7 +12736,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131894330",
@@ -12605,7 +12801,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131893920",
@@ -12669,7 +12866,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131893660",
@@ -12733,7 +12931,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131893320",
@@ -12797,7 +12996,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518190915",
@@ -12861,7 +13061,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479102476",
@@ -12925,7 +13126,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518190485",
@@ -12989,7 +13191,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518190305",
@@ -13053,7 +13256,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518190135",
@@ -13117,7 +13321,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518189865",
@@ -13181,7 +13386,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131890840",
@@ -13245,7 +13451,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131890590",
@@ -13309,7 +13516,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131890370",
@@ -13373,7 +13581,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131890020",
@@ -13437,7 +13646,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131889750",
@@ -13501,7 +13711,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131889430",
@@ -13565,7 +13776,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518188965",
@@ -13629,7 +13841,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479100086",
@@ -13693,7 +13906,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479100006",
@@ -13757,7 +13971,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479099736",
@@ -13821,7 +14036,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131888480",
@@ -13885,7 +14101,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131888230",
@@ -13949,7 +14166,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35131887950",
@@ -14013,7 +14231,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351225072",
@@ -14077,7 +14296,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187795",
@@ -14141,7 +14361,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224982",
@@ -14205,7 +14426,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187705",
@@ -14269,7 +14491,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224932",
@@ -14333,7 +14556,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187625",
@@ -14397,7 +14621,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224862",
@@ -14461,7 +14686,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187555",
@@ -14525,7 +14751,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224792",
@@ -14589,7 +14816,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187485",
@@ -14653,7 +14881,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224712",
@@ -14717,7 +14946,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187415",
@@ -14781,7 +15011,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224602",
@@ -14845,7 +15076,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187355",
@@ -14909,7 +15141,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187325",
@@ -14973,7 +15206,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187295",
@@ -15037,7 +15271,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224382",
@@ -15101,7 +15336,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187155",
@@ -15165,7 +15401,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518187035",
@@ -15229,7 +15466,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224252",
@@ -15293,7 +15531,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351224162",
@@ -15357,7 +15596,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518186835",
@@ -15421,7 +15661,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479096776",
@@ -15485,7 +15726,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479096576",
@@ -15549,7 +15791,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518186675",
@@ -15613,7 +15856,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518186615",
@@ -15677,7 +15921,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479096236",
@@ -15741,7 +15986,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35518186505",
@@ -15805,7 +16051,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351223862",
@@ -15869,7 +16116,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479096036",
@@ -15933,7 +16181,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351223702",
@@ -15997,7 +16246,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479095286",
@@ -16061,7 +16311,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479095626",
@@ -16125,7 +16376,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479095146",
@@ -16189,7 +16441,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351223642",
@@ -16253,7 +16506,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479094936",
@@ -16317,7 +16571,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35351223512",
@@ -16381,7 +16636,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "35479094716",
@@ -16445,6 +16701,7 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   }
 ]

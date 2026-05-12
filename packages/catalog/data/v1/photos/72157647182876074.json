@@ -90,7 +90,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716240617",
@@ -183,7 +183,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902001055",
@@ -276,7 +276,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282353183",
@@ -369,7 +369,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901995585",
@@ -462,7 +462,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901346762",
@@ -555,7 +555,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901344092",
@@ -648,7 +648,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15715935709",
@@ -741,7 +741,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876181306",
@@ -834,7 +834,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282337353",
@@ -927,7 +927,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901334412",
@@ -1020,7 +1020,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901331672",
@@ -1113,7 +1113,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901974155",
@@ -1206,7 +1206,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901326242",
@@ -1299,7 +1299,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15715917019",
@@ -1392,7 +1392,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15899986861",
@@ -1485,7 +1485,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716201487",
@@ -1578,7 +1578,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282314873",
@@ -1671,7 +1671,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15899978511",
@@ -1764,7 +1764,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15715903709",
@@ -1857,7 +1857,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 1
+    "rotation": 0
   },
   {
     "id": "15282307653",
@@ -1950,7 +1950,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 1
+    "rotation": 0
   },
   {
     "id": "15899971251",
@@ -2043,7 +2043,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15715895929",
@@ -2136,7 +2136,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15279684944",
@@ -2229,7 +2229,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901297482",
@@ -2322,7 +2322,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714446768",
@@ -2415,7 +2415,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15899958671",
@@ -2508,7 +2508,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15715884839",
@@ -2601,7 +2601,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901288012",
@@ -2694,7 +2694,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15279671294",
@@ -2787,7 +2787,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876124086",
@@ -2880,7 +2880,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901925645",
@@ -2973,7 +2973,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15279663294",
@@ -3066,7 +3066,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714616820",
@@ -3159,7 +3159,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282273893",
@@ -3252,7 +3252,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901270512",
@@ -3345,7 +3345,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15899933551",
@@ -3438,7 +3438,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714605980",
@@ -3531,7 +3531,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901261612",
@@ -3624,7 +3624,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282259803",
@@ -3717,7 +3717,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901468562",
@@ -3810,7 +3810,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282464443",
@@ -3903,7 +3903,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902107535",
@@ -3996,7 +3996,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714797330",
@@ -4089,7 +4089,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716342377",
@@ -4182,7 +4182,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714609978",
@@ -4275,7 +4275,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902098675",
@@ -4368,7 +4368,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876291056",
@@ -4461,7 +4461,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902093495",
@@ -4554,7 +4554,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716327917",
@@ -4647,7 +4647,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282442873",
@@ -4740,7 +4740,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282440523",
@@ -4833,7 +4833,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053861311",
@@ -4926,7 +4926,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436159283",
@@ -5019,7 +5019,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870048027",
@@ -5112,7 +5112,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868359488",
@@ -5205,7 +5205,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053861051",
@@ -5298,7 +5298,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858021",
@@ -5391,7 +5391,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870047787",
@@ -5484,7 +5484,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055811475",
@@ -5577,7 +5577,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15433525224",
@@ -5670,7 +5670,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868359198",
@@ -5763,7 +5763,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055122622",
@@ -5856,7 +5856,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868524600",
@@ -5949,7 +5949,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436158603",
@@ -6042,7 +6042,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053860521",
@@ -6135,7 +6135,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16030026456",
@@ -6228,7 +6228,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 1
+    "rotation": 0
   },
   {
     "id": "15868524440",
@@ -6321,7 +6321,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16030026226",
@@ -6414,7 +6414,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868521970",
@@ -6507,7 +6507,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870047037",
@@ -6600,7 +6600,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868524220",
@@ -6693,7 +6693,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868358588",
@@ -6786,7 +6786,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15869757139",
@@ -6879,7 +6879,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055810645",
@@ -6972,7 +6972,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055122012",
@@ -7065,7 +7065,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053860061",
@@ -7158,7 +7158,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868524050",
@@ -7251,7 +7251,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053860011",
@@ -7344,7 +7344,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16030025836",
@@ -7437,7 +7437,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055121892",
@@ -7530,7 +7530,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053859861",
@@ -7623,7 +7623,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436157753",
@@ -7716,7 +7716,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15433524284",
@@ -7809,7 +7809,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868358238",
@@ -7902,7 +7902,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868358128",
@@ -7995,7 +7995,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055810155",
@@ -8088,7 +8088,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16030025726",
@@ -8181,7 +8181,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436157453",
@@ -8274,7 +8274,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055121482",
@@ -8367,7 +8367,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870046127",
@@ -8460,7 +8460,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868523280",
@@ -8553,7 +8553,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870045957",
@@ -8646,7 +8646,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436157203",
@@ -8739,7 +8739,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15869756109",
@@ -8832,7 +8832,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055120232",
@@ -8925,7 +8925,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15433523484",
@@ -9018,7 +9018,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15433523474",
@@ -9111,7 +9111,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858811",
@@ -9204,7 +9204,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858691",
@@ -9297,7 +9297,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15869755759",
@@ -9390,7 +9390,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053857891",
@@ -9483,7 +9483,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868522660",
@@ -9576,7 +9576,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858601",
@@ -9669,7 +9669,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870045217",
@@ -9762,7 +9762,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055808285",
@@ -9855,7 +9855,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858361",
@@ -9948,7 +9948,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15433522944",
@@ -10041,7 +10041,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15869755389",
@@ -10134,7 +10134,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16055120342",
@@ -10227,7 +10227,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "16053858191",
@@ -10320,7 +10320,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15868522160",
@@ -10413,7 +10413,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15436156343",
@@ -10506,7 +10506,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15870044717",
@@ -10599,7 +10599,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716470987",
@@ -10692,7 +10692,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714927930",
@@ -10785,7 +10785,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714925220",
@@ -10878,7 +10878,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714922380",
@@ -10971,7 +10971,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716460527",
@@ -11064,7 +11064,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901577412",
@@ -11157,7 +11157,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15900241421",
@@ -11250,7 +11250,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15900238251",
@@ -11343,7 +11343,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15900235681",
@@ -11436,7 +11436,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901565572",
@@ -11529,7 +11529,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714903470",
@@ -11622,7 +11622,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714712278",
@@ -11715,7 +11715,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714897980",
@@ -11808,7 +11808,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716145209",
@@ -11901,7 +11901,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714703818",
@@ -11994,7 +11994,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15900216751",
@@ -12087,7 +12087,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716426957",
@@ -12180,7 +12180,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15900210761",
@@ -12273,7 +12273,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282541033",
@@ -12366,7 +12366,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15901537872",
@@ -12459,7 +12459,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902178935",
@@ -12552,7 +12552,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716413497",
@@ -12645,7 +12645,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876369166",
@@ -12738,7 +12738,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15279914344",
@@ -12831,7 +12831,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716405557",
@@ -12924,7 +12924,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876360976",
@@ -13017,7 +13017,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716400247",
@@ -13110,7 +13110,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15282515813",
@@ -13203,7 +13203,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714853190",
@@ -13296,7 +13296,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714850570",
@@ -13389,7 +13389,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15902151055",
@@ -13482,7 +13482,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716386627",
@@ -13575,7 +13575,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876342006",
@@ -13668,7 +13668,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15279886464",
@@ -13761,7 +13761,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876336946",
@@ -13854,7 +13854,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714646518",
@@ -13947,7 +13947,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716083899",
@@ -14040,7 +14040,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15714641108",
@@ -14133,7 +14133,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15876326486",
@@ -14226,7 +14226,7 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   },
   {
     "id": "15716075779",
@@ -14319,6 +14319,6 @@
     },
     "originalFormat": "jpg",
     "media": "photo",
-    "orientation": 8
+    "rotation": 270
   }
 ]

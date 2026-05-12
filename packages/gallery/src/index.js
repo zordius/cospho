@@ -71,8 +71,7 @@ function pickAspect(p) {
   }
   const o = p.sizes?.o;
   if (o?.width && o?.height) {
-    const rotated =
-      p.orientation === 5 || p.orientation === 6 || p.orientation === 7 || p.orientation === 8;
+    const rotated = p.rotation === 90 || p.rotation === 270;
     return rotated ? { w: o.height, h: o.width } : { w: o.width, h: o.height };
   }
   return null;

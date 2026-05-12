@@ -135,6 +135,10 @@ export function normalizePhoto(photo) {
   for (const k of SIZE_KEYS) {
     sizes[k] = sizedFromExtras(photo, k);
   }
+  // Flickr's `rotation` (0/90/180/270) reflects EITHER an EXIF Orientation tag
+  // OR a manual rotation done through Flickr's UI. 90/270 mean the displayed
+  // image swaps w/h relative to `o`.
+  const rotation = Number(photo?.rotation);
   return {
     id: photo.id,
     title: text(photo.title),
@@ -144,6 +148,7 @@ export function normalizePhoto(photo) {
     sizes,
     originalFormat: photo?.originalformat ?? null,
     media: photo?.media ?? 'photo',
+    rotation: Number.isFinite(rotation) ? rotation : 0,
   };
 }
 
@@ -153,6 +158,7 @@ const PHOTO_EXTRAS = [
   'date_upload',
   'original_format',
   'media',
+  'rotation',
   ...SIZE_KEYS.map((k) => `url_${k}`),
 ].join(',');
 
@@ -174,44 +180,3 @@ export async function fetchPhotosInAlbum(flickr, albumId, perPage = 500) {
   return all;
 }
 
-// Flickr's getExif returns Orientation as ExifTool's descriptive string
-// rather than the numeric EXIF code (1–8). Map it back so callers get a
-// usable code.
-const ORIENTATION_BY_LABEL = {
-  'Horizontal (normal)': 1,
-  'Mirror horizontal': 2,
-  'Rotate 180': 3,
-  'Mirror vertical': 4,
-  'Mirror horizontal and rotate 270 CW': 5,
-  'Rotate 90 CW': 6,
-  'Mirror horizontal and rotate 90 CW': 7,
-  'Rotate 270 CW': 8,
-};
-
-export async function fetchPhotoExifOrientation(flickr, photoId) {
-  const res = await flickr('flickr.photos.getExif', { photo_id: String(photoId) });
-  const tags = asArray(res?.photo?.exif);
-  const tag = tags.find((t) => t.tag === 'Orientation');
-  const raw = tag?.raw?._content;
-  if (!raw) return undefined;
-  return ORIENTATION_BY_LABEL[raw];
-}
-
-// Returns an async gate that paces callers at most one start per
-// `minIntervalMs`. Flickr publishes 3600 queries/hour (~1/sec); going over
-// returns 503 Server temporarily unavailable.
-export function createRateLimiter(minIntervalMs) {
-  let next = 0;
-  return async () => {
-    const now = Date.now();
-    const slot = Math.max(next, now);
-    next = slot + minIntervalMs;
-    const wait = slot - now;
-    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
-  };
-}
-
-export function attachOrientation(photo, orientation) {
-  if (orientation == null) return photo;
-  return { ...photo, orientation };
-}

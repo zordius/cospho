@@ -53,7 +53,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367036",
@@ -109,7 +110,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367043",
@@ -165,7 +167,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367047",
@@ -221,7 +224,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367055",
@@ -277,7 +281,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367058",
@@ -333,7 +338,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367065",
@@ -389,7 +395,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367068",
@@ -445,7 +452,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367075",
@@ -501,7 +509,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367077",
@@ -557,7 +566,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367079",
@@ -613,7 +623,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367081",
@@ -669,7 +680,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367084",
@@ -725,7 +737,8 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   },
   {
     "id": "47367089",
@@ -781,6 +794,7 @@
       }
     },
     "originalFormat": "jpg",
-    "media": "photo"
+    "media": "photo",
+    "rotation": 0
   }
 ]
