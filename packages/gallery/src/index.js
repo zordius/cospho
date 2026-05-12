@@ -63,7 +63,13 @@ function escapeHtml(s) {
 function pickAspect(p) {
   for (const k of ['o', 'k', 'h', 'l', 'c', 'z', 'm', 'n', 's']) {
     const sz = p.sizes?.[k];
-    if (sz?.width && sz?.height) return { w: sz.width, h: sz.height };
+    if (!sz?.width || !sz?.height) continue;
+    // Flickr pre-rotates every size except `o`, which it returns at raw EXIF
+    // dimensions. Swap when the original is rotated 90°/270°.
+    if (k === 'o' && (p.orientation === 5 || p.orientation === 6 || p.orientation === 7 || p.orientation === 8)) {
+      return { w: sz.height, h: sz.width };
+    }
+    return { w: sz.width, h: sz.height };
   }
   return null;
 }
