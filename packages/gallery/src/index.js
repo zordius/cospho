@@ -8,7 +8,7 @@ const DEFAULTS = {
   hgap: null, // horizontal gap inside paired rows; falls back to gap
   pair: true, // auto-pair non-wide photos; wide photos stay solo
   soloAspectMin: 1.2, // photo with w/h >= this counts as wide
-  forceSoloAspectMin: 1.4, // photo with w/h > this always goes solo, never pairs
+  forceSoloAspectMin: 1.52, // photo with w/h > this always goes solo, never pairs
   alwaysShowTitle: false,
   linkUrl: null, // (photo) => string  — when set, click navigates to result
   faviconBase: '../',
@@ -61,15 +61,19 @@ function escapeHtml(s) {
 }
 
 function pickAspect(p) {
-  for (const k of ['o', 'k', 'h', 'l', 'c', 'z', 'm', 'n', 's']) {
+  // Flickr pre-rotates derivative sizes but returns `o` ambiguously: raw EXIF
+  // dims when a larger pipeline exists, pre-rotated when `o` is the only/last
+  // rendition. Prefer derivatives so rotation never matters; fall back to `o`
+  // with a swap only when nothing else is available and the photo is rotated.
+  for (const k of ['k', 'h', 'l', 'c', 'z', 'm', 'n', 's']) {
     const sz = p.sizes?.[k];
-    if (!sz?.width || !sz?.height) continue;
-    // Flickr pre-rotates every size except `o`, which it returns at raw EXIF
-    // dimensions. Swap when the original is rotated 90°/270°.
-    if (k === 'o' && (p.orientation === 5 || p.orientation === 6 || p.orientation === 7 || p.orientation === 8)) {
-      return { w: sz.height, h: sz.width };
-    }
-    return { w: sz.width, h: sz.height };
+    if (sz?.width && sz?.height) return { w: sz.width, h: sz.height };
+  }
+  const o = p.sizes?.o;
+  if (o?.width && o?.height) {
+    const rotated =
+      p.orientation === 5 || p.orientation === 6 || p.orientation === 7 || p.orientation === 8;
+    return rotated ? { w: o.height, h: o.width } : { w: o.width, h: o.height };
   }
   return null;
 }

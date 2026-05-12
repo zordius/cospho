@@ -28,6 +28,7 @@ const indexPhotos = covers.map(({ album, cover }) => ({
   title: `${album.title} · ${album.photoCount ?? 0}張照片`,
   media: 'photo',
   sizes: cover.sizes,
+  orientation: cover.orientation,
 }));
 
 const yearOf = (album) => album.title.match(/^(\d{4})/)?.[1] ?? 'Unknown';
