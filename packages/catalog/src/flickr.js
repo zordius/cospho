@@ -211,27 +211,7 @@ export function createRateLimiter(minIntervalMs) {
   };
 }
 
-// EXIF orientations 5/6/7/8 indicate the stored pixels need a 90° rotation
-// to display correctly. We persist Flickr's raw metadata as-is and swap w/h
-// on the fly via withDisplayOrientation so the JSON cache stays faithful.
-function shouldSwap(orientation) {
-  return orientation === 5 || orientation === 6 || orientation === 7 || orientation === 8;
-}
-
 export function attachOrientation(photo, orientation) {
   if (orientation == null) return photo;
   return { ...photo, orientation };
-}
-
-export function withDisplayOrientation(photo) {
-  if (!shouldSwap(photo.orientation)) return photo;
-  const sizes = {};
-  for (const [k, v] of Object.entries(photo.sizes ?? {})) {
-    if (v && v.width != null && v.height != null) {
-      sizes[k] = { ...v, width: v.height, height: v.width };
-    } else {
-      sizes[k] = v;
-    }
-  }
-  return { ...photo, sizes };
 }

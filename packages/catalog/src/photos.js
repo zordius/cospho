@@ -4,7 +4,6 @@ import {
   fetchPhotoExifOrientation,
   normalizePhoto,
   attachOrientation,
-  withDisplayOrientation,
   createRateLimiter,
 } from './flickr.js';
 import { readPhotos, savePhotos } from './store.js';
@@ -50,12 +49,12 @@ async function enrichWithOrientation(flickr, photos, onProgress) {
 
 export async function getPhotos(version, albumId, { onProgress } = {}) {
   const cached = await readPhotos(version, albumId);
-  if (cached.length > 0) return cached.map(withDisplayOrientation);
+  if (cached.length > 0) return cached;
 
   const { flickr } = createFlickrClient();
   const raw = await fetchPhotosInAlbum(flickr, albumId);
   const photos = raw.map(normalizePhoto);
   const enriched = await enrichWithOrientation(flickr, photos, onProgress);
   await savePhotos(enriched, version, albumId);
-  return enriched.map(withDisplayOrientation);
+  return enriched;
 }
