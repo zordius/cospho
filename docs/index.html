@@ -54,10 +54,11 @@ h2{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
-  scroll-margin-top:40px;
+  z-index:0;
   -webkit-tap-highlight-color:transparent;
+  scroll-margin-bottom:calc(var(--h)*var(--s)*(var(--ww) - var(--w))/var(--w)*1px);
   transform-origin:0 0;
-  transition:transform .3s;
+  transition:transform .3s,z-index 0s .3s;
   background-image:url(sprites/index-16.png);
   background-repeat:no-repeat;
   background-size:calc(10*var(--w)*var(--s)*1px) calc(18*var(--h)*var(--s)*1px);
@@ -66,6 +67,7 @@ h2{
 .g>div.s{
   z-index:100;
   transform:translate(calc(var(--x)*var(--s)*-1px),0) scale(calc(var(--ww)/var(--w)));
+  transition:transform .3s,z-index 0s 0s;
 }
 .g>div img{
   display:block;

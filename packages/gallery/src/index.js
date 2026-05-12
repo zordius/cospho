@@ -224,14 +224,16 @@ h2{
   content-visibility:auto;
   contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
   cursor:pointer;
-  scroll-margin-top:40px;
+  z-index:0;
   -webkit-tap-highlight-color:transparent;
+  scroll-margin-bottom:calc(var(--h)*var(--s)*(var(--ww) - var(--w))/var(--w)*1px);
   transform-origin:0 0;
-  transition:transform .3s;${spriteRules}
+  transition:transform .3s,z-index 0s .3s;${spriteRules}
 }
 .g>div.s{
   z-index:100;
   transform:translate(calc(var(--x)*var(--s)*-1px),0) scale(calc(var(--ww)/var(--w)));
+  transition:transform .3s,z-index 0s 0s;
 }
 .g>div img{
   display:block;
@@ -414,7 +416,7 @@ const T='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAA
 ${prefixDecl}const p=innerWidth*devicePixelRatio>=${Math.round(o.width * 1.8)}?1:0;
 const o=new IntersectionObserver(es=>{for(const e of es){const i=e.target;if(e.isIntersecting){if(!i.src||i.src===T){i.decoding='async';const u=i.dataset.src.split(',');${setSrc}}}else if(i.src&&i.src!==T){if(i.complete)o.unobserve(i);else i.src=T}}},{rootMargin:'200px 0px'});
 for(const i of document.images)if(i.dataset.src&&!i.src)o.observe(i);
-${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{let d=e.target.closest('.g>div');if(!d)return;if(d.classList.contains('s')){const a=document.querySelectorAll('.g>div');const t=a[[].indexOf.call(a,d)+(e.clientX<innerWidth/2?-1:1)];if(!t)return;clearTimeout(d._t);d.classList.remove('s');d=t}d.scrollIntoView({behavior:'smooth',block:'start'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
+${o.linkUrl ? `document.body.addEventListener('click',e=>{const d=e.target.closest('div[data-h]');if(!d)return;location=d.dataset.h});` : `document.body.addEventListener('click',e=>{let d=e.target.closest('.g>div');if(!d)return;if(d.classList.contains('s')){const a=document.querySelectorAll('.g>div');const t=a[[].indexOf.call(a,d)+(e.clientX<innerWidth/2?-1:1)];if(!t)return;clearTimeout(d._t);d.classList.remove('s');d=t}d.scrollIntoView({behavior:'smooth',block:'end'});clearTimeout(d._t);d.classList.add('s');d._t=setTimeout(()=>d.classList.remove('s'),3000)});`}
 </script>`;
 
   return `<!DOCTYPE html>
