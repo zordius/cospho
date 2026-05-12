@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://live.staticflickr.com" crossorigin>
 <link rel="preload" as="image" href="../sprites/72157624633111770-16.png">
 <style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--s:calc(100vw / 390px)}
+:root{--ww:390;--s:calc(100vw / (var(--ww) * 1px))}
 body{
   background:#000;
   color:#fff;
@@ -56,17 +56,16 @@ h2{
   cursor:pointer;
   scroll-margin-top:40px;
   -webkit-tap-highlight-color:transparent;
+  transform-origin:0 0;
+  transition:transform .3s;
   background-image:url(../sprites/72157624633111770-16.png);
   background-repeat:no-repeat;
   background-size:calc(10*var(--w)*var(--s)*1px) calc(95*var(--h)*var(--s)*1px);
   background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);
 }
 .g>div.s{
-  left:0;
-  width:100vw;
-  height:calc(100vw * var(--h) / var(--w));
   z-index:100;
-  transition:left .3s,width .3s,height .3s;
+  transform:translate(calc(var(--x)*var(--s)*-1px),0) scale(calc(var(--ww)/var(--w)));
 }
 .g>div img{
   display:block;
@@ -87,10 +86,18 @@ h2{
   font-size:14px;
   border-radius:4px;
   pointer-events:none;
+  transform-origin:0 0;
   opacity:0;
-  transition:opacity .5s;
+  transition:opacity .5s,transform .3s,left .3s,top .3s;
 }
-.g>div[data-t].s::after{opacity:1;transition:opacity 0s}
+.g>div[data-t].s::after{
+  left:calc(16px*var(--w)/var(--ww));
+  top:calc(16px*var(--w)/var(--ww));
+  max-width:min(calc(100vw - 32px),480px);
+  transform:scale(calc(var(--w)/var(--ww)));
+  opacity:1;
+  transition:opacity 0s,transform .3s,left .3s,top .3s;
+}
 @media (hover:hover){
   .g>div:hover{outline:1px solid rgba(255,255,255,.2)}
 }</style>
