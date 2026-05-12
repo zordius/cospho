@@ -46,7 +46,7 @@ function pickSize(photo, targetWidth) {
   for (const k of ORDERED_SIZES) {
     const sz = photo.sizes?.[k];
     if (!sz?.url) continue;
-    largest = sz;
+    if (largest == null || sz.width > largest.width) largest = sz;
     if (sz.width != null && sz.width >= targetWidth) return sz;
   }
   return largest;
@@ -258,9 +258,14 @@ export function buildGroup(photos, opts = {}, offsets = {}) {
     const placed = packRow(rows[r], o.width, hgap);
     if (r > 0) cumY += o.gap;
     for (const cell of placed) {
+      const seen = new Set();
       cell.picks = o.densities
         .map((d) => ({ d, sz: pickSize(cell.photo, cell.w * d) }))
-        .filter(({ sz }) => sz?.url);
+        .filter(({ sz }) => {
+          if (!sz?.url || seen.has(sz.url)) return false;
+          seen.add(sz.url);
+          return true;
+        });
       cells.push({
         ...cell,
         y: cumY,

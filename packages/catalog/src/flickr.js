@@ -173,3 +173,65 @@ export async function fetchPhotosInAlbum(flickr, albumId, perPage = 500) {
   }
   return all;
 }
+
+// Flickr's getExif returns Orientation as ExifTool's descriptive string
+// rather than the numeric EXIF code (1–8). Map it back so callers get a
+// usable code.
+const ORIENTATION_BY_LABEL = {
+  'Horizontal (normal)': 1,
+  'Mirror horizontal': 2,
+  'Rotate 180': 3,
+  'Mirror vertical': 4,
+  'Mirror horizontal and rotate 270 CW': 5,
+  'Rotate 90 CW': 6,
+  'Mirror horizontal and rotate 90 CW': 7,
+  'Rotate 270 CW': 8,
+};
+
+export async function fetchPhotoExifOrientation(flickr, photoId) {
+  const res = await flickr('flickr.photos.getExif', { photo_id: String(photoId) });
+  const tags = asArray(res?.photo?.exif);
+  const tag = tags.find((t) => t.tag === 'Orientation');
+  const raw = tag?.raw?._content;
+  if (!raw) return undefined;
+  return ORIENTATION_BY_LABEL[raw];
+}
+
+// Returns an async gate that paces callers at most one start per
+// `minIntervalMs`. Flickr publishes 3600 queries/hour (~1/sec); going over
+// returns 503 Server temporarily unavailable.
+export function createRateLimiter(minIntervalMs) {
+  let next = 0;
+  return async () => {
+    const now = Date.now();
+    const slot = Math.max(next, now);
+    next = slot + minIntervalMs;
+    const wait = slot - now;
+    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+  };
+}
+
+// EXIF orientations 5/6/7/8 indicate the stored pixels need a 90° rotation
+// to display correctly. We persist Flickr's raw metadata as-is and swap w/h
+// on the fly via withDisplayOrientation so the JSON cache stays faithful.
+function shouldSwap(orientation) {
+  return orientation === 5 || orientation === 6 || orientation === 7 || orientation === 8;
+}
+
+export function attachOrientation(photo, orientation) {
+  if (orientation == null) return photo;
+  return { ...photo, orientation };
+}
+
+export function withDisplayOrientation(photo) {
+  if (!shouldSwap(photo.orientation)) return photo;
+  const sizes = {};
+  for (const [k, v] of Object.entries(photo.sizes ?? {})) {
+    if (v && v.width != null && v.height != null) {
+      sizes[k] = { ...v, width: v.height, height: v.width };
+    } else {
+      sizes[k] = v;
+    }
+  }
+  return { ...photo, sizes };
+}

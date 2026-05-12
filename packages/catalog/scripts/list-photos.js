@@ -9,7 +9,12 @@ if (!albumId) {
   process.exit(1);
 }
 
-const photos = await getPhotos(VERSION, albumId);
+const photos = await getPhotos(VERSION, albumId, {
+  onProgress: (done, total) => {
+    process.stdout.write(`\r  fetching exif ${done}/${total}`);
+    if (done === total) process.stdout.write('\n');
+  },
+});
 
 if (photos.length === 0) {
   console.log(`No photos found for album ${albumId}.`);
@@ -25,7 +30,8 @@ for (const p of photos) {
   const fmt = p.originalFormat ?? '?';
   const title = p.title || '(untitled)';
   const mediaTag = p.media === 'video' ? ' [video]' : '';
-  console.log(`[${p.id}] ${title} — ${dim} ${fmt}, ${date}${mediaTag}`);
+  const orientTag = p.orientation && p.orientation !== 1 ? ` [r${p.orientation}]` : '';
+  console.log(`[${p.id}] ${title} — ${dim} ${fmt}, ${date}${mediaTag}${orientTag}`);
 }
 
 console.log(`\nPhotos cache: ${relative(process.cwd(), getPhotosPath(VERSION, albumId))}`);
