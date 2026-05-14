@@ -9,7 +9,7 @@ const COLS = 10;
 const DOWNLOAD_CONCURRENCY = 4;
 
 function spritePath(version, albumId, blockSize) {
-  return resolve(getDocsDir(), 'sprites', `${albumId}-${blockSize}.png`);
+  return resolve(getDocsDir(), 'sprites', `${albumId}-${blockSize}.webp`);
 }
 
 export function getSpritePath(version, albumId, blockSize) {
@@ -17,7 +17,7 @@ export function getSpritePath(version, albumId, blockSize) {
 }
 
 export function getIndexSpritePath(blockSize = 16) {
-  return resolve(getDocsDir(), 'sprites', `index-${blockSize}.png`);
+  return resolve(getDocsDir(), 'sprites', `index-${blockSize}.webp`);
 }
 
 async function fileExists(path) {
@@ -88,7 +88,7 @@ export async function getAlbumSprite16(version, albumId, { onProgress } = {}) {
     },
   })
     .composite(composites)
-    .png({ compressionLevel: 9, adaptiveFiltering: true })
+    .webp({ quality: 80, effort: 6 })
     .toFile(path);
 
   return path;
@@ -138,7 +138,7 @@ export async function getIndexSprite16(version, { onProgress } = {}) {
     },
   })
     .composite(composites)
-    .png({ compressionLevel: 9, adaptiveFiltering: true })
+    .webp({ quality: 80, effort: 6 })
     .toFile(outPath);
 
   return outPath;

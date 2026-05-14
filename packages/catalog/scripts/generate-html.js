@@ -29,7 +29,7 @@ const count = album?.photoCount ?? photos.length;
 const outDir = resolve(getDocsDir(), 'albums');
 const outFile = resolve(outDir, `${albumId}.html`);
 
-// HTML lives at docs/albums/<id>.html, sprite at docs/sprites/<id>-16.png
+// HTML lives at docs/albums/<id>.html, sprite at docs/sprites/<id>-16.webp
 const spriteRelativeUrl = `../sprites/${basename(spriteAbs)}`;
 
 const html = buildHtml(photos, {
