@@ -177,14 +177,14 @@ function buildCss(o, sprite, cols, rows) {
     ? `
   background-image:url(${sprite.url});
   background-repeat:no-repeat;
-  background-size:calc(${cols}*var(--w)*var(--s)*1px) calc(${rows}*var(--h)*var(--s)*1px);
-  background-position:calc(var(--c)*var(--w)*var(--s)*-1px) calc(var(--r)*var(--h)*var(--s)*-1px);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
+  background-size:calc(${cols}*var(--w)*var(--s)) calc(${rows}*var(--h)*var(--s));
+  background-position:calc(var(--c)*var(--w)*var(--s)*-1) calc(var(--r)*var(--h)*var(--s)*-1);${isPixelated ? '\n  image-rendering:pixelated;' : ''}`
     : `
   background:#888;`;
 
   return `
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ww:${o.width};--s:calc(100vw / (var(--ww) * 1px))}
+:root{--ww:${o.width};--s:calc(100vw / var(--ww))}
 body{
   background:#000;
   color:#fff;
@@ -212,27 +212,27 @@ h2{
 .g{
   position:relative;
   width:100vw;
-  height:calc(var(--gh)*var(--s)*1px);
+  height:calc(var(--gh)*var(--s));
 }
 .g>div{
   position:absolute;
-  left:calc(var(--x)*var(--s)*1px);
-  width:calc(var(--w)*var(--s)*1px);
-  top:calc(var(--y)*var(--s)*1px);
-  height:calc(var(--h)*var(--s)*1px);
+  left:calc(var(--x)*var(--s));
+  width:calc(var(--w)*var(--s));
+  top:calc(var(--y)*var(--s));
+  height:calc(var(--h)*var(--s));
   overflow:hidden;
   content-visibility:auto;
-  contain-intrinsic-size:calc(var(--w)*var(--s)*1px) calc(var(--h)*var(--s)*1px);
+  contain-intrinsic-size:calc(var(--w)*var(--s)) calc(var(--h)*var(--s));
   cursor:pointer;
   z-index:0;
   -webkit-tap-highlight-color:transparent;
-  scroll-margin-bottom:calc(var(--h)*var(--s)*(var(--ww) - var(--w))/var(--w)*1px);
+  scroll-margin-bottom:calc(var(--h)*var(--s)*(var(--ww) - var(--w))/var(--w));
   transform-origin:0 0;
   transition:transform .3s,z-index 0s .3s;${spriteRules}
 }
 .g>div.s{
   z-index:100;
-  transform:translate(calc(var(--x)*var(--s)*-1px),0) scale(calc(var(--ww)/var(--w)));
+  transform:translate(calc(var(--x)*var(--s)*-1),0) scale(calc(var(--ww)/var(--w)));
   transition:transform .3s,z-index 0s 0s;
 }
 .g>div img{
